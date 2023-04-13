@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Table from "./pages/Table";
+import Form from "./pages/Form";
 import NavigationBar from "./pages/NavigationBar";
 const router = createBrowserRouter([
   {
@@ -15,8 +17,12 @@ export default function App() {
       element: <Dashboard />,
     },
     {
-      path: "/navigation-bar",
-      element: <NavigationBar />,
+      path: "/table",
+      element: <Table />,
+    },
+    {
+      path: "/form",
+      element: <Form />,
     },
   ]);
 
