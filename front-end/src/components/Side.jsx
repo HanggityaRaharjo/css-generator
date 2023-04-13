@@ -45,19 +45,43 @@ const Side = () => {
         </div>
       </Link>
 
-      <Link to={"/table"}>
-        <div className="rounded-md p-2 mb-5 hover:bg-primary">Monitoring</div>
+      <Link to={"/monitoring"}>
+        <div
+          className={`rounded-md p-2 mb-5 hover:bg-primary ${
+            currentPage == "monitoring" ? "bg-primary" : null
+          }`}
+        >
+          Monitoring
+        </div>
       </Link>
 
-      <Link to={"/table"}>
-        <div className="rounded-md p-2 mb-5 hover:bg-primary">Button</div>
+      <Link to={"/button"}>
+        <div
+          className={`rounded-md p-2 mb-5 hover:bg-primary ${
+            currentPage == "button" ? "bg-primary" : null
+          }`}
+        >
+          Button
+        </div>
       </Link>
 
-      <Link to={"/table"}>
-        <div className="rounded-md p-2 mb-5 hover:bg-primary">Pop Up</div>
+      <Link to={"/pop-up"}>
+        <div
+          className={`rounded-md p-2 mb-5 hover:bg-primary ${
+            currentPage == "pop-up" ? "bg-primary" : null
+          }`}
+        >
+          Pop Up
+        </div>
       </Link>
-      <Link to={"/table"}>
-        <div className="rounded-md p-2 mb-5 hover:bg-primary">Login</div>
+      <Link to={"/login"}>
+        <div
+          className={`rounded-md p-2 mb-5 hover:bg-primary ${
+            currentPage == "login" ? "bg-primary" : null
+          }`}
+        >
+          Login
+        </div>
       </Link>
     </div>
   );

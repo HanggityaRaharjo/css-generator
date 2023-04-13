@@ -5,8 +5,6 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 
 const Table = () => {
-  const stateSidebar = useStyleStore((state) => state);
-  const stateBreadcrumbs = useStyleStore((state) => state);
   const stateLink = useStyleStore((state) => state);
   const stateNav = useStyleStore((state) => state);
   const stateTable = useStyleStore((state) => state);
@@ -15,7 +13,7 @@ const Table = () => {
 
   const [currentTab, setCurrentTab] = useState("cubex-card");
 
-  console.log(currentTab);
+  // console.log(currentTab);
 
   const handleTab = (elementClass) => {
     let tabActive = document.querySelector(".tab-active");
@@ -37,8 +35,13 @@ const Table = () => {
       { name: "Color", property: "cardContentColor" },
       { name: "Border Color", property: "cardContentBorderColor" },
       { name: "Background Filter", property: "tableBackgroundFilter" },
+      { name: "Filter Color", property: "tableFilterColor" },
       { name: "Background Search", property: "tableBackgroundSearch" },
+      { name: "Search Color", property: "tableSearchColor" },
       { name: "Background Button", property: "tableBackgroundButton" },
+      { name: "Table Header", property: "tableHeader" },
+      { name: "Table Row(Odd)", property: "tableRowOdd" },
+      { name: "Table Row(Even)", property: "tableRowEven" },
     ],
   };
 
@@ -98,20 +101,10 @@ const Table = () => {
               {/* Windows Preview */}
               <div className="mockup-window border border-base-300 rounded-t-none">
                 <div className="border-t border-base-300">
-                  <div className="h-[350px]  rounded-md">
+                  <div className="h-[550px]  rounded-md">
                     <div className="flex gap-2 h-full">
                       {/* Sidebar */}
-                      <div
-                        className="w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full"
-                        style={{
-                          background: stateSidebar.sidebarBackground,
-                          color: stateSidebar.sidebarTextColor,
-                          borderRadius: stateSidebar.sidebarBorderRadius,
-                          borderColor: stateSidebar.sidebarBorderColor,
-                          borderWidth: stateSidebar.sidebarBorderWidth,
-                          borderStyle: stateSidebar.sidebarBorderStyle,
-                        }}
-                      >
+                      <div className="w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full">
                         <div className=" rounded-md h-5 mb-1 px-2 mt-3">
                           Lorem
                         </div>
@@ -166,43 +159,23 @@ const Table = () => {
                         {/* Breadcrumb */}
                         <div
                           className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between `}
-                          style={{
-                            background: stateBreadcrumbs.breadcrumbBackground,
-                            borderColor: stateBreadcrumbs.breadcrumbBorderColor,
-                            borderRadius:
-                              stateBreadcrumbs.breadcrumbBorderRadius,
-                            borderWidth: stateBreadcrumbs.breadcrumbBorderWidth,
-                            borderStyle: stateBreadcrumbs.breadcrumbBorderStyle,
-                          }}
                         >
                           <div className="w-1/2 flex justify-center items-center">
                             <div className="h-5 w-5 bg-white rounded-full"></div>
                           </div>
-                          <div
-                            className="w-11/12"
-                            style={{
-                              color: stateBreadcrumbs.breadcrumbTextColor,
-                            }}
-                          >
+                          <div className="w-11/12">
                             <p>Lorem</p>
                             <p className="text-xs">
-                              Lorem <span>/</span>{" "}
-                              <span
-                                style={{
-                                  color: stateBreadcrumbs.breadcrumbTextActive,
-                                }}
-                              >
-                                Lorem
-                              </span>
+                              Lorem <span>/</span> <span>Lorem</span>
                             </p>
                           </div>
                         </div>
 
                         {/* Konten */}
                         <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md p-2 ${
+                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md p-5 ${
                             currentTab == "cubex-card"
-                              ? "border border-red-500"
+                              ? "border border-primary"
                               : ""
                           }`}
                           style={{
@@ -222,7 +195,7 @@ const Table = () => {
                             <button
                               className={`px-2 py-1 rounded-md bg-primary ${
                                 currentTab == "table-button"
-                                  ? "border border-red-500"
+                                  ? "border border-primary"
                                   : null
                               }`}
                             >
@@ -232,7 +205,7 @@ const Table = () => {
                           <div
                             className={` ${
                               currentTab == "cubex-table"
-                                ? "border border-red-500"
+                                ? "border border-primary"
                                 : ""
                             }`}
                           >
@@ -244,6 +217,7 @@ const Table = () => {
                                   style={{
                                     background:
                                       stateTable.tableBackgroundFilter,
+                                    color: stateTable.tableFilterColor,
                                   }}
                                 >
                                   <option value="10">10</option>
@@ -255,7 +229,7 @@ const Table = () => {
                               <div
                                 className={`flex items-center gap-2 ${
                                   currentTab == "table-search"
-                                    ? "border border-red-500"
+                                    ? "border border-primary"
                                     : null
                                 }`}
                               >
@@ -266,6 +240,7 @@ const Table = () => {
                                   style={{
                                     background:
                                       stateTable.tableBackgroundSearch,
+                                    color: stateTable.tableSearchColor,
                                   }}
                                 />
                               </div>
@@ -273,11 +248,10 @@ const Table = () => {
 
                             <table className="w-full">
                               <thead
-                                className={`bg-gray-500 ${
-                                  currentTab == "table-header"
-                                    ? "border border-red-500"
-                                    : null
-                                }`}
+                                className="bg-gray-500"
+                                style={{
+                                  background: stateTable.tableHeader,
+                                }}
                               >
                                 <tr>
                                   <td className="p-1">Table Header</td>
@@ -288,26 +262,42 @@ const Table = () => {
                               <tbody
                                 className={
                                   currentTab == "table-row"
-                                    ? "border border-red-500"
+                                    ? "border border-primary"
                                     : null
                                 }
                               >
-                                <tr className="bg-gray-400">
+                                <tr
+                                  className="bg-gray-400"
+                                  style={{ background: stateTable.tableRowOdd }}
+                                >
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                 </tr>
-                                <tr className="bg-gray-200">
+                                <tr
+                                  className="bg-gray-200"
+                                  style={{
+                                    background: stateTable.tableRowEven,
+                                  }}
+                                >
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                 </tr>
-                                <tr className="bg-gray-400">
+                                <tr
+                                  className="bg-gray-400"
+                                  style={{ background: stateTable.tableRowOdd }}
+                                >
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                 </tr>
-                                <tr className="bg-gray-200">
+                                <tr
+                                  className="bg-gray-200"
+                                  style={{
+                                    background: stateTable.tableRowEven,
+                                  }}
+                                >
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>
                                   <td className="p-1">Table Data</td>

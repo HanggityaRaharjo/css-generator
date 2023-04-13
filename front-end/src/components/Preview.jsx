@@ -203,13 +203,13 @@ const Preview = () => {
           {/* Windows Preview */}
           <div className="mockup-window border border-base-300 rounded-t-none">
             <div className="border-t border-base-300">
-              <div className="h-[350px]  rounded-md">
+              <div className="h-[550px]  rounded-md">
                 <div className="flex gap-2 h-full">
                   {/* Sidebar */}
                   <div
                     id="sidebar-view"
                     className={`w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full ${
-                      currentTab == "sidebar" ? "border border-red-500" : ""
+                      currentTab == "sidebar" ? "border border-primary" : ""
                     }`}
                     style={{
                       background: stateSidebar.sidebarBackground,
@@ -226,7 +226,7 @@ const Preview = () => {
                     <div
                       className={`bg-[#adadad] rounded-md h-5 mb-1 px-2 ${
                         currentTab == "link-bg-active"
-                          ? "border border-red-500"
+                          ? "border border-primary"
                           : ""
                       }`}
                       style={{
@@ -246,7 +246,7 @@ const Preview = () => {
                     <div
                       className={`flex justify-between mb-2 ${
                         currentTab == "navigation"
-                          ? "border border-red-500"
+                          ? "border border-primary"
                           : ""
                       }`}
                       style={{
@@ -281,7 +281,7 @@ const Preview = () => {
                     <div
                       className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between ${
                         currentTab == "cubexbreadcrumbs"
-                          ? "border border-red-500"
+                          ? "border border-primary"
                           : ""
                       }`}
                       style={{
@@ -319,9 +319,9 @@ const Preview = () => {
                     <div className="grid grid-cols-2 gap-2 text-black">
                       {/* Cubex Card */}
                       <div
-                        className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
+                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
                           currentTab == "cubex-card"
-                            ? "border border-red-500"
+                            ? "border border-primary"
                             : ""
                         }`}
                         style={{
@@ -345,9 +345,9 @@ const Preview = () => {
                       {/* End Cubex Card */}
                       {/* Cubex Card */}
                       <div
-                        className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
+                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
                           currentTab == "cubex-card"
-                            ? "border border-red-500"
+                            ? "border border-primary"
                             : ""
                         }`}
                         style={{
@@ -371,9 +371,9 @@ const Preview = () => {
                       {/* End Cubex Card */}
                       {/* Cubex Card */}
                       <div
-                        className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
+                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
                           currentTab == "cubex-card"
-                            ? "border border-red-500"
+                            ? "border border-primary"
                             : ""
                         }`}
                         style={{
@@ -397,9 +397,9 @@ const Preview = () => {
                       {/* End Cubex Card */}
                       {/* Cubex Card */}
                       <div
-                        className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
+                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
                           currentTab == "cubex-card"
-                            ? "border border-red-500"
+                            ? "border border-primary"
                             : ""
                         }`}
                         style={{

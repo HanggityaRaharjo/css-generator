@@ -10,7 +10,7 @@ const useStyleStore = create((set) => ({
   sidebarBorderWidth: "",
   sidebarBorderStyle: "",
   sidebarBorderColor: "",
-  
+
   sidebarLinkTextColor: "",
   sidebarLinkBackgroundActive: "",
   sidebarLinkBorderRadius: "",
@@ -47,48 +47,55 @@ const useStyleStore = create((set) => ({
   navbarBorderColor: "",
 
   // Card Content
-  cardContentBackground :"",
-  cardContentColor :"",
-  cardContentBorderRadius :"",
-  cardContentBorderWidth :"",
-  cardContentBorderStyle :"",
-  cardContentBorderColor :"",
-
-
-  // Button
-  buttonPrimary: "",
-  buttonSecondary: "",
-  buttonPrimaryOutline: "",
-  buttonSecondaryOutline: "",
-
-
-  
+  cardContentBackground: "",
+  cardContentColor: "",
+  cardContentBorderRadius: "",
+  cardContentBorderWidth: "",
+  cardContentBorderStyle: "",
+  cardContentBorderColor: "",
 
   // Table
   tableTextColor: "",
   tableBackgroundFilter: "",
+  tableFilterColor: "",
   tableBackgroundSearch: "",
+  tableSearchColor: "",
   tableBackgroundButton: "",
-  
+  tableHeader: "",
+  tableRowOdd: "",
+  tableRowEven: "",
 
-  // ToggleSwitch
-  switchToggleOn: "",
-  switchToggleBackgroundOn: "",
-  switchToggleOff: "",
-  switchToggleBackgroundOff: "",
-
-  // Label
-  labelTextColor: "",
+  // Form Card
+  cardFormBackground: "",
+  cardFormColor: "",
 
   // Input
+  inputLabelColor: "",
   inputTextColor: "",
-  inputBackgroundColor: "",
-  inputBorderRadius: "",
+  inputTextBackground: "",
+  // select
+  selectLabelColor: "",
+  selectTextColor: "",
+  selectTextBackground: "",
 
-  changeStyle:(state)=>{
+  // Text area
+  textAreaBackground: "",
+  textAreaColor: "",
+
+  // ---------------------------- Monitoring -------------------------------
+  cardGaugeBackground: "",
+  cardGaugeValueColor: "",
+  cardBackgroundProgress: "",
+
+  // Monitor
+  cardMonitorBackground: "",
+  cardMonitorColor: "",
+
+  // ---------------------------- Monitoring -------------------------------
+  changeStyle: (state) => {
     console.log(state);
     const property = state.property;
-    set({[property]:state.value})
+    set({ [property]: state.value });
   },
 }));
 

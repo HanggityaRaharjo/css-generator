@@ -15,7 +15,7 @@ const WindowsPreview = (props) => {
             <div
               id="sidebar-view"
               className={`w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full ${
-                currentTab == "sidebar" ? "border border-red-500" : ""
+                currentTab == "sidebar" ? "border border-primary" : ""
               }`}
               style={{
                 background: stateSidebar.sidebarBackground,
@@ -31,7 +31,7 @@ const WindowsPreview = (props) => {
               <div className=" rounded-md h-5 mb-1 px-2">Lorem</div>
               <div
                 className={`bg-[#adadad] rounded-md h-5 mb-1 px-2 ${
-                  currentTab == "link-bg-active" ? "border border-red-500" : ""
+                  currentTab == "link-bg-active" ? "border border-primary" : ""
                 }`}
                 style={{
                   background: stateSidebar.sidebarLinkBackgroundActive,
@@ -43,7 +43,7 @@ const WindowsPreview = (props) => {
             <div className="w-[85%] flex flex-col text-sm pr-2 pt-2">
               <div
                 className={`flex justify-between mb-2 ${
-                  currentTab == "navigation" ? "border border-red-500" : ""
+                  currentTab == "navigation" ? "border border-primary" : ""
                 }`}
               >
                 <span className="w-5 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300"></span>
@@ -59,7 +59,7 @@ const WindowsPreview = (props) => {
               <div
                 className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between ${
                   currentTab == "cubexbreadcrumbs"
-                    ? "border border-red-500"
+                    ? "border border-primary"
                     : ""
                 }`}
                 style={{
@@ -90,7 +90,7 @@ const WindowsPreview = (props) => {
                 {/* Cubex Card */}
                 <div
                   className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                    currentTab == "cubex-card" ? "border border-red-500" : ""
+                    currentTab == "cubex-card" ? "border border-primary" : ""
                   }`}
                 >
                   <div className="w-4/12">
@@ -106,7 +106,7 @@ const WindowsPreview = (props) => {
                 {/* Cubex Card */}
                 <div
                   className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                    currentTab == "cubex-card" ? "border border-red-500" : ""
+                    currentTab == "cubex-card" ? "border border-primary" : ""
                   }`}
                 >
                   <div className="w-4/12">
@@ -122,7 +122,7 @@ const WindowsPreview = (props) => {
                 {/* Cubex Card */}
                 <div
                   className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                    currentTab == "cubex-card" ? "border border-red-500" : ""
+                    currentTab == "cubex-card" ? "border border-primary" : ""
                   }`}
                 >
                   <div className="w-4/12">
@@ -138,7 +138,7 @@ const WindowsPreview = (props) => {
                 {/* Cubex Card */}
                 <div
                   className={`h-28 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                    currentTab == "cubex-card" ? "border border-red-500" : ""
+                    currentTab == "cubex-card" ? "border border-primary" : ""
                   }`}
                 >
                   <div className="w-4/12">

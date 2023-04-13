@@ -3,12 +3,10 @@ import Dashboard from "./pages/Dashboard";
 import Table from "./pages/Table";
 import Form from "./pages/Form";
 import NavigationBar from "./pages/NavigationBar";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
+import Monitoring from "./pages/Monitoring";
+import Button from "./pages/Button";
+import Popup from "./pages/Popup";
+import Login from "./pages/Login";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -23,6 +21,22 @@ export default function App() {
     {
       path: "/form",
       element: <Form />,
+    },
+    {
+      path: "/monitoring",
+      element: <Monitoring />,
+    },
+    {
+      path: "/button",
+      element: <Button />,
+    },
+    {
+      path: "/pop-up",
+      element: <Popup />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
