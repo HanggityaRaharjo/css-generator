@@ -1,5 +1,6 @@
 import React from "react";
 import useStyleStore from "../store/CssStore";
+import axios from "axios";
 
 const Navbar = () => {
   const stateComponents = useStyleStore((state) => state);
@@ -134,6 +135,17 @@ const Navbar = () => {
         valueColor: stateComponents.valueColor,
       },
     };
+
+    axios
+      .post("http://localhost:8000/api/tes", {
+        components: components,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
     console.log(components);
   };

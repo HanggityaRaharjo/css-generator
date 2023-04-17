@@ -35,13 +35,13 @@ class ComponentsController extends Controller
      */
     public function store(Request $request)
     {
-        $myfile = fopen("newfile.css", "w") or die("Unable to open file!");
+        $myfile = fopen("cubex-test.css", "w") or die("Unable to open file!");
   
         fwrite($myfile, '*{');
-        fwrite($myfile, "border:1px solid ". $request->sidebarBackground .";}");
+        fwrite($myfile, "border:1px solid ". "green".";}");
         
         fclose($myfile);
-        return response('sukses');
+        return response($request);
     }
 
     /**

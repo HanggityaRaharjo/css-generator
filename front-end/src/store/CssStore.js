@@ -5,7 +5,7 @@ const useStyleStore = create((set) => ({
   sidebarBackground: "",
   sidebarTextColor: "",
   sidebarLinkBackgroundActive: "",
-  sidebarBorderRadius: "0%",
+  sidebarBorderRadius: "",
   sidebarBorderWidth: "",
   sidebarBorderStyle: "",
   sidebarBorderColor: "",
