@@ -1,7 +1,6 @@
 import { create } from "zustand";
 
 const useStyleStore = create((set) => ({
-  bears: 10,
   // Sidebar
   sidebarBackground: "",
   sidebarTextColor: "",
@@ -82,7 +81,6 @@ const useStyleStore = create((set) => ({
   textAreaBackground: "",
   textAreaColor: "",
 
-  // ---------------------------- Monitoring -------------------------------
   cardGaugeBackground: "",
   cardGaugeValueColor: "",
   cardBackgroundProgress: "",
@@ -90,10 +88,50 @@ const useStyleStore = create((set) => ({
   // Monitor
   cardMonitorBackground: "",
   cardMonitorColor: "",
+  monitorBorderBackground: "",
+  valueColor: "",
 
-  // ---------------------------- Monitoring -------------------------------
+  // Button
+  // Primary
+  btnPrimaryBackground: "",
+  btnPrimaryTextColor: "",
+  btnPrimaryBorderRadius: "",
+  btnPrimaryOutline: "",
+  btnPrimaryOutlineText: "",
+  btnPrimaryHoverBackground: "",
+  btnPrimaryHoverText: "",
+  btnPrimaryActiveBackground: "",
+  btnPrimaryActiveText: "",
+  // Secondary
+  btnSecondaryBackground: "",
+  btnSecondaryTextColor: "",
+  btnSecondaryBorderRadius: "",
+  btnSecondaryOutline: "",
+  btnSecondaryOutlineText: "",
+  btnSecondaryHoverBackground: "",
+  btnSecondaryHoverText: "",
+  btnSecondaryActiveBackground: "",
+  btnSecondaryActiveText: "",
+  popUpCardBackground: "",
+  popUpSuccessBackground: "",
+  popUpSuccessColor: "",
+  popUpFailedBackground: "",
+  popUpFailedColor: "",
+  popUpTextColor: "",
+  popUpBtnBackground: "",
+  popUpBtnTextColor: "",
+
+  // ---------------------------- Login -------------------------------
+  cardLoginBackground: "",
+  cardLoginTextColor: "",
+  cardLoginHeading: "",
+  loginLabelColor: "",
+  loginInputBackground: "",
+  loginInputTextColor: "",
+  loginButtonBackground: "",
+  loginButtonTextColor: "",
+  // ---------------------------- Login -------------------------------
   changeStyle: (state) => {
-    console.log(state);
     const property = state.property;
     set({ [property]: state.value });
   },

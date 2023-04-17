@@ -14,6 +14,7 @@ const InputStyle = (props) => {
         <input
           id="field-background"
           type="color"
+          defaultValue={"#ffffff"}
           className="input input-bordered w-full"
           onChange={(e) => handleSidebarValue(e.target.value, props.property)}
         />

@@ -82,20 +82,6 @@ const Table = () => {
               {/* Tab */}
               <div className="flex justify-between">
                 <h5 className="text-xl font-bold"> Preview Page</h5>
-                <div className="tabs translate-y-[1px]">
-                  <button
-                    className="tab tab-lifted cubex-card tab-active"
-                    onClick={() => handleTab("cubex-card")}
-                  >
-                    Card Table
-                  </button>
-                  <button
-                    className="tab tab-lifted cubex-table"
-                    onClick={() => handleTab("cubex-table")}
-                  >
-                    Table
-                  </button>
-                </div>
               </div>
 
               {/* Windows Preview */}
@@ -341,6 +327,22 @@ const Table = () => {
             {/* End Pembatas */}
           </div>
           {/* Menu Bawah */}
+          <div className="flex justify-center">
+            <div className="tabs translate-y-[1px]">
+              <button
+                className="tab tab-lifted cubex-card tab-active"
+                onClick={() => handleTab("cubex-card")}
+              >
+                Card Table
+              </button>
+              <button
+                className="tab tab-lifted cubex-table"
+                onClick={() => handleTab("cubex-table")}
+              >
+                Table
+              </button>
+            </div>
+          </div>
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
             {currentTab == "cubex-card"
               ? tabComponent.cubexcard.map((components, index) => (

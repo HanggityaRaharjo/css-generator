@@ -15,7 +15,6 @@ const Preview = () => {
 
   const [currentTab, setCurrentTab] = useState("sidebar");
 
-  console.log(currentTab);
   const tabComponent = {
     sidebar: [
       { name: "Background", property: "sidebarBackground" },
@@ -166,38 +165,6 @@ const Preview = () => {
           {/* Tab */}
           <div className="flex justify-between">
             <h5 className="text-xl font-bold"> Preview Page</h5>
-            <div className="tabs translate-y-[1px]">
-              <button
-                className="tab tab-lifted sidebar tab-active"
-                onClick={() => handleTab("sidebar")}
-              >
-                Sidebar
-              </button>
-              <button
-                className="tab tab-lifted link-bg-active "
-                onClick={() => handleTab("link-bg-active")}
-              >
-                Link Active Backround
-              </button>
-              <button
-                className="tab tab-lifted cubex-card"
-                onClick={() => handleTab("cubex-card")}
-              >
-                Card
-              </button>
-              <button
-                className="tab tab-lifted cubexbreadcrumbs"
-                onClick={() => handleTab("cubexbreadcrumbs")}
-              >
-                Breadcrumbs
-              </button>
-              <button
-                className="tab tab-lifted form navigation"
-                onClick={() => handleTab("navigation")}
-              >
-                Navigation
-              </button>
-            </div>
           </div>
 
           {/* Windows Preview */}
@@ -556,6 +523,42 @@ const Preview = () => {
         </div>
         {/* End Pembatas */}
       </div>
+
+      <div className="flex justify-center">
+        <div className="tabs translate-y-[1px]">
+          <button
+            className="tab tab-lifted sidebar tab-active"
+            onClick={() => handleTab("sidebar")}
+          >
+            Sidebar
+          </button>
+          <button
+            className="tab tab-lifted link-bg-active "
+            onClick={() => handleTab("link-bg-active")}
+          >
+            Link Active Backround
+          </button>
+          <button
+            className="tab tab-lifted cubex-card"
+            onClick={() => handleTab("cubex-card")}
+          >
+            Card
+          </button>
+          <button
+            className="tab tab-lifted cubexbreadcrumbs"
+            onClick={() => handleTab("cubexbreadcrumbs")}
+          >
+            Breadcrumbs
+          </button>
+          <button
+            className="tab tab-lifted form navigation"
+            onClick={() => handleTab("navigation")}
+          >
+            Navigation
+          </button>
+        </div>
+      </div>
+
       {/* Menu Bawah */}
       <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
         {/* Sidebar */}

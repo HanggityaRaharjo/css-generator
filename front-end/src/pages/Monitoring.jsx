@@ -27,6 +27,8 @@ const Monitoring = () => {
     monitor: [
       { name: "Background", property: "cardMonitorBackground" },
       { name: "Color", property: "cardMonitorColor" },
+      { name: "Background Border", property: "monitorBorderBackground" },
+      { name: "Value Color", property: "valueColor" },
     ],
   };
 
@@ -43,20 +45,6 @@ const Monitoring = () => {
               {/* Tab */}
               <div className="flex justify-between">
                 <h5 className="text-xl font-bold">Preview Page</h5>
-                <div className="tabs translate-y-[1px]">
-                  <button
-                    className="tab tab-lifted gauge tab-active"
-                    onClick={() => handleTab("gauge")}
-                  >
-                    Gauge
-                  </button>
-                  <button
-                    className="tab tab-lifted monitoring"
-                    onClick={() => handleTab("monitoring")}
-                  >
-                    Monitoring
-                  </button>
-                </div>
               </div>
 
               {/* Windows Preview */}
@@ -224,14 +212,41 @@ const Monitoring = () => {
                         {/* Monitoring */}
                         <div className="grid grid-cols-2 gap-8">
                           {/* Monitoring */}
-                          <div className="bg-gray-200 h-56 rounded-md p-8 relative">
-                            <div className="border-l border-b border-black h-full w-full relative">
+                          <div
+                            className={`bg-gray-200 h-56 rounded-md p-8 relative ${
+                              currentTab == "monitoring"
+                                ? "border border-primary"
+                                : null
+                            }`}
+                            style={{
+                              background: stateMonitor.cardMonitorBackground,
+                              color: stateMonitor.cardMonitorColor,
+                            }}
+                          >
+                            <div
+                              className="border-l border-b border-black h-full w-full relative"
+                              style={{
+                                borderColor: stateMonitor.cardMonitorColor,
+                              }}
+                            >
                               {/* Dislay transparent */}
-                              <div className="absolute w-[inherit] bg-primary bg-opacity-20 bottom-0 h-10 z-50"></div>
+                              <div
+                                className="absolute w-[inherit] bg-primary bg-opacity-20 bottom-0 h-10 z-[100]"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
 
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-28 h-14 z-50"></div>
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-0 h-20 z-50"></div>
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 left-10 h-10 z-50"></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-28 h-14 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-0 h-20 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 left-10 h-10 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
                             </div>
                             {/* Y */}
                             <div className="flex flex-col absolute bottom-8 left-0 w-8 items-end pr-1">
@@ -259,26 +274,89 @@ const Monitoring = () => {
                               <span>10:00</span>
                             </div>
                             {/* Border */}
-                            <div className="absolute left-9 flex flex-col bottom-8 w-[450px] overflow-hidden">
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
+                            <div className="absolute left-9 flex flex-col bottom-8 w-[450px] overflow-hidden opacity-20 ">
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
                               <div className="  w-full h-[23px]"></div>
                             </div>
                           </div>
                           {/* End Monitoring */}
                           {/* Monitoring */}
-                          <div className="bg-gray-200 h-56 rounded-md p-8 relative">
-                            <div className="border-l border-b border-black h-full w-full relative">
+                          <div
+                            className={`bg-gray-200 h-56 rounded-md p-8 relative ${
+                              currentTab == "monitoring"
+                                ? "border border-primary"
+                                : null
+                            }`}
+                            style={{
+                              background: stateMonitor.cardMonitorBackground,
+                              color: stateMonitor.cardMonitorColor,
+                            }}
+                          >
+                            <div
+                              className="border-l border-b border-black h-full w-full relative"
+                              style={{
+                                borderColor: stateMonitor.cardMonitorColor,
+                              }}
+                            >
                               {/* Dislay transparent */}
-                              <div className="absolute w-[inherit] bg-primary bg-opacity-20 bottom-0 h-10 z-50"></div>
+                              <div
+                                className="absolute w-[inherit] bg-primary bg-opacity-20 bottom-0 h-10 z-[100]"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
 
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-28 h-14 z-50"></div>
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-0 h-20 z-50"></div>
-                              <div className="absolute w-20 bg-primary bg-opacity-20 bottom-10 left-10 h-10 z-50"></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-28 h-14 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 right-0 h-20 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
+                              <div
+                                className="absolute w-20 bg-primary bg-opacity-20 bottom-10 left-10 h-10 z-50"
+                                style={{ background: stateMonitor.valueColor }}
+                              ></div>
                             </div>
                             {/* Y */}
                             <div className="flex flex-col absolute bottom-8 left-0 w-8 items-end pr-1">
@@ -306,13 +384,49 @@ const Monitoring = () => {
                               <span>10:00</span>
                             </div>
                             {/* Border */}
-                            <div className="absolute left-9 flex flex-col bottom-8 w-[450px] overflow-hidden">
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
-                              <div className="border-b border-gray-100 w-full h-[23px]"></div>
+                            <div className="absolute left-9 flex flex-col bottom-8 w-[450px] overflow-hidden opacity-20 ">
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
+                              <div
+                                className="border-b border-gray-100 w-full h-[23px]"
+                                style={{
+                                  borderColor:
+                                    stateMonitor.monitorBorderBackground,
+                                }}
+                              ></div>
                               <div className="  w-full h-[23px]"></div>
                             </div>
                           </div>
@@ -333,6 +447,22 @@ const Monitoring = () => {
             {/* Menu Kanan */}
             <div className="w-[20%] h-fit p-2">kanan</div>
             {/* End Pembatas */}
+          </div>
+          <div className="flex justify-center">
+            <div className="tabs translate-y-[1px]">
+              <button
+                className="tab tab-lifted gauge tab-active"
+                onClick={() => handleTab("gauge")}
+              >
+                Gauge
+              </button>
+              <button
+                className="tab tab-lifted monitoring"
+                onClick={() => handleTab("monitoring")}
+              >
+                Monitoring
+              </button>
+            </div>
           </div>
           {/* Menu Bawah */}
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">

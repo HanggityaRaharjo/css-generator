@@ -52,32 +52,6 @@ const Form = () => {
               {/* Tab */}
               <div className="flex justify-between">
                 <h5 className="text-xl font-bold"> Preview Page</h5>
-                <div className="tabs translate-y-[1px]">
-                  <button
-                    className="tab tab-lifted form-card tab-active"
-                    onClick={() => handleTab("form-card")}
-                  >
-                    Form Card
-                  </button>
-                  <button
-                    className="tab tab-lifted input-text"
-                    onClick={() => handleTab("input-text")}
-                  >
-                    Input Text
-                  </button>
-                  <button
-                    className="tab tab-lifted input-select"
-                    onClick={() => handleTab("input-select")}
-                  >
-                    Input Select
-                  </button>
-                  <button
-                    className="tab tab-lifted text-area"
-                    onClick={() => handleTab("text-area")}
-                  >
-                    Text Area
-                  </button>
-                </div>
               </div>
 
               {/* Windows Preview */}
@@ -407,12 +381,41 @@ const Form = () => {
             <div className="w-[20%] h-fit p-2">kanan</div>
             {/* End Pembatas */}
           </div>
+          <div className="flex justify-center">
+            <div className="tabs translate-y-[1px]">
+              <button
+                className="tab tab-lifted form-card tab-active"
+                onClick={() => handleTab("form-card")}
+              >
+                Form Card
+              </button>
+              <button
+                className="tab tab-lifted input-text"
+                onClick={() => handleTab("input-text")}
+              >
+                Input Text
+              </button>
+              <button
+                className="tab tab-lifted input-select"
+                onClick={() => handleTab("input-select")}
+              >
+                Input Select
+              </button>
+              <button
+                className="tab tab-lifted text-area"
+                onClick={() => handleTab("text-area")}
+              >
+                Text Area
+              </button>
+            </div>
+          </div>
           {/* Menu Bawah */}
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
             {/* Form Card */}
             {currentTab == "form-card"
-              ? tabComponent.formCard.map((components) => (
+              ? tabComponent.formCard.map((components, index) => (
                   <InputStyle
+                    key={index}
                     name={components.name}
                     property={components.property}
                   />
@@ -421,8 +424,9 @@ const Form = () => {
             {/* End Form Card */}
             {/* Input Text */}
             {currentTab == "input-text"
-              ? tabComponent.inputText.map((components) => (
+              ? tabComponent.inputText.map((components, index) => (
                   <InputStyle
+                    key={index}
                     name={components.name}
                     property={components.property}
                   />
@@ -431,8 +435,9 @@ const Form = () => {
             {/* End Input Text */}
             {/* Input Text */}
             {currentTab == "input-select"
-              ? tabComponent.inputSelect.map((components) => (
+              ? tabComponent.inputSelect.map((components, index) => (
                   <InputStyle
+                    key={index}
                     name={components.name}
                     property={components.property}
                   />
@@ -441,8 +446,9 @@ const Form = () => {
             {/* End Input Text */}
             {/* Input Text */}
             {currentTab == "text-area"
-              ? tabComponent.textArea.map((components) => (
+              ? tabComponent.textArea.map((components, index) => (
                   <InputStyle
+                    key={index}
                     name={components.name}
                     property={components.property}
                   />

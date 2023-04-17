@@ -4,8 +4,35 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
+import { useState } from "react";
 
 const Login = () => {
+  const [currentTab, setCurrentTab] = useState("popup-success");
+
+  const stateLogin = useStyleStore((state) => state);
+
+  const handleTab = (elementClass) => {
+    let tabActive = document.querySelector(".tab-active");
+    if (tabActive !== null) {
+      tabActive.classList.remove("tab-active");
+    }
+    setCurrentTab(elementClass);
+    document.querySelector(`.${elementClass}`).classList.add("tab-active");
+  };
+
+  const tabComponent = {
+    login: [
+      { name: "Background Card", property: "cardLoginBackground" },
+      { name: "Text Color", property: "cardLoginTextColor" },
+      { name: "Heading Color", property: "cardLoginHeading" },
+      { name: "Label Color", property: "loginLabelColor" },
+      { name: "Background Input", property: "loginInputBackground" },
+      { name: "Color Input", property: "loginInputTextColor" },
+      { name: "Button Background", property: "loginButtonBackground" },
+      { name: "Button Text", property: "loginButtonTextColor" },
+    ],
+  };
+
   return (
     <div className=" min-h-screen">
       <Navbar />
@@ -19,85 +46,74 @@ const Login = () => {
               {/* Tab */}
               <div className="flex justify-between">
                 <h5 className="text-xl font-bold"> Preview Page</h5>
-                <div className="tabs translate-y-[1px]">
-                  <button
-                    className="tab tab-lifted cubex-card tab-active"
-                    onClick={() => handleTab("cubex-card")}
-                  >
-                    Card Table
-                  </button>
-                  <button
-                    className="tab tab-lifted cubex-table"
-                    onClick={() => handleTab("cubex-table")}
-                  >
-                    Table
-                  </button>
-                </div>
               </div>
 
               {/* Windows Preview */}
               <div className="mockup-window border border-base-300 rounded-t-none">
                 <div className="border-t border-base-300">
-                  <div className="h-[450px]  rounded-md">
-                    <div className="flex gap-2 h-full">
-                      {/* Sidebar */}
-                      <div className="w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full">
-                        <div className=" rounded-md h-5 mb-1 px-2 mt-3">
-                          Lorem
-                        </div>
-                        <div className=" rounded-md h-5 mb-1 px-2">Lorem</div>
-                        <div className=" rounded-md h-5 mb-1 px-2">Lorem</div>
-                        <div
-                          className={`bg-[#adadad] rounded-md h-5 mb-1 px-2`}
+                  <div className="h-[550px]  rounded-md">
+                    <div className="flex justify-center items-center gap-2 h-full">
+                      <div
+                        className="bg-gray-200 py-[20px] px-[45px] rounded-md scale-90"
+                        style={{
+                          background: stateLogin.cardLoginBackground,
+                          color: stateLogin.cardLoginTextColor,
+                        }}
+                      >
+                        <p className="w-56 text-center mb-[15px]">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Mollitia cum, temporib
+                        </p>
+                        <h5
+                          className="text-center mb-[15px] font-[600] text-[24px]"
+                          style={{ color: stateLogin.cardLoginHeading }}
                         >
-                          Lorem
+                          Login
+                        </h5>
+                        <div className="flex flex-col">
+                          <label
+                            className="mb-[9px]"
+                            style={{ color: stateLogin.loginLabelColor }}
+                          >
+                            Username
+                          </label>
+                          <input
+                            type="text"
+                            className="mb-2 w-full h-10 rounded-md px-2"
+                            placeholder="Username"
+                            style={{
+                              background: stateLogin.loginInputBackground,
+                              color: stateLogin.loginInputTextColor,
+                            }}
+                          />
                         </div>
-                      </div>
-                      <div className="w-[85%] flex flex-col text-sm pr-2 pt-2">
-                        {/* Navigation */}
-                        <div className={`flex justify-between mb-2 `}>
-                          <span className="w-5 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300"></span>
-                          <div className="flex gap-1 text-sm">
-                            <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                              Link
-                            </span>
-                            <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                              Link
-                            </span>
-                            <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                              Link
-                            </span>
-                            <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                              Link
-                            </span>
-                            <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                              Link
-                            </span>
-                          </div>
+                        <div className="flex flex-col mb-[15px]">
+                          <label
+                            className="mb-[9px]"
+                            style={{ color: stateLogin.loginLabelColor }}
+                          >
+                            Password
+                          </label>
+                          <input
+                            type="text"
+                            className="mb-2 w-full h-10 rounded-md px-2"
+                            placeholder="Password"
+                            style={{
+                              background: stateLogin.loginInputBackground,
+                              color: stateLogin.loginInputTextColor,
+                            }}
+                          />
                         </div>
-                        {/* Breadcrumb */}
-                        <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between `}
+                        <button
+                          className="btn w-full"
+                          style={{
+                            background: stateLogin.loginButtonBackground,
+                            borderColor: stateLogin.loginButtonBackground,
+                            color: stateLogin.loginButtonTextColor,
+                          }}
                         >
-                          <div className="w-1/2 flex justify-center items-center">
-                            <div className="h-5 w-5 bg-white rounded-full"></div>
-                          </div>
-                          <div className="w-11/12">
-                            <p>Lorem</p>
-                            <p className="text-xs">
-                              Lorem <span>/</span> <span>Lorem</span>
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Konten */}
-                        <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md p-2`}
-                        >
-                          asd
-                        </div>
-
-                        {/* End Konten */}
+                          Login
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -111,9 +127,27 @@ const Login = () => {
             <div className="w-[20%] h-fit p-2">kanan</div>
             {/* End Pembatas */}
           </div>
+          {/* Tabs */}
+          <div className="flex justify-center">
+            <div className="tabs translate-y-[1px]">
+              <button
+                className="tab tab-lifted card-login tab-active"
+                onClick={() => handleTab("card-login")}
+              >
+                Login Card
+              </button>
+            </div>
+          </div>
+          {/* End Tabs */}
           {/* Menu Bawah */}
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
-            <div>asd</div>
+            {tabComponent.login.map((components, index) => (
+              <InputStyle
+                key={index}
+                name={components.name}
+                property={components.property}
+              />
+            ))}
           </div>
         </div>
       </div>
