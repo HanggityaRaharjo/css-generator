@@ -222,7 +222,7 @@ const Table = () => {
                                 <label>Search</label>
                                 <input
                                   type="text"
-                                  className="rounded-md w-28"
+                                  className="rounded-md w-28 h-7"
                                   style={{
                                     background:
                                       stateTable.tableBackgroundSearch,
@@ -232,66 +232,44 @@ const Table = () => {
                               </div>
                             </div>
 
-                            <table className="w-full">
-                              <thead
-                                className="bg-gray-500"
-                                style={{
-                                  background: stateTable.tableHeader,
-                                }}
-                              >
-                                <tr>
-                                  <td className="p-1">Table Header</td>
-                                  <td className="p-1">Table Header</td>
-                                  <td className="p-1">Table Header</td>
-                                </tr>
-                              </thead>
-                              <tbody
-                                className={
-                                  currentTab == "table-row"
-                                    ? "border border-primary"
-                                    : null
-                                }
-                              >
-                                <tr
-                                  className="bg-gray-400"
-                                  style={{ background: stateTable.tableRowOdd }}
-                                >
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                </tr>
-                                <tr
-                                  className="bg-gray-200"
-                                  style={{
-                                    background: stateTable.tableRowEven,
-                                  }}
-                                >
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                </tr>
-                                <tr
-                                  className="bg-gray-400"
-                                  style={{ background: stateTable.tableRowOdd }}
-                                >
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                </tr>
-                                <tr
-                                  className="bg-gray-200"
-                                  style={{
-                                    background: stateTable.tableRowEven,
-                                  }}
-                                >
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                  <td className="p-1">Table Data</td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            <div className="overflow-x-auto">
+                              <table className="table table-zebra w-full">
+                                {/* head */}
+                                <thead>
+                                  <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Job</th>
+                                    <th>Favorite Color</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {/* row 1 */}
+                                  <tr>
+                                    <th>1</th>
+                                    <td>Cy Ganderton</td>
+                                    <td>Quality Control Specialist</td>
+                                    <td>Blue</td>
+                                  </tr>
+                                  {/* row 2 */}
+                                  <tr>
+                                    <th>2</th>
+                                    <td>Hart Hagerty</td>
+                                    <td>Desktop Support Technician</td>
+                                    <td>Purple</td>
+                                  </tr>
+                                  {/* row 3 */}
+                                  <tr>
+                                    <th>3</th>
+                                    <td>Brice Swyre</td>
+                                    <td>Tax Accountant</td>
+                                    <td>Red</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
 
-                            <div className={`p-1 flex justify-between`}>
+                            <div className={`p-5 flex justify-between text-lg`}>
                               <span>Show 1 of 1</span>
                               <div className="flex gap-1">
                                 <button>Pevious</button>

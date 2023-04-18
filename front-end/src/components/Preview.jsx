@@ -3,44 +3,186 @@ import useStyleStore from "../store/CssStore";
 import InputSelect from "./InputSelect";
 import InputRangeSlider from "./InputRangeSlider";
 import InputStyle from "./InputStyle";
-import WindowsPreview from "./WindowsPreview";
 
 const Preview = () => {
-  const stateSidebar = useStyleStore((state) => state);
-  const stateBreadcrumbs = useStyleStore((state) => state);
-  const stateLink = useStyleStore((state) => state);
-  const stateCard = useStyleStore((state) => state);
-  const stateNav = useStyleStore((state) => state);
+  const stateMenu = useStyleStore((state) => state);
   const changeStyle = useStyleStore((state) => state.changeStyle);
 
-  const [currentTab, setCurrentTab] = useState("sidebar");
-
+  const [currentTab, setCurrentTab] = useState("header");
+  console.log(stateMenu);
   const tabComponent = {
+    header: [
+      {
+        name: "Background Color",
+        property: "headerBackgroundColor",
+        defaultValue: "#d3d3d3",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Background Gradient",
+        property: "headerBackgroundGradient",
+        defaultValue: "",
+        type: "text",
+        placeholder: "linear-gradient(red, yellow)",
+      },
+      {
+        name: "Background Image",
+        property: "headerBackgroundImage",
+        defaultValue: "Test",
+        type: "text",
+        placeholder: "URL/Link",
+      },
+      {
+        name: "Border Width",
+        property: "headerBorderWidth",
+        defaultValue: "0px",
+        type: "number",
+        placeholder: "0px",
+      },
+      {
+        name: "Border Color",
+        property: "headerBorderColor",
+        defaultValue: "",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Shadow Thick",
+        property: "headerShadowThick",
+        defaultValue: "",
+        type: "text",
+        placeholder: "5px 10px #888888",
+      },
+      {
+        name: "Shadow Gradient",
+        property: "headerShadowGradient",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Color",
+        property: "headerColor",
+        defaultValue: "0px",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Filter Blur",
+        property: "headerFilter",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Font Family",
+        property: "headerFontFamily",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "Arial,mono-thin,reguler",
+      },
+      {
+        name: "Font Size",
+        property: "headerFontSize",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Height",
+        property: "headerHeight",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+    ],
     sidebar: [
-      { name: "Background", property: "sidebarBackground" },
-      { name: "Color", property: "sidebarTextColor" },
-      { name: "Border Color", property: "sidebarBorderColor" },
-    ],
-    cubexbreadcrumbs: [
-      { name: "Background", property: "breadcrumbBackground" },
-      { name: "Color", property: "breadcrumbTextColor" },
-      { name: "Breadcrumbs Active", property: "breadcrumbTextActive" },
-      { name: "Border Color", property: "breadcrumbBorderColor" },
-    ],
-    linkBgActive: [
-      { name: "Background", property: "sidebarLinkBackgroundActive" },
-      { name: "Color", property: "sidebarLinkTextColor" },
-      { name: "Border Color", property: "sidebarLinkBorderColor" },
-    ],
-    cubexcard: [
-      { name: "Background", property: "cardBackground" },
-      { name: "Color", property: "cardTextColorPrimary" },
-      { name: "Border Color", property: "cardBorderColor" },
-    ],
-    navigation: [
-      { name: "Background", property: "navbarBackground" },
-      { name: "Color", property: "navbarTextColor" },
-      { name: "Border Color", property: "navbarBorderColor" },
+      {
+        name: "Background Color",
+        property: "sidebarBackgroundColor",
+        defaultValue: "#d3d3d3",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Background Gradient",
+        property: "sidebarBackgroundGradient",
+        defaultValue: "#adadad",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Background Image",
+        property: "sidebarBackgroundImage",
+        defaultValue: "Test",
+        type: "text",
+        placeholder: "URL/Link",
+      },
+
+      {
+        name: "Border Width",
+        property: "sidebarBorderWidth",
+        defaultValue: "0px",
+        type: "number",
+        placeholder: "0px",
+      },
+      {
+        name: "Border Color",
+        property: "sidebarBorderColor",
+        defaultValue: "",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Shadow Thick",
+        property: "sidebarShadowThick",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Shadow Gradient",
+        property: "sidebarShadowGradient",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Color",
+        property: "sidebarColor",
+        defaultValue: "0px",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Filter Blur",
+        property: "sidebarFilter",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Font Family",
+        property: "sidebarFontFamily",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "Arial,mono-thin,reguler",
+      },
+      {
+        name: "Font Size",
+        property: "sidebarFontSize",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Height",
+        property: "sidebarHeight",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
     ],
   };
 
@@ -147,14 +289,9 @@ const Preview = () => {
     });
   };
 
-  const handleTab = (elementClass) => {
-    let tabActive = document.querySelector(".tab-active");
-    if (tabActive !== null) {
-      tabActive.classList.remove("tab-active");
-    }
-
-    setCurrentTab(elementClass);
-    document.querySelector(`.${elementClass}`).classList.add("tab-active");
+  const handleMenu = (menu) => {
+    setCurrentTab(menu);
+    handleTab(menu);
   };
 
   return (
@@ -168,240 +305,53 @@ const Preview = () => {
           </div>
 
           {/* Windows Preview */}
-          <div className="mockup-window border border-base-300 rounded-t-none">
-            <div className="border-t border-base-300">
-              <div className="h-[550px]  rounded-md">
-                <div className="flex gap-2 h-full">
-                  {/* Sidebar */}
-                  <div
-                    id="sidebar-view"
-                    className={`w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full ${
-                      currentTab == "sidebar" ? "border border-primary" : ""
-                    }`}
+          <div className="border flex justify-center">
+            <div className=" relative w-[750px]">
+              <img src="blank-computer.png" alt="" className="w-full" />
+              <div className="absolute left-0 top-[39px] w-full px-[43px] h-[382px] ">
+                <div className="h-full">
+                  <header
+                    className="bg-primary h-10 cursor-pointer"
                     style={{
-                      background: stateSidebar.sidebarBackground,
-                      color: stateSidebar.sidebarTextColor,
-                      borderRadius: stateSidebar.sidebarBorderRadius,
-                      borderColor: stateSidebar.sidebarBorderColor,
-                      borderWidth: stateSidebar.sidebarBorderWidth,
-                      borderStyle: stateSidebar.sidebarBorderStyle,
+                      background: `${
+                        stateMenu.headerBackgroundGradient == null ||
+                        stateMenu.headerBackgroundGradient == ""
+                          ? stateMenu.headerBackgroundColor
+                          : stateMenu.headerBackgroundGradient
+                      }`,
+                      borderWidth: `${stateMenu.headerBorderWidth}px`,
+                      borderColor: stateMenu.headerBorderColor,
                     }}
+                    onClick={() => handleMenu("header")}
                   >
-                    <div className=" rounded-md h-5 mb-1 px-2 mt-3">Lorem</div>
-                    <div className=" rounded-md h-5 mb-1 px-2">Lorem</div>
-                    <div className=" rounded-md h-5 mb-1 px-2">Lorem</div>
+                    Header
+                  </header>
+                  <div className="flex">
                     <div
-                      className={`bg-[#adadad] rounded-md h-5 mb-1 px-2 ${
-                        currentTab == "link-bg-active"
-                          ? "border border-primary"
-                          : ""
-                      }`}
-                      style={{
-                        background: stateLink.sidebarLinkBackgroundActive,
-                        color: stateLink.sidebarLinkTextColor,
-                        borderRadius: stateLink.sidebarLinkBorderRadius,
-                        borderWidth: stateLink.sidebarLinkBorderWidth,
-                        borderColor: stateLink.sidebarLinkBorderColor,
-                        borderStyle: stateLink.sidebarLinkBorderStyle,
-                      }}
+                      className="w-[15%] h-[300px] bg-secondary cursor-pointer"
+                      onClick={() => handleMenu("sidebar")}
                     >
-                      Lorem
+                      Sidebar
                     </div>
+                    <div className="w-[85%]">Content</div>
                   </div>
-                  <div className="w-[85%] flex flex-col text-sm pr-2 pt-2">
-                    {/* Navigation */}
-                    <div
-                      className={`flex justify-between mb-2 ${
-                        currentTab == "navigation"
-                          ? "border border-primary"
-                          : ""
-                      }`}
-                      style={{
-                        background: stateNav.navbarBackground,
-                        color: stateNav.navbarTextColor,
-                        borderRadius: stateNav.navbarBorderRadius,
-                        borderColor: stateNav.navbarBorderColor,
-                        borderWidth: stateNav.navbarBorderWidth,
-                        borderStyle: stateNav.navbarBorderStyle,
-                      }}
-                    >
-                      <span className="w-5 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300"></span>
-                      <div className="flex gap-1 text-sm">
-                        <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                          Link
-                        </span>
-                        <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                          Link
-                        </span>
-                        <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                          Link
-                        </span>
-                        <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                          Link
-                        </span>
-                        <span className="w-10 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 flex justify-center">
-                          Link
-                        </span>
-                      </div>
-                    </div>
-                    {/* Breadcrumb */}
-                    <div
-                      className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between ${
-                        currentTab == "cubexbreadcrumbs"
-                          ? "border border-primary"
-                          : ""
-                      }`}
-                      style={{
-                        background: stateBreadcrumbs.breadcrumbBackground,
-                        borderColor: stateBreadcrumbs.breadcrumbBorderColor,
-                        borderRadius: stateBreadcrumbs.breadcrumbBorderRadius,
-                        borderWidth: stateBreadcrumbs.breadcrumbBorderWidth,
-                        borderStyle: stateBreadcrumbs.breadcrumbBorderStyle,
-                      }}
-                    >
-                      <div className="w-1/2 flex justify-center items-center">
-                        <div className="h-5 w-5 bg-white rounded-full"></div>
-                      </div>
-                      <div
-                        className="w-11/12"
-                        style={{
-                          color: stateBreadcrumbs.breadcrumbTextColor,
-                        }}
-                      >
-                        <p>Lorem</p>
-                        <p className="text-xs">
-                          Lorem <span>/</span>{" "}
-                          <span
-                            style={{
-                              color: stateBreadcrumbs.breadcrumbTextActive,
-                            }}
-                          >
-                            Lorem
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Cubex Card */}
-                    <div className="grid grid-cols-2 gap-2 text-black">
-                      {/* Cubex Card */}
-                      <div
-                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                          currentTab == "cubex-card"
-                            ? "border border-primary"
-                            : ""
-                        }`}
-                        style={{
-                          background: stateCard.cardBackground,
-                          color: stateCard.cardTextColorPrimary,
-                          borderRadius: stateCard.cardBorderRadius,
-                          borderWidth: stateCard.cardBorderWidth,
-                          borderStyle: stateCard.cardBorderStyle,
-                          borderColor: stateCard.cardBorderColor,
-                        }}
-                      >
-                        <div className="w-4/12">
-                          <div className="w-16 h-16 bg-white rounded-full"></div>
-                        </div>
-                        <div className="w-8/12">
-                          <p className="text-lg">lorem</p>
-                          <p>lorem</p>
-                          <p>lorem</p>
-                        </div>
-                      </div>
-                      {/* End Cubex Card */}
-                      {/* Cubex Card */}
-                      <div
-                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                          currentTab == "cubex-card"
-                            ? "border border-primary"
-                            : ""
-                        }`}
-                        style={{
-                          background: stateCard.cardBackground,
-                          color: stateCard.cardTextColorPrimary,
-                          borderRadius: stateCard.cardBorderRadius,
-                          borderWidth: stateCard.cardBorderWidth,
-                          borderStyle: stateCard.cardBorderStyle,
-                          borderColor: stateCard.cardBorderColor,
-                        }}
-                      >
-                        <div className="w-4/12">
-                          <div className="w-16 h-16 bg-white rounded-full"></div>
-                        </div>
-                        <div className="w-8/12">
-                          <p className="text-lg">lorem</p>
-                          <p>lorem</p>
-                          <p>lorem</p>
-                        </div>
-                      </div>
-                      {/* End Cubex Card */}
-                      {/* Cubex Card */}
-                      <div
-                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                          currentTab == "cubex-card"
-                            ? "border border-primary"
-                            : ""
-                        }`}
-                        style={{
-                          background: stateCard.cardBackground,
-                          color: stateCard.cardTextColorPrimary,
-                          borderRadius: stateCard.cardBorderRadius,
-                          borderWidth: stateCard.cardBorderWidth,
-                          borderStyle: stateCard.cardBorderStyle,
-                          borderColor: stateCard.cardBorderColor,
-                        }}
-                      >
-                        <div className="w-4/12">
-                          <div className="w-16 h-16 bg-white rounded-full"></div>
-                        </div>
-                        <div className="w-8/12">
-                          <p className="text-lg">lorem</p>
-                          <p>lorem</p>
-                          <p>lorem</p>
-                        </div>
-                      </div>
-                      {/* End Cubex Card */}
-                      {/* Cubex Card */}
-                      <div
-                        className={`h-44 rounded-md flex justify-between gap-5 items-center px-10 bg-gradient-to-tr from-base-300 via-base-200 to-base-300 ${
-                          currentTab == "cubex-card"
-                            ? "border border-primary"
-                            : ""
-                        }`}
-                        style={{
-                          background: stateCard.cardBackground,
-                          color: stateCard.cardTextColorPrimary,
-                          borderRadius: stateCard.cardBorderRadius,
-                          borderWidth: stateCard.cardBorderWidth,
-                          borderStyle: stateCard.cardBorderStyle,
-                          borderColor: stateCard.cardBorderColor,
-                        }}
-                      >
-                        <div className="w-4/12">
-                          <div className="w-16 h-16 bg-white rounded-full"></div>
-                        </div>
-                        <div className="w-8/12">
-                          <p className="text-lg">lorem</p>
-                          <p>lorem</p>
-                          <p>lorem</p>
-                        </div>
-                      </div>
-                      {/* End Cubex Card */}
-                    </div>
-                    {/* End Cubex Card */}
-                  </div>
+                  <footer className="bg-primary h-10">Footer</footer>
                 </div>
               </div>
             </div>
           </div>
-
           {/* End Preview */}
         </div>
         {/* Pembatas */}
         {/* Menu Kanan */}
 
         <div className="w-[20%] h-fit p-2">
+          {/* Color Picker */}
+          <div className="border h-10 relative rounded-md">
+            <input type="text" className="w-full h-full" />
+            <div className="bg-primary absolute w-full h-56 hidden">bl</div>
+          </div>
+          {/* End Color Picker */}
           {/* Sidebar */}
           {currentTab == "sidebar"
             ? tabComponentSlider.sidebar.map((components, index) => (
@@ -414,7 +364,6 @@ const Preview = () => {
               ))
             : null}
           {/* End Sidebar */}
-
           {/* Breadcrumbs */}
           {currentTab == "cubexbreadcrumbs"
             ? tabComponentSlider.breadcrumbs.map((components, index) => (
@@ -427,7 +376,6 @@ const Preview = () => {
               ))
             : null}
           {/* End Breadcrumbs */}
-
           {/* Link Bg Active */}
           {currentTab == "link-bg-active"
             ? tabComponentSlider.linkBgActive.map((components, index) => (
@@ -440,7 +388,6 @@ const Preview = () => {
               ))
             : null}
           {/* End Link Bg Active */}
-
           {/* Cubex Card */}
           {currentTab == "cubex-card"
             ? tabComponentSlider.cubexcard.map((components, index) => (
@@ -453,7 +400,6 @@ const Preview = () => {
               ))
             : null}
           {/* End Cubex Card */}
-
           {/* Navigation */}
           {currentTab == "navigation"
             ? tabComponentSlider.navigation.map((components, index) => (
@@ -466,7 +412,6 @@ const Preview = () => {
               ))
             : null}
           {/* End Navigation */}
-
           {/* Select */}
           {/* Sidebar */}
           {currentTab == "sidebar"
@@ -524,7 +469,7 @@ const Preview = () => {
         {/* End Pembatas */}
       </div>
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <div className="tabs translate-y-[1px]">
           <button
             className="tab tab-lifted sidebar tab-active"
@@ -557,10 +502,24 @@ const Preview = () => {
             Navigation
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Menu Bawah */}
-      <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
+      <div className="grid grid-cols-4 gap-1 text-sm border-4 h-56 p-2 overflow-y-scroll">
+        {/* Header */}
+        {currentTab == "header"
+          ? tabComponent.header.map((component, index) => (
+              <InputStyle
+                key={index}
+                name={component.name}
+                property={component.property}
+                defaultValue={component.defaultValue}
+                type={component.type}
+                placeholder={component.placeholder}
+              />
+            ))
+          : null}
+        {/* End Header */}
         {/* Sidebar */}
         {currentTab == "sidebar"
           ? tabComponent.sidebar.map((component, index) => (
@@ -568,54 +527,13 @@ const Preview = () => {
                 key={index}
                 name={component.name}
                 property={component.property}
+                defaultValue={component.defaultValue}
+                type={component.type}
+                placeholder={component.placeholder}
               />
             ))
           : null}
         {/* End Sidebar */}
-        {/* cubex-breadcrumbs */}
-        {currentTab == "cubexbreadcrumbs"
-          ? tabComponent.cubexbreadcrumbs.map((component, index) => (
-              <InputStyle
-                key={index}
-                name={component.name}
-                property={component.property}
-              />
-            ))
-          : null}
-        {/* End cubex-breadcrumbs*/}
-        {/* cubex-breadcrumbs */}
-        {currentTab == "link-bg-active"
-          ? tabComponent.linkBgActive.map((component, index) => (
-              <InputStyle
-                key={index}
-                name={component.name}
-                property={component.property}
-              />
-            ))
-          : ""}
-        {/* End cubex-breadcrumbs*/}
-        {/* cubex-card */}
-        {currentTab == "cubex-card"
-          ? tabComponent.cubexcard.map((component, index) => (
-              <InputStyle
-                key={index}
-                name={component.name}
-                property={component.property}
-              />
-            ))
-          : ""}
-        {/* End cubex-card*/}
-        {/* cubex-card */}
-        {currentTab == "navigation"
-          ? tabComponent.navigation.map((component, index) => (
-              <InputStyle
-                key={index}
-                name={component.name}
-                property={component.property}
-              />
-            ))
-          : ""}
-        {/* End cubex-card*/}
       </div>
       {/* End Menu Bawah */}
     </div>

@@ -131,6 +131,36 @@ const useStyleStore = create((set) => ({
   loginButtonBackground: "",
   loginButtonTextColor: "",
   // ---------------------------- Login -------------------------------
+
+  // Selected
+  headerBackgroundColor: "",
+  headerBackgroundImage: "",
+  headerBackgroundGradient: "",
+  headerBorderWidth: "",
+  headerBorderStyle: "",
+  headerBorderColor: "",
+  headerShadowThick: "",
+  headerShadowGradient: "",
+  headerColor: "",
+  headerFilter: "",
+  headerFontFamily: "",
+  headerFontSize: "",
+  headerHeight: "",
+  // End Selected
+  // Selected
+  sidebarBackgroundColor: "",
+  sidebarBackgroundImage: "",
+  sidebarBackgroundGradient: "",
+  sidebarBorderWidth: "",
+  sidebarBorderStyle: "",
+  sidebarBorderColor: "",
+  sidebarShadowThick: "",
+  sidebarShadowGradient: "",
+  sidebarColor: "",
+  sidebarFilter: "",
+  sidebarFontFamily: "",
+  sidebarFontSize: "",
+  // End Selected
   changeStyle: (state) => {
     const property = state.property;
     set({ [property]: state.value });

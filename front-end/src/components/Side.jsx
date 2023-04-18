@@ -15,20 +15,60 @@ const Side = () => {
   console.log();
   return (
     <div className="w-[15%] bg-base-200  p-5 ">
+      <div className={`p-2 mb-2 border-b border-gray-600`}>HTML</div>
+
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "header" ? "text-white bg-primary" : null
+          }`}
+        >
+          Header
+        </div>
+      </Link>
+      <Link to={"/"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "header" ? "text-white bg-primary" : null
+          }`}
+        >
+          Body
+        </div>
+      </Link>
+      <Link to={"/"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "header" ? "text-white bg-primary" : null
+          }`}
+        >
+          Sidebar
+        </div>
+      </Link>
+      <Link to={"/"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "header" ? "text-white bg-primary" : null
+          }`}
+        >
+          Footer
+        </div>
+      </Link>
+      <Link to={"/"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "" ? "text-white bg-primary" : null
           }`}
         >
           Dashboard
         </div>
       </Link>
 
+      <div className={`p-2 mb-2 border-b border-gray-600`}>Widget</div>
+
       <Link to={"/table"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "table" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "table" ? "text-white bg-primary" : null
           }`}
         >
           Table
@@ -37,8 +77,8 @@ const Side = () => {
 
       <Link to={"/form"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "form" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "form" ? "text-white bg-primary" : null
           }`}
         >
           Form
@@ -47,8 +87,8 @@ const Side = () => {
 
       <Link to={"/monitoring"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "monitoring" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "monitoring" ? "text-white bg-primary" : null
           }`}
         >
           Monitoring
@@ -57,8 +97,8 @@ const Side = () => {
 
       <Link to={"/button"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "button" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "button" ? "text-white bg-primary" : null
           }`}
         >
           Button
@@ -67,8 +107,8 @@ const Side = () => {
 
       <Link to={"/pop-up"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "pop-up" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "pop-up" ? "text-white bg-primary" : null
           }`}
         >
           Pop Up
@@ -76,8 +116,8 @@ const Side = () => {
       </Link>
       <Link to={"/login"}>
         <div
-          className={`rounded-md p-2 mb-5 hover:bg-primary ${
-            currentPage == "login" ? "bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+            currentPage == "login" ? "text-white bg-primary" : null
           }`}
         >
           Login

@@ -1,3 +1,27 @@
-* {
-    border: 1px solid green;
+.cubex-box-wrapper {
+    border-radius: 15px;
+    padding: 20px 38px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: fit-content;
+    background: #2f8f28;
+}
+
+.cubex-card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0;
+    color: #d06c6c;
+}
+.cubex-text-primary {
+    color: #d06c6c;
+}
+
+.cubex-card {
+    min-height: 310px;
+    background: #37a974;
+    border-radius: 8px;
 }

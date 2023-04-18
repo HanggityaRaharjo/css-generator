@@ -17,6 +17,10 @@ class ComponentsController extends Controller
         //
     }
 
+    public function test(){
+        return 'asd';
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -36,12 +40,49 @@ class ComponentsController extends Controller
     public function store(Request $request)
     {
         $myfile = fopen("cubex-test.css", "w") or die("Unable to open file!");
-  
-        fwrite($myfile, '*{');
-        fwrite($myfile, "border:1px solid ". "green".";}");
         
+
+        // Writing CSS File
+        fwrite($myfile, "
+        .cubex-box-wrapper {
+            border-radius: 15px;
+            padding: 20px 38px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            width: fit-content;
+            background: {$request->components['breadcrumbs']['breadcrumbBackground']};
+        }
+        ");
+        
+        fwrite($myfile, "
+        .cubex-card-title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 32px;
+            margin: 0;
+            color: {$request->components['breadcrumbs']['breadcrumbTextActive']};
+        }
+        .cubex-text-primary {
+            color: {$request->components['breadcrumbs']['breadcrumbTextActive']};
+        }
+        ");
+        
+        fwrite($myfile, "
+        .cubex-card {
+            min-height: 310px;
+            background: {$request->components['card']['cardBackground']};
+            border-radius: 8px;
+        }
+        ");
+        
+
+        
+        
+
         fclose($myfile);
-        return response($request);
+        return response('success');
     }
 
     /**
