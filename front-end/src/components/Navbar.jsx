@@ -106,7 +106,7 @@ const Navbar = () => {
         selectTextColor: stateComponents.selectTextColor,
       },
       sidebar: {
-        sidebarBackground: stateComponents.sidebarBackground,
+        BackgroundColor: stateComponents.sidebarBackgroundColor,
         sidebarBorderColor: stateComponents.sidebarBorderColor,
         sidebarBorderRadius: stateComponents.sidebarBorderRadius,
         sidebarBorderStyle: stateComponents.sidebarBorderStyle,
@@ -118,7 +118,7 @@ const Navbar = () => {
         sidebarLinkBorderStyle: stateComponents.sidebarLinkBorderStyle,
         sidebarLinkBorderWidth: stateComponents.sidebarLinkBorderWidth,
         sidebarLinkTextColor: stateComponents.sidebarLinkTextColor,
-        sidebarTextColor: stateComponents.sidebarTextColor,
+        Color: stateComponents.sidebarColor,
       },
       table: {
         tableBackgroundButton: stateComponents.tableBackgroundButton,
@@ -133,6 +133,19 @@ const Navbar = () => {
         textAreaBackground: stateComponents.textAreaBackground,
         textAreaColor: stateComponents.textAreaColor,
         valueColor: stateComponents.valueColor,
+      },
+      header: {
+        BackgroundColor: stateComponents.headerBackgroundColor,
+        BackgroundGradient: stateComponents.headerBackgroundGradient,
+        BorderWidth: stateComponents.headerBorderWidth,
+        BorderColor: stateComponents.headerBorderColor,
+        Shadow: stateComponents.headerShadow,
+        Color: stateComponents.headerColor,
+      },
+      content: {
+        BackgroundColor: stateComponents.contentBackgroundColor,
+        BackgroundGradient: stateComponents.contentBackgroundGradient,
+        Color: stateComponents.contentColor,
       },
     };
 

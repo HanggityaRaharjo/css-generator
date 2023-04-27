@@ -139,8 +139,7 @@ const useStyleStore = create((set) => ({
   headerBorderWidth: "",
   headerBorderStyle: "",
   headerBorderColor: "",
-  headerShadowThick: "",
-  headerShadowGradient: "",
+  headerShadow: "",
   headerColor: "",
   headerFilter: "",
   headerFontFamily: "",
@@ -160,6 +159,22 @@ const useStyleStore = create((set) => ({
   sidebarFilter: "",
   sidebarFontFamily: "",
   sidebarFontSize: "",
+
+  // Content
+  contentBackgroundColor: "",
+  contentBackgroundImage: "",
+  contentBackgroundGradient: "",
+  contentBorderWidth: "",
+  contentBorderStyle: "",
+  contentBorderColor: "",
+  contentShadowThick: "",
+  contentShadowGradient: "",
+  contentColor: "",
+  contentFilter: "",
+  contentFontFamily: "",
+  contentFontSize: "",
+  // End Content
+
   // End Selected
   changeStyle: (state) => {
     const property = state.property;

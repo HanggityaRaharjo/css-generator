@@ -15,16 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
    
-    $myfile = fopen("newfile.css", "w") or die("Unable to open file!");
-  
-    fwrite($myfile, '*{');
-    fwrite($myfile, 'border:1px solid red;}');
-
-
-
-
-    
-    fclose($myfile);
+    // $myfile = fopen("newfile.css", "w") or die("Unable to open file!");
+    // fwrite($myfile, '*{');
+    // fwrite($myfile, 'border:1px solid red;}');
+    // fclose($myfile);
 
     return view('welcome');
+});
+
+Route::get('/dashboard',function(){
+
+    return view('dashboard');
 });

@@ -1,0 +1,29 @@
+
+        .bg-dark {
+            background:#b2d995!important; 
+        } 
+
+        #sidebarMenu.bg-light{
+            background:#dbe1d8!important;
+        }
+
+        
+        .sidebar .nav-link,.sidebar .nav-link .feather{
+            
+        }
+        
+
+        main{
+            background:#a3b899!important;background:linear-gradient(to bottom,#f6f6ed,#a7a592)!important;
+        }
+        
+        main,table thead tr th,table tbody tr td{
+            
+        }
+        
+            .navbar-dark .navbar-brand,.navbar-dark .navbar-nav .nav-link{
+                
+            }
+        
+
+        

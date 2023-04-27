@@ -48,18 +48,11 @@ const Preview = () => {
         placeholder: "none",
       },
       {
-        name: "Shadow Thick",
-        property: "headerShadowThick",
+        name: "Shadow",
+        property: "headerShadow",
         defaultValue: "",
         type: "text",
-        placeholder: "5px 10px #888888",
-      },
-      {
-        name: "Shadow Gradient",
-        property: "headerShadowGradient",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
+        placeholder: "0px 20px 50px grey",
       },
       {
         name: "Color",
@@ -101,16 +94,16 @@ const Preview = () => {
       {
         name: "Background Color",
         property: "sidebarBackgroundColor",
-        defaultValue: "#d3d3d3",
+        defaultValue: "",
         type: "color",
         placeholder: "none",
       },
       {
         name: "Background Gradient",
         property: "sidebarBackgroundGradient",
-        defaultValue: "#adadad",
-        type: "color",
-        placeholder: "none",
+        defaultValue: "",
+        type: "text",
+        placeholder: "linear-gradient(red, yellow)",
       },
       {
         name: "Background Image",
@@ -119,7 +112,6 @@ const Preview = () => {
         type: "text",
         placeholder: "URL/Link",
       },
-
       {
         name: "Border Width",
         property: "sidebarBorderWidth",
@@ -179,6 +171,92 @@ const Preview = () => {
       {
         name: "Height",
         property: "sidebarHeight",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+    ],
+    content: [
+      {
+        name: "Background Color",
+        property: "contentBackgroundColor",
+        defaultValue: "",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Background Gradient",
+        property: "contentBackgroundGradient",
+        defaultValue: "",
+        type: "text",
+        placeholder: "linear-gradient(red, yellow)",
+      },
+      {
+        name: "Background Image",
+        property: "contentBackgroundImage",
+        defaultValue: "Test",
+        type: "text",
+        placeholder: "URL/Link",
+      },
+      {
+        name: "Border Width",
+        property: "contentBorderWidth",
+        defaultValue: "0px",
+        type: "number",
+        placeholder: "0px",
+      },
+      {
+        name: "Border Color",
+        property: "contentBorderColor",
+        defaultValue: "",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Shadow Thick",
+        property: "contentShadowThick",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Shadow Gradient",
+        property: "contentShadowGradient",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Color",
+        property: "contentColor",
+        defaultValue: "0px",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Filter Blur",
+        property: "contentFilter",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Font Family",
+        property: "contentFontFamily",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "Arial,mono-thin,reguler",
+      },
+      {
+        name: "Font Size",
+        property: "contentFontSize",
+        defaultValue: "0px",
+        type: "text",
+        placeholder: "0px",
+      },
+      {
+        name: "Height",
+        property: "contentHeight",
         defaultValue: "0px",
         type: "text",
         placeholder: "0px",
@@ -291,7 +369,6 @@ const Preview = () => {
 
   const handleMenu = (menu) => {
     setCurrentTab(menu);
-    handleTab(menu);
   };
 
   return (
@@ -306,10 +383,10 @@ const Preview = () => {
 
           {/* Windows Preview */}
           <div className="border flex justify-center">
-            <div className=" relative w-[750px]">
-              <img src="blank-computer.png" alt="" className="w-full" />
-              <div className="absolute left-0 top-[39px] w-full px-[43px] h-[382px] ">
-                <div className="h-full">
+            <div className=" relative w-[750px] border ">
+              <img src="blank-computer.png" alt="" className="w-full " />
+              <div className="absolute left-0 top-[39px] w-full px-[43px] h-[382px] overflow-hidden">
+                <div className="h-full overflow-hidden">
                   <header
                     className="bg-primary h-10 cursor-pointer"
                     style={{
@@ -321,6 +398,8 @@ const Preview = () => {
                       }`,
                       borderWidth: `${stateMenu.headerBorderWidth}px`,
                       borderColor: stateMenu.headerBorderColor,
+                      boxShadow: stateMenu.headerShadow,
+                      color: stateMenu.headerColor,
                     }}
                     onClick={() => handleMenu("header")}
                   >
@@ -330,10 +409,33 @@ const Preview = () => {
                     <div
                       className="w-[15%] h-[300px] bg-secondary cursor-pointer"
                       onClick={() => handleMenu("sidebar")}
+                      style={{
+                        background: `${
+                          stateMenu.sidebarBackgroundGradient == null ||
+                          stateMenu.sidebarBackgroundGradient == ""
+                            ? stateMenu.sidebarBackgroundColor
+                            : stateMenu.sidebarBackgroundGradient
+                        }`,
+                        color: stateMenu.sidebarColor,
+                      }}
                     >
                       Sidebar
                     </div>
-                    <div className="w-[85%]">Content</div>
+                    <div
+                      className="w-[85%] cursor-pointer"
+                      onClick={() => handleMenu("content")}
+                      style={{
+                        background: `${
+                          stateMenu.contentBackgroundGradient == null ||
+                          stateMenu.contentBackgroundGradient == ""
+                            ? stateMenu.contentBackgroundColor
+                            : stateMenu.contentBackgroundGradient
+                        }`,
+                        color: stateMenu.contentColor,
+                      }}
+                    >
+                      Content
+                    </div>
                   </div>
                   <footer className="bg-primary h-10">Footer</footer>
                 </div>
@@ -523,6 +625,20 @@ const Preview = () => {
         {/* Sidebar */}
         {currentTab == "sidebar"
           ? tabComponent.sidebar.map((component, index) => (
+              <InputStyle
+                key={index}
+                name={component.name}
+                property={component.property}
+                defaultValue={component.defaultValue}
+                type={component.type}
+                placeholder={component.placeholder}
+              />
+            ))
+          : null}
+        {/* End Sidebar */}
+        {/* Sidebar */}
+        {currentTab == "content"
+          ? tabComponent.content.map((component, index) => (
               <InputStyle
                 key={index}
                 name={component.name}

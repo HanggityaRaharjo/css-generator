@@ -22,20 +22,23 @@ const InputStyle = (props) => {
       <div className="form-control transition-all duration-300">
         <label className="input-group h-12">
           <span className="bg-gray-300 w-32">{props.name}</span>
-
           {props.type == "color" ? (
-            <InputColor
-              initialValue={props.defaultValue}
-              onChange={setColor}
-              placement="top"
-              style={{ height: 48, width: "300px" }}
+            <input
+              id="field-background"
+              type={props.type}
+              defaultValue={props.defaultValue}
+              className="w-[300px] border px-4 h-12"
+              placeholder={props.placeholder}
+              onChange={(e) =>
+                handleSidebarValue(e.target.value, props.property)
+              }
             />
           ) : (
             <input
               id="field-background"
               type={props.type}
               defaultValue={props.defaultValue}
-              className="w-[300px] border px-4"
+              className="w-[300px] border px-4 h-12"
               placeholder={props.placeholder}
               onChange={(e) =>
                 handleSidebarValue(e.target.value, props.property)

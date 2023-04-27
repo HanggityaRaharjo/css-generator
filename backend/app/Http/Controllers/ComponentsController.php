@@ -39,50 +39,94 @@ class ComponentsController extends Controller
      */
     public function store(Request $request)
     {
-        $myfile = fopen("cubex-test.css", "w") or die("Unable to open file!");
-        
 
+        // Check If Data None
+        // Header
+        $headerBackgroundColor = !empty($request->components['header']['BackgroundColor']) ? 'background:'. $request->components['header']['BackgroundColor'] .'!important;' : '';
+        $headerBackgroundGradient = !empty($request->components['header']['BackgroundGradient']) ? 'background:'. $request->components['header']['BackgroundGradient'] .'!important;' : '';
+        // Header Border
+        $headerBorderColor = !empty($request->components['header']['BorderColor']) ? $request->components['header']['BorderColor'] : '';
+        $headerBorder = !empty($request->components['header']['BorderWidth']) ? 'border:'. $request->components['header']['BorderWidth'] .'px solid ' . $headerBorderColor . ';' : '';
+        
+        // Header Box Shadow
+        $headerBoxShadow = !empty($request->components['header']['Shadow']) ? 'box-shadow:'. $request->components['header']['Shadow'] .'!important;' : '';
+        // Header Color
+        $headerColor = !empty($request->components['header']['Color']) ? 'color:'. $request->components['header']['Color'] .'!important;' : '';
+
+        // All Header Color
+        $allHeaderColor = '
+            .navbar-dark .navbar-brand,.navbar-dark .navbar-nav .nav-link{
+                ' . $headerColor . '
+            }
+        ';
+
+        // Sidebar
+        $sidebarBackgroundColor = !empty($request->components['sidebar']['BackgroundColor']) ? 'background:'. $request->components['sidebar']['BackgroundColor'] .'!important;' : '';
+        $sidebarBackgroundGradient = !empty($request->components['sidebar']['BackgroundGradient']) ? 'background:'. $request->components['sidebar']['BackgroundGradient'] .'!important;' : '';
+
+        $sidebarColor = !empty($request->components['sidebar']['Color']) ? 'color:'. $request->components['sidebar']['Color'] .';' : '';
+
+        // All Sidebar Color
+        $allSidebarColor = '
+        .sidebar .nav-link,.sidebar .nav-link .feather{
+            ' . $sidebarColor . '
+        }
+        ';
+
+        // Content
+        $contentBackgroundColor = !empty($request->components['content']['BackgroundColor']) ? 'background:'. $request->components['content']['BackgroundColor'] .'!important;' : '';
+        $contentBackgroundGradient = !empty($request->components['content']['BackgroundGradient']) ? 'background:'. $request->components['content']['BackgroundGradient'] .'!important;' : '';
+
+        $contentColor = !empty($request->components['content']['Color']) ? 'color:'. $request->components['content']['Color'] .'!important;' : '';
+
+        // All Content Color
+        $allContentColor = '
+        main,table thead tr th,table tbody tr td{
+            ' . $contentColor . '
+        }
+        ';
+
+        
         // Writing CSS File
-        fwrite($myfile, "
-        .cubex-box-wrapper {
-            border-radius: 15px;
-            padding: 20px 38px;
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            width: fit-content;
-            background: {$request->components['breadcrumbs']['breadcrumbBackground']};
-        }
-        ");
-        
-        fwrite($myfile, "
-        .cubex-card-title {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 32px;
-            margin: 0;
-            color: {$request->components['breadcrumbs']['breadcrumbTextActive']};
-        }
-        .cubex-text-primary {
-            color: {$request->components['breadcrumbs']['breadcrumbTextActive']};
-        }
-        ");
-        
-        fwrite($myfile, "
-        .cubex-card {
-            min-height: 310px;
-            background: {$request->components['card']['cardBackground']};
-            border-radius: 8px;
-        }
-        ");
-        
+        $myfile = fopen("cubex.css", "w") or die("Unable to open file!");
+        fwrite($myfile, '
+        .bg-dark {
+            '. 
+            $headerBackgroundColor.   // Header
+            $headerBackgroundGradient.
+            $headerBorder.
+            $headerBoxShadow
+         
+            . ' 
+        } 
 
-        
-        
+        #sidebarMenu.bg-light{
+            '.
+            $sidebarBackgroundColor. // Sidebar
+            $sidebarBackgroundGradient
+            .
+            '
+        }
 
+        ' . $allSidebarColor . '
+
+        main{
+            '.
+            $contentBackgroundColor.  // Content
+            $contentBackgroundGradient
+            .
+            '
+        }
+        ' . 
+        $allContentColor.
+        $allHeaderColor
+        
+        . '
+
+        ');
         fclose($myfile);
-        return response('success');
+       
+        return response($request);
     }
 
     /**
