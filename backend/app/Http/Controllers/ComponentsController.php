@@ -44,6 +44,12 @@ class ComponentsController extends Controller
         // Header
         $headerBackgroundColor = !empty($request->components['header']['BackgroundColor']) ? 'background:'. $request->components['header']['BackgroundColor'] .'!important;' : '';
         $headerBackgroundGradient = !empty($request->components['header']['BackgroundGradient']) ? 'background:'. $request->components['header']['BackgroundGradient'] .'!important;' : '';
+        // Header Height
+        $headerHeight = !empty($request->components['header']['Height']) ? 
+        '
+        padding-top:' . $request->components['header']['Height'] .'!important;
+        padding-bottom:'. $request->components['header']['Height'] .'!important;
+        ' : '';
         // Header Border
         $headerBorderColor = !empty($request->components['header']['BorderColor']) ? $request->components['header']['BorderColor'] : '';
         $headerBorder = !empty($request->components['header']['BorderWidth']) ? 'border:'. $request->components['header']['BorderWidth'] .'px solid ' . $headerBorderColor . ';' : '';
@@ -79,6 +85,45 @@ class ComponentsController extends Controller
 
         $contentColor = !empty($request->components['content']['Color']) ? 'color:'. $request->components['content']['Color'] .'!important;' : '';
 
+        // Button Primary
+        $buttonPrimaryBackgroundColor = !empty($request->components['button']['Primary']['BackgroundColor']) ? 'background:'. $request->components['button']['Primary']['BackgroundColor'] .'!important;' : '';
+        $buttonPrimaryBorderColor = !empty($request->components['button']['Primary']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Primary']['BackgroundColor'] .'!important;' : '';
+
+        // Button Secondary
+        $buttonSecondaryBackgroundColor = !empty($request->components['button']['Secondary']['BackgroundColor']) ? 'background:'. $request->components['button']['Secondary']['BackgroundColor'] .'!important;' : '';
+        $buttonSecondaryBorderColor = !empty($request->components['button']['Secondary']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Secondary']['BackgroundColor'] .'!important;' : '';
+
+        // Button Success
+        $buttonSuccessBackgroundColor = !empty($request->components['button']['Success']['BackgroundColor']) ? 'background:'. $request->components['button']['Success']['BackgroundColor'] .'!important;' : '';
+        $buttonSuccessBorderColor = !empty($request->components['button']['Success']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Success']['BackgroundColor'] .'!important;' : '';
+
+        // Button Danger
+        $buttonDangerBackgroundColor = !empty($request->components['button']['Error']['BackgroundColor']) ? 'background:'. $request->components['button']['Error']['BackgroundColor'] .'!important;' : '';
+        $buttonDangerBorderColor = !empty($request->components['button']['Error']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Error']['BackgroundColor'] .'!important;' : '';
+
+        // Button Warning
+        $buttonWarningBackgroundColor = !empty($request->components['button']['Warning']['BackgroundColor']) ? 'background:'. $request->components['button']['Warning']['BackgroundColor'] .'!important;' : '';
+        $buttonWarningBorderColor = !empty($request->components['button']['Warning']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Warning']['BackgroundColor'] .'!important;' : '';
+
+        // Button Info
+        $buttonInfoBackgroundColor = !empty($request->components['button']['Info']['BackgroundColor']) ? 'background:'. $request->components['button']['Info']['BackgroundColor'] .'!important;' : '';
+        $buttonInfoBorderColor = !empty($request->components['button']['Info']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Info']['BackgroundColor'] .'!important;' : '';
+
+
+        // --------------------------------------- Modal ----------------------------------------------
+        // Modal Header
+        $modalHeaderBackgroundColor = !empty($request->components['modal']['modalHeader']['BackgroundColor']) ? 'background:'. $request->components['button']['Info']['BackgroundColor'] .'!important;' : '';
+
+        // Modal Body
+        $modalBodyBackgroundColor = !empty($request->components['modal']['modalBody']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalBody']['BackgroundColor'] .'!important;' : '';
+
+        
+        
+        
+        
+        
+        
+        // --------------------------------------- End Modal ----------------------------------------------
         // All Content Color
         $allContentColor = '
         main,table thead tr th,table tbody tr td{
@@ -86,7 +131,8 @@ class ComponentsController extends Controller
         }
         ';
 
-        
+            // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            
         // Writing CSS File
         $myfile = fopen("cubex.css", "w") or die("Unable to open file!");
         fwrite($myfile, '
@@ -98,7 +144,12 @@ class ComponentsController extends Controller
             $headerBoxShadow
          
             . ' 
-        } 
+        }
+
+        .navbar-brand{
+            ' . $headerHeight . '
+
+        }
 
         #sidebarMenu.bg-light{
             '.
@@ -117,12 +168,54 @@ class ComponentsController extends Controller
             .
             '
         }
+
+        .btn-primary{                  
+            ' . 
+            $buttonPrimaryBackgroundColor .  // Button Primary
+            $buttonPrimaryBorderColor   
+            .'
+        }
+
+        .btn-secondary{                  
+            ' . 
+            $buttonSecondaryBackgroundColor .  // Button Secondary
+            $buttonSecondaryBorderColor   
+            .'
+        }
+
+        .btn-success{                  
+            ' . 
+            $buttonSuccessBackgroundColor .  // Button Success
+            $buttonSuccessBorderColor   
+            .'
+        }
+
+        .btn-danger{                  
+            ' . 
+            $buttonDangerBackgroundColor .  // Button Danger
+            $buttonDangerBorderColor   
+            .'
+        }
+
+        .btn-warning{                  
+            ' . 
+            $buttonWarningBackgroundColor .  // Button Warning
+            $buttonWarningBorderColor   
+            .'
+        }
+
+        .btn-info{                  
+            ' . 
+            $buttonInfoBackgroundColor .  // Button Info
+            $buttonInfoBorderColor   
+            .'
+        }
+
         ' . 
         $allContentColor.
         $allHeaderColor
-        
         . '
-
+        
         ');
         fclose($myfile);
        

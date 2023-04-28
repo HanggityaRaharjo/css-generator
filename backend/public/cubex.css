@@ -1,10 +1,15 @@
 
         .bg-dark {
-            background:#b2d995!important; 
-        } 
+            background:#269092!important; 
+        }
+
+        .navbar-brand{
+            
+
+        }
 
         #sidebarMenu.bg-light{
-            background:#dbe1d8!important;
+            background:#269092!important;
         }
 
         
@@ -14,8 +19,34 @@
         
 
         main{
-            background:#a3b899!important;background:linear-gradient(to bottom,#f6f6ed,#a7a592)!important;
+            background:#e8e8e8!important;
         }
+
+        .btn-primary{                  
+            
+        }
+
+        .btn-secondary{                  
+            background:#652929!important;border:1px solid #652929!important;
+        }
+
+        .btn-success{                  
+            
+        }
+
+        .btn-danger{                  
+            
+        }
+
+        .btn-warning{                  
+            
+        }
+
+        .btn-info{                  
+            
+        }
+
+
         
         main,table thead tr th,table tbody tr td{
             
@@ -25,5 +56,9 @@
                 
             }
         
+        
+        
+
+
 
         

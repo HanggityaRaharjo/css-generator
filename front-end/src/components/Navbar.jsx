@@ -17,31 +17,6 @@ const Navbar = () => {
         breadcrumbTextColor: stateComponents.breadcrumbTextColor,
         breadcrumbTextTitle: stateComponents.breadcrumbTextTitle,
       },
-      buttonPrimary: {
-        btnPrimaryActiveBackground: stateComponents.btnPrimaryActiveBackground,
-        btnPrimaryActiveText: stateComponents.btnPrimaryActiveText,
-        btnPrimaryBackground: stateComponents.btnPrimaryBackground,
-        btnPrimaryBorderRadius: stateComponents.btnPrimaryBorderRadius,
-        btnPrimaryHoverBackground: stateComponents.btnPrimaryHoverBackground,
-        btnPrimaryHoverText: stateComponents.btnPrimaryHoverText,
-        btnPrimaryOutline: stateComponents.btnPrimaryOutline,
-        btnPrimaryOutlineText: stateComponents.btnPrimaryOutlineText,
-        btnPrimaryTextColor: stateComponents.btnPrimaryTextColor,
-      },
-      buttonSecondary: {
-        btnSecondaryActiveBackground:
-          stateComponents.btnSecondaryActiveBackground,
-        btnSecondaryActiveText: stateComponents.btnSecondaryActiveText,
-        btnSecondaryBackground: stateComponents.btnSecondaryBackground,
-        btnSecondaryBorderRadius: stateComponents.btnSecondaryBorderRadius,
-        btnSecondaryHoverBackground:
-          stateComponents.btnSecondaryHoverBackground,
-        btnSecondaryHoverText: stateComponents.btnSecondaryHoverText,
-        btnSecondaryOutline: stateComponents.btnSecondaryOutline,
-        btnSecondaryOutlineText: stateComponents.btnSecondaryOutlineText,
-        btnSecondaryTextColor: stateComponents.btnSecondaryTextColor,
-      },
-
       card: {
         cardBackground: stateComponents.cardBackground,
         cardBackgroundProgress: stateComponents.cardBackgroundProgress,
@@ -141,11 +116,43 @@ const Navbar = () => {
         BorderColor: stateComponents.headerBorderColor,
         Shadow: stateComponents.headerShadow,
         Color: stateComponents.headerColor,
+        Height: stateComponents.headerHeight,
       },
       content: {
         BackgroundColor: stateComponents.contentBackgroundColor,
         BackgroundGradient: stateComponents.contentBackgroundGradient,
         Color: stateComponents.contentColor,
+      },
+      button: {
+        Primary: {
+          BackgroundColor: stateComponents.btnPrimaryBackground,
+        },
+        Secondary: {
+          BackgroundColor: stateComponents.btnSecondaryBackground,
+        },
+        Success: {
+          BackgroundColor: stateComponents.btnSuccessBackground,
+        },
+        Error: {
+          BackgroundColor: stateComponents.btnErrorBackground,
+        },
+        Warning: {
+          BackgroundColor: stateComponents.btnWarningBackground,
+        },
+        Info: {
+          BackgroundColor: stateComponents.btnInfoBackground,
+        },
+      },
+      modal: {
+        modalHeader: {
+          BackgroundColor: stateComponents.modalHeaderBackgroundColor,
+        },
+        modalBody: {
+          BackgroundColor: stateComponents.modalBodyBackgroundColor,
+        },
+        modalFooter: {
+          BackgroundColor: stateComponents.modalFooterBackgroundColor,
+        },
       },
     };
 

@@ -7,6 +7,7 @@ import Monitoring from "./pages/Monitoring";
 import Button from "./pages/Button";
 import Popup from "./pages/Popup";
 import Login from "./pages/Login";
+import Modal from "./pages/Modal";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ export default function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/modal",
+      element: <Modal />,
     },
   ]);
 

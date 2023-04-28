@@ -24,6 +24,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',function(){
-
     return view('dashboard');
+});
+Route::get('/button',function(){
+    return view('button');
+});
+Route::get('/modal',function(){
+    return view('modal');
 });

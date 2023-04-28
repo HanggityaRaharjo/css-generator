@@ -85,9 +85,9 @@ const Preview = () => {
       {
         name: "Height",
         property: "headerHeight",
-        defaultValue: "0px",
+        defaultValue: "",
         type: "text",
-        placeholder: "0px",
+        placeholder: "0rem",
       },
     ],
     sidebar: [
@@ -388,7 +388,7 @@ const Preview = () => {
               <div className="absolute left-0 top-[39px] w-full px-[43px] h-[382px] overflow-hidden">
                 <div className="h-full overflow-hidden">
                   <header
-                    className="bg-primary h-10 cursor-pointer"
+                    className="bg-primary h-10 cursor-pointer flex justify-center items-center"
                     style={{
                       background: `${
                         stateMenu.headerBackgroundGradient == null ||
@@ -400,6 +400,7 @@ const Preview = () => {
                       borderColor: stateMenu.headerBorderColor,
                       boxShadow: stateMenu.headerShadow,
                       color: stateMenu.headerColor,
+                      height: stateMenu.headerHeight,
                     }}
                     onClick={() => handleMenu("header")}
                   >
@@ -407,7 +408,7 @@ const Preview = () => {
                   </header>
                   <div className="flex">
                     <div
-                      className="w-[15%] h-[300px] bg-secondary cursor-pointer"
+                      className="w-[15%] h-[300px] bg-secondary cursor-pointer  flex justify-center items-center"
                       onClick={() => handleMenu("sidebar")}
                       style={{
                         background: `${
@@ -422,7 +423,7 @@ const Preview = () => {
                       Sidebar
                     </div>
                     <div
-                      className="w-[85%] cursor-pointer"
+                      className="w-[85%] cursor-pointer  flex justify-center items-center"
                       onClick={() => handleMenu("content")}
                       style={{
                         background: `${
@@ -437,7 +438,9 @@ const Preview = () => {
                       Content
                     </div>
                   </div>
-                  <footer className="bg-primary h-10">Footer</footer>
+                  <footer className="bg-primary h-10  flex justify-center items-center">
+                    Footer
+                  </footer>
                 </div>
               </div>
             </div>

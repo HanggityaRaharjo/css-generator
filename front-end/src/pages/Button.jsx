@@ -20,24 +20,100 @@ const Button = () => {
   };
   const tabComponent = {
     btnPrimary: [
-      { name: "Background", property: "btnPrimaryBackground" },
-      { name: "Color", property: "btnPrimaryTextColor" },
-      { name: "Button Outline", property: "btnPrimaryOutline" },
-      { name: "Text Outline", property: "btnPrimaryOutlineText" },
-      { name: "Button Hover", property: "btnPrimaryHoverBackground" },
-      { name: "Hover Text", property: "btnPrimaryHoverText" },
-      { name: "Button Active", property: "btnPrimaryActiveBackground" },
-      { name: "Active Text", property: "btnPrimaryActiveText" },
+      {
+        name: "Background Color",
+        property: "btnPrimaryBackground",
+        defaultValue: stateButton.btnPrimaryBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnPrimaryBackground",
+        defaultValue: stateButton.btnPrimaryBackground,
+        type: "color",
+        placeholder: "none",
+      },
     ],
     btnSecondary: [
-      { name: "Background", property: "btnSecondaryBackground" },
-      { name: "Color", property: "btnSecondaryTextColor" },
-      { name: "Button Outline", property: "btnSecondaryOutline" },
-      { name: "Text Outline", property: "btnSecondaryOutlineText" },
-      { name: "Button Hover", property: "btnSecondaryHoverBackground" },
-      { name: "Hover Text", property: "btnSecondaryHoverText" },
-      { name: "Button Active", property: "btnSecondaryActiveBackground" },
-      { name: "Active Text", property: "btnSecondaryActiveText" },
+      {
+        name: "Background Color",
+        property: "btnSecondaryBackground",
+        defaultValue: stateButton.btnSecondaryBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnSecondaryBackground",
+        defaultValue: stateButton.btnSecondaryBackground,
+        type: "color",
+        placeholder: "none",
+      },
+    ],
+    btnSuccess: [
+      {
+        name: "Background Color",
+        property: "btnSuccessBackground",
+        defaultValue: stateButton.btnSuccessBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnSuccessBackground",
+        defaultValue: stateButton.btnSuccessBackground,
+        type: "color",
+        placeholder: "none",
+      },
+    ],
+    btnError: [
+      {
+        name: "Background Color",
+        property: "btnErrorBackground",
+        defaultValue: stateButton.btnErrorBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnErrorBackground",
+        defaultValue: stateButton.btnErrorBackground,
+        type: "color",
+        placeholder: "none",
+      },
+    ],
+    btnWarning: [
+      {
+        name: "Background Color",
+        property: "btnWarningBackground",
+        defaultValue: stateButton.btnWarningBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnWarningBackground",
+        defaultValue: stateButton.btnWarningBackground,
+        type: "color",
+        placeholder: "none",
+      },
+    ],
+    btnInfo: [
+      {
+        name: "Background Color",
+        property: "btnInfoBackground",
+        defaultValue: stateButton.btnInfoBackground,
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Border Color",
+        property: "btnInfoBackground",
+        defaultValue: stateButton.btnInfoBackground,
+        type: "color",
+        placeholder: "none",
+      },
     ],
   };
 
@@ -62,7 +138,7 @@ const Button = () => {
               </div>
 
               {/* Windows Preview */}
-              <div className="mockup-window border border-base-300 rounded-t-none">
+              <div className="mockup-window border border-base-300 rounded-t-none ">
                 <div className="border-t border-base-300">
                   <div className="h-[550px]  rounded-md">
                     <div className="flex gap-2 h-full">
@@ -117,134 +193,769 @@ const Button = () => {
                         </div>
 
                         {/* Konten */}
-                        <div className="rounded-md grid grid-cols-4">
-                          {/* Primary */}
-                          <div className="border">
-                            <h4 className="text-xl">Button</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-primary rounded-md"
-                                style={{
-                                  background: stateButton.btnPrimaryBackground,
-                                  color: stateButton.btnPrimaryTextColor,
-                                  borderRadius:
-                                    stateButton.btnPrimaryBorderRadius,
-                                }}
-                              >
-                                Button
-                              </button>
+                        <div className="overflow-y-scroll">
+                          {/* Button Rounded */}
+                          <div className="rounded-md grid grid-cols-4 border">
+                            {/* Primary */}
+                            <div className="border">
+                              <h4>Button Primary</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-primary"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4>Primary Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-primary btn-outline"
+                                  style={{
+                                    borderColor:
+                                      stateButton.btnSecondaryOutline,
+                                    color: stateButton.btnSecondaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4>Primary Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-primary bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4>Primary Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-primary scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Secondary */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-secondary"
+                                  style={{
+                                    background:
+                                      stateButton.btnSecondaryBackground,
+                                    color: stateButton.btnSecondaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnSecondaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-secondary btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-secondary bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-secondary scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Success */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-success"
+                                  style={{
+                                    background:
+                                      stateButton.btnSuccessBackground,
+                                    color: stateButton.btnSuccessTextColor,
+                                    borderRadius:
+                                      stateButton.btnSuccessBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-success btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-success bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-success scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Error */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-error"
+                                  style={{
+                                    background: stateButton.btnErrorBackground,
+                                    color: stateButton.btnErrorTextColor,
+                                    borderRadius:
+                                      stateButton.btnErrorBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-error btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-error bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-error scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Warning */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-warning"
+                                  style={{
+                                    background:
+                                      stateButton.btnWarningBackground,
+                                    color: stateButton.btnWarningTextColor,
+                                    borderRadius:
+                                      stateButton.btnWarningBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-warning btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-warning bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-warning scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Info */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-info"
+                                  style={{
+                                    background: stateButton.btnInfoBackground,
+                                    color: stateButton.btnInfoTextColor,
+                                    borderRadius:
+                                      stateButton.btnInfoBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] border btn btn-info btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px]  btn btn-info bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="px-4 py-2 rounded-[4px] btn btn-info scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
                           </div>
-                          <div className="border">
-                            <h4 className="text-xl">Outline</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 border border-primary text-primary rounded-md"
-                                style={{
-                                  borderColor: stateButton.btnPrimaryOutline,
-                                  color: stateButton.btnPrimaryOutlineText,
-                                }}
-                              >
-                                Button
-                              </button>
+                          {/* Circle Button */}
+                          <div className="rounded-md grid grid-cols-4 border">
+                            {/* Circle Primary */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-primary"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="border">
-                            <h4 className="text-xl">Hover</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-secondary rounded-md"
-                                style={{
-                                  background:
-                                    stateButton.btnPrimaryHoverBackground,
-                                  color: stateButton.btnPrimaryHoverText,
-                                }}
-                              >
-                                Button
-                              </button>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-primary btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="border">
-                            {" "}
-                            <h4 className="text-xl">Active</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-secondary rounded-md"
-                                style={{
-                                  background:
-                                    stateButton.btnPrimaryActiveBackground,
-                                  color: stateButton.btnPrimaryActiveText,
-                                }}
-                              >
-                                Button
-                              </button>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-primary bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          {/* Seconadry */}
-                          <div className="border">
-                            <h4 className="text-xl">Button</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-secondary rounded-md"
-                                style={{
-                                  background:
-                                    stateButton.btnSecondaryBackground,
-                                  color: stateButton.btnSecondaryTextColor,
-                                  borderRadius:
-                                    stateButton.btnSecondaryBorderRadius,
-                                }}
-                              >
-                                Button
-                              </button>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-primary scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="border">
-                            <h4 className="text-xl">Outline</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 border border-secondary text-secondary rounded-md"
-                                style={{
-                                  borderColor: stateButton.btnSecondaryOutline,
-                                  color: stateButton.btnSecondaryOutlineText,
-                                }}
-                              >
-                                Button
-                              </button>
+                            {/* Circle Secondary */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-secondary"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="border">
-                            <h4 className="text-xl">Hover</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-secondary rounded-md"
-                                style={{
-                                  background:
-                                    stateButton.btnSecondaryHoverBackground,
-                                  color: stateButton.btnSecondaryHoverText,
-                                }}
-                              >
-                                Button
-                              </button>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-secondary btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <div className="border">
-                            {" "}
-                            <h4 className="text-xl">Active</h4>
-                            <div>
-                              <button
-                                className="px-4 py-2 bg-secondary rounded-md"
-                                style={{
-                                  background:
-                                    stateButton.btnSecondaryActiveBackground,
-                                  color: stateButton.btnSecondaryActiveText,
-                                }}
-                              >
-                                Button
-                              </button>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-secondary bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-secondary scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Circle Success */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-success"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-success btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-success bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-success scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Circle Error */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-error"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-error btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-error bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-error scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Circle Warning */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-warning"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-warning btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-warning bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-warning scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            {/* Circle Info */}
+                            <div className="border">
+                              <h4 className="text-xl">Button</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-info"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryBackground,
+                                    color: stateButton.btnPrimaryTextColor,
+                                    borderRadius:
+                                      stateButton.btnPrimaryBorderRadius,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Outline</h4>
+                              <div>
+                                <button
+                                  className="rounded-full border btn btn-info btn-outline"
+                                  style={{
+                                    borderColor: stateButton.btnPrimaryOutline,
+                                    color: stateButton.btnPrimaryOutlineText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              <h4 className="text-xl">Hover</h4>
+                              <div>
+                                <button
+                                  className="rounded-full  btn btn-info bg-opacity-80"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryHoverBackground,
+                                    color: stateButton.btnPrimaryHoverText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
+                            </div>
+                            <div className="border">
+                              {" "}
+                              <h4 className="text-xl">Active</h4>
+                              <div>
+                                <button
+                                  className="rounded-full btn btn-info scale-90"
+                                  style={{
+                                    background:
+                                      stateButton.btnPrimaryActiveBackground,
+                                    color: stateButton.btnPrimaryActiveText,
+                                  }}
+                                >
+                                  Button
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
-
                         {/* End Konten */}
                       </div>
                     </div>
@@ -284,25 +995,109 @@ const Button = () => {
               >
                 Secondary
               </button>
+              <button
+                className="tab tab-lifted button-success"
+                onClick={() => handleTab("button-success")}
+              >
+                Success
+              </button>
+              <button
+                className="tab tab-lifted button-danger"
+                onClick={() => handleTab("button-danger")}
+              >
+                Danger
+              </button>
+              <button
+                className="tab tab-lifted button-warning"
+                onClick={() => handleTab("button-warning")}
+              >
+                Warning
+              </button>
+              <button
+                className="tab tab-lifted button-info"
+                onClick={() => handleTab("button-info")}
+              >
+                Info
+              </button>
             </div>
           </div>
           {/* Menu Bawah */}
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
+            {/* Primary */}
             {currentTab == "button-primary"
-              ? tabComponent.btnPrimary.map((components, index) => (
+              ? tabComponent.btnPrimary.map((component, index) => (
                   <InputStyle
                     key={index}
-                    name={components.name}
-                    property={components.property}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
                   />
                 ))
               : null}
+            {/* Secondary */}
             {currentTab == "button-secondary"
-              ? tabComponent.btnSecondary.map((components, index) => (
+              ? tabComponent.btnSecondary.map((component, index) => (
                   <InputStyle
                     key={index}
-                    name={components.name}
-                    property={components.property}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
+                  />
+                ))
+              : null}
+            {/* SUCCESS */}
+            {currentTab == "button-success"
+              ? tabComponent.btnSuccess.map((component, index) => (
+                  <InputStyle
+                    key={index}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
+                  />
+                ))
+              : null}
+            {/* danger */}
+            {currentTab == "button-danger"
+              ? tabComponent.btnError.map((component, index) => (
+                  <InputStyle
+                    key={index}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
+                  />
+                ))
+              : null}
+            {/* Warning */}
+            {currentTab == "button-warning"
+              ? tabComponent.btnWarning.map((component, index) => (
+                  <InputStyle
+                    key={index}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
+                  />
+                ))
+              : null}
+            {/* Info */}
+            {currentTab == "button-info"
+              ? tabComponent.btnInfo.map((component, index) => (
+                  <InputStyle
+                    key={index}
+                    name={component.name}
+                    property={component.property}
+                    defaultValue={component.defaultValue}
+                    type={component.type}
+                    placeholder={component.placeholder}
                   />
                 ))
               : null}

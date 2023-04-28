@@ -11,15 +11,12 @@ const Side = () => {
   let currentUrl = url.replace("/", "");
 
   const [currentPage, setCurrentPage] = useState(currentUrl);
-
-  console.log();
   return (
-    <div className="w-[15%] bg-base-200  p-5 ">
+    <div className="w-[15%] bg-base-200 p-5  h-[100%] overflow-scroll">
       <div className={`p-2 mb-2 border-b border-gray-600`}>HTML</div>
-
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "header" ? "text-white bg-primary" : null
           }`}
         >
@@ -28,7 +25,7 @@ const Side = () => {
       </Link>
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "header" ? "text-white bg-primary" : null
           }`}
         >
@@ -37,7 +34,7 @@ const Side = () => {
       </Link>
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "header" ? "text-white bg-primary" : null
           }`}
         >
@@ -46,7 +43,7 @@ const Side = () => {
       </Link>
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "header" ? "text-white bg-primary" : null
           }`}
         >
@@ -55,7 +52,7 @@ const Side = () => {
       </Link>
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "" ? "text-white bg-primary" : null
           }`}
         >
@@ -65,19 +62,19 @@ const Side = () => {
 
       <div className={`p-2 mb-2 border-b border-gray-600`}>Widget</div>
 
-      <Link to={"/table"}>
+      <Link to={"/modal"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "table" ? "text-white bg-primary" : null
           }`}
         >
-          Table
+          Modal
         </div>
       </Link>
 
       <Link to={"/form"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "form" ? "text-white bg-primary" : null
           }`}
         >
@@ -87,7 +84,7 @@ const Side = () => {
 
       <Link to={"/monitoring"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "monitoring" ? "text-white bg-primary" : null
           }`}
         >
@@ -97,7 +94,7 @@ const Side = () => {
 
       <Link to={"/button"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "button" ? "text-white bg-primary" : null
           }`}
         >
@@ -107,7 +104,7 @@ const Side = () => {
 
       <Link to={"/pop-up"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "pop-up" ? "text-white bg-primary" : null
           }`}
         >
@@ -116,7 +113,68 @@ const Side = () => {
       </Link>
       <Link to={"/login"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-[#4b6bfb96] ${
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "login" ? "text-white bg-primary" : null
+          }`}
+        >
+          Login
+        </div>
+      </Link>
+
+      <div className={`p-2 mb-2 border-b border-gray-600`}>Widget</div>
+
+      <Link to={"/table"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "table" ? "text-white bg-primary" : null
+          }`}
+        >
+          Table
+        </div>
+      </Link>
+
+      <Link to={"/form"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "form" ? "text-white bg-primary" : null
+          }`}
+        >
+          Form
+        </div>
+      </Link>
+
+      <Link to={"/monitoring"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "monitoring" ? "text-white bg-primary" : null
+          }`}
+        >
+          Monitoring
+        </div>
+      </Link>
+
+      <Link to={"/button"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "button" ? "text-white bg-primary" : null
+          }`}
+        >
+          Button
+        </div>
+      </Link>
+
+      <Link to={"/pop-up"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "pop-up" ? "text-white bg-primary" : null
+          }`}
+        >
+          Pop Up
+        </div>
+      </Link>
+      <Link to={"/login"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "login" ? "text-white bg-primary" : null
           }`}
         >

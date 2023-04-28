@@ -91,7 +91,7 @@ const useStyleStore = create((set) => ({
   monitorBorderBackground: "",
   valueColor: "",
 
-  // Button
+  // ---------------------------------------------Button--------------------------------
   // Primary
   btnPrimaryBackground: "",
   btnPrimaryTextColor: "",
@@ -112,6 +112,48 @@ const useStyleStore = create((set) => ({
   btnSecondaryHoverText: "",
   btnSecondaryActiveBackground: "",
   btnSecondaryActiveText: "",
+  // Success
+  btnSuccessBackground: "",
+  btnSuccessTextColor: "",
+  btnSuccessBorderRadius: "",
+  btnSuccessOutline: "",
+  btnSuccessOutlineText: "",
+  btnSuccessHoverBackground: "",
+  btnSuccessHoverText: "",
+  btnSuccessActiveBackground: "",
+  btnSuccessActiveText: "",
+  // Error
+  btnErrorBackground: "",
+  btnErrorTextColor: "",
+  btnErrorBorderRadius: "",
+  btnErrorOutline: "",
+  btnErrorOutlineText: "",
+  btnErrorHoverBackground: "",
+  btnErrorHoverText: "",
+  btnErrorActiveBackground: "",
+  btnErrorActiveText: "",
+  // Warning
+  btnWarningBackground: "",
+  btnWarningTextColor: "",
+  btnWarningBorderRadius: "",
+  btnWarningOutline: "",
+  btnWarningOutlineText: "",
+  btnWarningHoverBackground: "",
+  btnWarningHoverText: "",
+  btnWarningActiveBackground: "",
+  btnWarningActiveText: "",
+  // Info
+  btnInfoBackground: "",
+  btnInfoTextColor: "",
+  btnInfoBorderRadius: "",
+  btnInfoOutline: "",
+  btnInfoOutlineText: "",
+  btnInfoHoverBackground: "",
+  btnInfoHoverText: "",
+  btnInfoActiveBackground: "",
+  btnInfoActiveText: "",
+
+  // ---------------------------------------------Button--------------------------------
   popUpCardBackground: "",
   popUpSuccessBackground: "",
   popUpSuccessColor: "",
@@ -174,6 +216,13 @@ const useStyleStore = create((set) => ({
   contentFontFamily: "",
   contentFontSize: "",
   // End Content
+  // --------------------------------------------------- Modal ------------------------------------------
+  modalHeaderBackgroundColor: "",
+  modalHeaderBorderColor: "",
+  modalBodyBorderColor: "",
+  modalBodyBorderColor: "",
+  modalFooterBorderColor: "",
+  modalFooterBorderColor: "",
 
   // End Selected
   changeStyle: (state) => {
