@@ -26,9 +26,31 @@ Route::get('/', function () {
 Route::get('/dashboard',function(){
     return view('dashboard');
 });
+
 Route::get('/button',function(){
     return view('button');
 });
+
 Route::get('/modal',function(){
     return view('modal');
+});
+
+Route::get('/pop-over',function(){
+    return view('pop-over');
+});
+
+Route::get('/font-icon',function(){
+    return view('font-icon');
+});
+
+Route::get('/typography',function(){
+    return view('typography');
+});
+
+Route::get('/basic-table',function(){
+    return view('basic-table');
+});
+
+Route::get('/tab-nav',function(){
+    return view('tab-nav');
 });

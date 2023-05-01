@@ -1,123 +1,231 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 class="mt-3">Button</h2>
-    <div class="mt-2">
-        <h5>Button</h5>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-        <button type="button" class="btn btn-warning">Warning</button>
-        <button type="button" class="btn btn-info">Info</button>
-        <button type="button" class="btn btn-light">Light</button>
-        <button type="button" class="btn btn-dark">Dark</button>
-    </div>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Buttons</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item active">Buttons</li>
+            </ol>
 
-    <div class="mt-2">
-        <h5>Outline Button</h5>
-        <button type="button" class="btn btn-outline-primary">Primary</button>
-        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-danger">Danger</button>
-        <button type="button" class="btn btn-outline-warning">Warning</button>
-        <button type="button" class="btn btn-outline-info">Info</button>
-        <button type="button" class="btn btn-outline-light">Light</button>
-        <button type="button" class="btn btn-outline-dark">Dark</button>
-    </div>
-    <div class="mt-2">
-        <h5>Disable Button</h5>
-        <button type="button" class="btn btn-primary" disabled>Primary</button>
-        <button type="button" class="btn btn-secondary" disabled>Secondary</button>
-        <button type="button" class="btn btn-success" disabled>Success</button>
-        <button type="button" class="btn btn-danger" disabled>Danger</button>
-        <button type="button" class="btn btn-warning" disabled>Warning</button>
-        <button type="button" class="btn btn-info" disabled>Info</button>
-        <button type="button" class="btn btn-light" disabled>Light</button>
-        <button type="button" class="btn btn-dark" disabled>Dark</button>
-    </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>Buttons
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-2">
+                                <h5>Button Default</h5>
+                            </div>
+                            <button type="button" class="btn btn-primary">Primary</button>
+                            <button type="button" class="btn btn-secondary">Secondary</button>
+                            <button type="button" class="btn btn-success">Success</button>
+                            <button type="button" class="btn btn-danger">Danger</button>
+                            <button type="button" class="btn btn-warning">Warning</button>
+                            <button type="button" class="btn btn-info">Info</button>
+                            <button type="button" class="btn btn-light">Light</button>
+                            <button type="button" class="btn btn-dark">Dark</button>
 
-    {{-- Size --}}
-    <h2 class="mt-5">Size</h2>
-    <div class="mt-2">
-        <h5>Small Button</h5>
-        <button type="button" class="btn btn-sm btn-primary">Primary</button>
-        <button type="button" class="btn btn-sm btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-sm btn-success">Success</button>
-        <button type="button" class="btn btn-sm btn-danger">Danger</button>
-        <button type="button" class="btn btn-sm btn-warning">Warning</button>
-        <button type="button" class="btn btn-sm btn-info">Info</button>
-        <button type="button" class="btn btn-sm btn-light">Light</button>
-        <button type="button" class="btn btn-sm btn-dark">Dark</button>
-    </div>
-    <div class="mt-2">
-        <h5>Medium Button</h5>
-        <button type="button" class="btn btn-md btn-primary">Primary</button>
-        <button type="button" class="btn btn-md btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-md btn-success">Success</button>
-        <button type="button" class="btn btn-md btn-danger">Danger</button>
-        <button type="button" class="btn btn-md btn-warning">Warning</button>
-        <button type="button" class="btn btn-md btn-info">Info</button>
-        <button type="button" class="btn btn-md btn-light">Light</button>
-        <button type="button" class="btn btn-md btn-dark">Dark</button>
-    </div>
-    <div class="mt-2">
-        <h5>Large Button</h5>
-        <button type="button" class="btn btn-lg btn-primary">Primary</button>
-        <button type="button" class="btn btn-lg btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-lg btn-success">Success</button>
-        <button type="button" class="btn btn-lg btn-danger">Danger</button>
-        <button type="button" class="btn btn-lg btn-warning">Warning</button>
-        <button type="button" class="btn btn-lg btn-info">Info</button>
-        <button type="button" class="btn btn-lg btn-light">Light</button>
-        <button type="button" class="btn btn-lg btn-dark">Dark</button>
-    </div>
-    {{-- End Size --}}
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Button Outline</h5>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary">Primary</button>
+                            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                            <button type="button" class="btn btn-outline-success">Success</button>
+                            <button type="button" class="btn btn-outline-info">Info</button>
+                            <button type="button" class="btn btn-outline-warning">Warning</button>
+                            <button type="button" class="btn btn-outline-danger">Danger</button>
+                            <button type="button" class="btn btn-outline-dark">Dark</button>
+                            <button type="button" class="btn btn-outline-light text-dark">Light</button>
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Button Size</h5>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-lg">Large</button>
+                            <button type="button" class="btn btn-primary">Default</button>
+                            <button type="button" class="btn btn-primary btn-sm">Small</button>
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Block Level Buttons<h5>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Full-Width Button</button>
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Active/Disabled Buttons<h5>
+                            </div>
+                            <button type="button" class="btn btn-primary active">Active Primary</button>
+                            <button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+                            <a href="#" class="btn btn-primary disabled">Disabled Link</a>
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Spiner Buttons<h5>
+                            </div>
+                            <button class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm"></span>
+                            </button>
 
-    {{-- Button Rounded --}}
-    <div>
+                            <button class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm"></span>
+                                Loading..
+                            </button>
 
-        <h2 class="mt-5">Rounded Button</h2>
-        {{-- Circle button --}}
-        <div class="mt-2">
-            <h5>Rounded</h5>
-            <button type="button" class="btn rounded btn-primary">Primary</button>
-            <button type="button" class="btn rounded btn-secondary">Secondary</button>
-            <button type="button" class="btn rounded btn-success">Success</button>
-            <button type="button" class="btn rounded btn-danger">Danger</button>
-            <button type="button" class="btn rounded btn-warning">Warning</button>
-            <button type="button" class="btn rounded btn-info">Info</button>
-            <button type="button" class="btn rounded btn-light">Light</button>
-            <button type="button" class="btn rounded btn-dark">Dark</button>
+                            <button class="btn btn-primary" disabled>
+                                <span class="spinner-border spinner-border-sm"></span>
+                                Loading..
+                            </button>
+
+                            <button class="btn btn-primary" disabled>
+                                <span class="spinner-grow spinner-grow-sm"></span>
+                                Loading..
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i> Button Groups
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="d-flex mb-2">
+                                        <h5>Horizontal Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <button type="button" class="btn btn-warning">Sony</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex mb-2">
+                                        <h5>Nesting Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-warning dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                Sony
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Tablet</a>
+                                                <a class="dropdown-item" href="#">Smartphone</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Vertical Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group-vertical">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <button type="button" class="btn btn-warning">Sony</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Vertical Button Group w/ Dropdown<h5>
+                                    </div>
+                                    <div class="btn-group-vertical">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-warning dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                Sony
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Tablet</a>
+                                                <a class="dropdown-item" href="#">Smartphone</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Large Size Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group btn-group-lg">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <button type="button" class="btn btn-warning">Sony</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Default Size Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group btn-group">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <button type="button" class="btn btn-warning">Sony</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Small Size Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-success">Apple</button>
+                                        <button type="button" class="btn btn-danger">Samsung</button>
+                                        <button type="button" class="btn btn-warning">Sony</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex mt-4 mb-2">
+                                        <h5>Split Button Groups<h5>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success">Sony</button>
+                                        <button type="button"
+                                            class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                            data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Tablet</a>
+                                            <a class="dropdown-item" href="#">Smartphone</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-4 mb-2">
+                                <h5>Button Groups Side by Side<h5>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success">Apple</button>
+                                <button type="button" class="btn btn-danger">Samsung</button>
+                                <button type="button" class="btn btn-warning">Sony</button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success">BMW</button>
+                                <button type="button" class="btn btn-danger">Mercedes</button>
+                                <button type="button" class="btn btn-warning">Volvo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
         </div>
-        {{-- End Circle button --}}
-        {{-- Circle button --}}
-        <div class="mt-2">
-            <h5>Button Small Rounded</h5>
-            <button type="button" class="btn rounded-sm btn-primary">Primary</button>
-            <button type="button" class="btn rounded-sm btn-secondary">Secondary</button>
-            <button type="button" class="btn rounded-sm btn-success">Success</button>
-            <button type="button" class="btn rounded-sm btn-danger">Danger</button>
-            <button type="button" class="btn rounded-sm btn-warning">Warning</button>
-            <button type="button" class="btn rounded-sm btn-info">Info</button>
-            <button type="button" class="btn rounded-sm btn-light">Light</button>
-            <button type="button" class="btn rounded-sm btn-dark">Dark</button>
-        </div>
-        {{-- End Circle button --}}
-        {{-- Circle button --}}
-        <div class="mt-2">
-            <h5>Button Small Rounded</h5>
-            <button type="button" class="btn rounded-lg btn-primary">Primary</button>
-            <button type="button" class="btn rounded-lg btn-secondary">Secondary</button>
-            <button type="button" class="btn rounded-lg btn-success">Success</button>
-            <button type="button" class="btn rounded-lg btn-danger">Danger</button>
-            <button type="button" class="btn rounded-lg btn-warning">Warning</button>
-            <button type="button" class="btn rounded-lg btn-info">Info</button>
-            <button type="button" class="btn rounded-lg btn-light">Light</button>
-            <button type="button" class="btn rounded-lg btn-dark">Dark</button>
-        </div>
-        {{-- End Circle button --}}
-
-    </div>
-    {{-- End Button Rounded --}}
+    </main>
 @endsection

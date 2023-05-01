@@ -8,6 +8,7 @@ import Button from "./pages/Button";
 import Popup from "./pages/Popup";
 import Login from "./pages/Login";
 import Modal from "./pages/Modal";
+import Theme from "./pages/Theme";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -42,6 +43,14 @@ export default function App() {
     {
       path: "/modal",
       element: <Modal />,
+    },
+    {
+      path: "/theme",
+      element: <Theme />,
+    },
+    {
+      path: "/navigation-bar",
+      element: <NavigationBar />,
     },
   ]);
 

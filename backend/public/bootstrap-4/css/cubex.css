@@ -1,0 +1,47 @@
+.bg-dark {
+  background: #269092 !important;
+}
+
+.navbar-brand {
+}
+
+#sidebarMenu {
+  background: #269092 !important;
+}
+
+.sidebar .nav-link,
+.sidebar .nav-link .feather {
+}
+
+main {
+  background: #e8e8e8 !important;
+}
+
+.btn-primary {
+}
+
+.btn-secondary {
+  background: #652929 !important;
+  border: 1px solid #652929 !important;
+}
+
+.btn-success {
+}
+
+.btn-danger {
+}
+
+.btn-warning {
+}
+
+.btn-info {
+}
+
+main,
+table thead tr th,
+table tbody tr td {
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+}

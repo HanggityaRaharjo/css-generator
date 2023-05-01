@@ -221,8 +221,16 @@ const useStyleStore = create((set) => ({
   modalHeaderBorderColor: "",
   modalBodyBorderColor: "",
   modalBodyBorderColor: "",
+  modalFooterBackgroundColor: "",
   modalFooterBorderColor: "",
-  modalFooterBorderColor: "",
+
+  // Color Theme
+  colorPrimary: "#007bff",
+  colorSecondary: "#6c757d",
+  colorSuccess: "#28a745",
+  colorWarning: "#ffc107",
+  colorInfo: "#17a2b8",
+  colorDanger: "#dc3545",
 
   // End Selected
   changeStyle: (state) => {

@@ -17,50 +17,23 @@ const Side = () => {
       <Link to={"/"}>
         <div
           className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "header" ? "text-white bg-primary" : null
-          }`}
-        >
-          Header
-        </div>
-      </Link>
-      <Link to={"/"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "header" ? "text-white bg-primary" : null
-          }`}
-        >
-          Body
-        </div>
-      </Link>
-      <Link to={"/"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "header" ? "text-white bg-primary" : null
-          }`}
-        >
-          Sidebar
-        </div>
-      </Link>
-      <Link to={"/"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "header" ? "text-white bg-primary" : null
-          }`}
-        >
-          Footer
-        </div>
-      </Link>
-      <Link to={"/"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "" ? "text-white bg-primary" : null
           }`}
         >
           Dashboard
         </div>
       </Link>
+      <Link to={"/theme"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "" ? "text-white bg-primary" : null
+          }`}
+        >
+          Theme
+        </div>
+      </Link>
 
-      <div className={`p-2 mb-2 border-b border-gray-600`}>Widget</div>
+      <div className={`p-2 mb-2 border-b border-gray-600`}>UI Features</div>
 
       <Link to={"/modal"}>
         <div
@@ -121,64 +94,15 @@ const Side = () => {
         </div>
       </Link>
 
-      <div className={`p-2 mb-2 border-b border-gray-600`}>Widget</div>
+      <div className={`p-2 mb-2 border-b border-gray-600`}>UI Components</div>
 
-      <Link to={"/table"}>
+      <Link to={"/navigation-bar"}>
         <div
           className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
             currentPage == "table" ? "text-white bg-primary" : null
           }`}
         >
-          Table
-        </div>
-      </Link>
-
-      <Link to={"/form"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "form" ? "text-white bg-primary" : null
-          }`}
-        >
-          Form
-        </div>
-      </Link>
-
-      <Link to={"/monitoring"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "monitoring" ? "text-white bg-primary" : null
-          }`}
-        >
-          Monitoring
-        </div>
-      </Link>
-
-      <Link to={"/button"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "button" ? "text-white bg-primary" : null
-          }`}
-        >
-          Button
-        </div>
-      </Link>
-
-      <Link to={"/pop-up"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "pop-up" ? "text-white bg-primary" : null
-          }`}
-        >
-          Pop Up
-        </div>
-      </Link>
-      <Link to={"/login"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "login" ? "text-white bg-primary" : null
-          }`}
-        >
-          Login
+          Navigation Bar
         </div>
       </Link>
     </div>

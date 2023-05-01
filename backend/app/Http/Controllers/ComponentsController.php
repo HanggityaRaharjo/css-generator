@@ -112,14 +112,31 @@ class ComponentsController extends Controller
 
         // --------------------------------------- Modal ----------------------------------------------
         // Modal Header
-        $modalHeaderBackgroundColor = !empty($request->components['modal']['modalHeader']['BackgroundColor']) ? 'background:'. $request->components['button']['Info']['BackgroundColor'] .'!important;' : '';
+        $modalHeaderBackgroundColor = !empty($request->components['modal']['modalHeader']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalHeader']['BackgroundColor'] .'!important;' : '';
 
         // Modal Body
         $modalBodyBackgroundColor = !empty($request->components['modal']['modalBody']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalBody']['BackgroundColor'] .'!important;' : '';
 
-        
-        
-        
+        // Modal Body
+        $modalFooterBackgroundColor = !empty($request->components['modal']['modalFooter']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalFooter']['BackgroundColor'] .'!important;' : '';
+
+        // BG Color Primary
+        $backgroundColorPrimary = !empty($request->components['themeColor']['colorPrimary']) ? 'background:'. $request->components['themeColor']['colorPrimary'] .'!important;' : '';
+
+        // BG Color Secondary
+        $backgroundColorSecondary = !empty($request->components['themeColor']['colorSecondary']) ? 'background:'. $request->components['themeColor']['colorSecondary'] .'!important;' : '';
+
+        // BG Color Success
+        $backgroundColorSuccess = !empty($request->components['themeColor']['colorSuccess']) ? 'background:'. $request->components['themeColor']['colorSuccess'] .'!important;' : '';
+
+        // BG Color Warning
+        $backgroundColorWarning = !empty($request->components['themeColor']['colorWarning']) ? 'background:'. $request->components['themeColor']['colorWarning'] .'!important;' : '';
+
+        // BG Color Info
+        $backgroundColorInfo = !empty($request->components['themeColor']['colorInfo']) ? 'background:'. $request->components['themeColor']['colorInfo'] .'!important;' : '';
+
+        // BG Color Danger
+        $backgroundColorDanger = !empty($request->components['themeColor']['colorDanger']) ? 'background:'. $request->components['themeColor']['colorDanger'] .'!important;' : '';
         
         
         
@@ -146,12 +163,48 @@ class ComponentsController extends Controller
             . ' 
         }
 
+        .bg-primary{
+            '.
+            $backgroundColorPrimary  //background Primary
+            .'
+        }
+
+        .bg-secondary{
+            '.
+            $backgroundColorSecondary  //background Secondary
+            .'
+        }
+
+        .bg-success{
+            '.
+            $backgroundColorSuccess  //background success
+            .'
+        }
+
+        .bg-warning{
+            '.
+            $backgroundColorWarning  //background warning
+            .'
+        }
+
+        .bg-info{
+            '.
+            $backgroundColorInfo  //background Info
+            .'
+        }
+
+        .bg-danger{
+            '.
+            $backgroundColorDanger  //background Danger
+            .'
+        }
+
         .navbar-brand{
             ' . $headerHeight . '
 
         }
 
-        #sidebarMenu.bg-light{
+        .sb-sidenav-dark{
             '.
             $sidebarBackgroundColor. // Sidebar
             $sidebarBackgroundGradient
@@ -208,6 +261,24 @@ class ComponentsController extends Controller
             ' . 
             $buttonInfoBackgroundColor .  // Button Info
             $buttonInfoBorderColor   
+            .'
+        }
+
+        .modal-header{
+            '. 
+            $modalHeaderBackgroundColor  //Modal Header
+            .'
+        }
+
+        .modal-body{
+            '. 
+            $modalBodyBackgroundColor  //Modal Body
+            .'
+        }
+
+        .modal-footer{
+            '. 
+            $modalFooterBackgroundColor  //Modal Body
             .'
         }
 

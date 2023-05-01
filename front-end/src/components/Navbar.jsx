@@ -154,6 +154,14 @@ const Navbar = () => {
           BackgroundColor: stateComponents.modalFooterBackgroundColor,
         },
       },
+      themeColor: {
+        colorPrimary: stateComponents.colorPrimary,
+        colorSecondary: stateComponents.colorSecondary,
+        colorSuccess: stateComponents.colorSuccess,
+        colorWarning: stateComponents.colorWarning,
+        colorInfo: stateComponents.colorInfo,
+        colorDanger: stateComponents.colorDanger,
+      },
     };
 
     axios

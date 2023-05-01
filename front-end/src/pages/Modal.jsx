@@ -147,7 +147,8 @@ const Modal = () => {
                             <div
                               className="border-t h-[30%] flex justify-end items-center gap-2 px-2 hover:border hover:border-red-500 cursor-pointer"
                               style={{
-                                background: stateModal.btnSecondaryBackground,
+                                background:
+                                  stateModal.modalFooterBackgroundColor,
                               }}
                               onClick={() => handleTab("modal-footer")}
                             >
