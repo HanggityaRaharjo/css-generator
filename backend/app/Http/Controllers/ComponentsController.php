@@ -110,6 +110,14 @@ class ComponentsController extends Controller
         $buttonInfoBorderColor = !empty($request->components['button']['Info']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Info']['BackgroundColor'] .'!important;' : '';
 
 
+        // -------------------------------------------- Table --------------------------------------
+        // Button Background
+        $tableBackgroundButton = !empty($request->components['table']['pageButton']['BackgroundColor']) ? 'background:'. $request->components['table']['pageButton']['BackgroundColor'] .'!important;' : '';
+        $tableBorderColorButton = !empty($request->components['table']['pageButton']['BackgroundColor']) ? 'border-color:'. $request->components['table']['pageButton']['BackgroundColor'] .'!important;' : '';
+        // Button Background Hover
+        $tableBackgroundButtonHover = !empty($request->components['table']['pageButton']['BackgroundHover']) ? 'background:'. $request->components['table']['pageButton']['BackgroundHover'] .';' : '';
+        $tableBorderColorButtonHover = !empty($request->components['table']['pageButton']['BackgroundHover']) ? 'border-color:'. $request->components['table']['pageButton']['BackgroundHover'] .';' : '';
+
         // --------------------------------------- Modal ----------------------------------------------
         // Modal Header
         $modalHeaderBackgroundColor = !empty($request->components['modal']['modalHeader']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalHeader']['BackgroundColor'] .'!important;' : '';
@@ -279,6 +287,20 @@ class ComponentsController extends Controller
         .modal-footer{
             '. 
             $modalFooterBackgroundColor  //Modal Body
+            .'
+        }
+
+        .page-item.active .page-link{
+            '. 
+            $tableBackgroundButton.  //Button page
+            $tableBorderColorButton  //Button Border Color
+            .'
+        }
+
+        .page-link:hover{
+            '. 
+            $tableBackgroundButtonHover.  //Button page Hover
+            $tableBorderColorButtonHover  //Button Border Color Hover
             .'
         }
 

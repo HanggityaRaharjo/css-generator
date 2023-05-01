@@ -1,10 +1,10 @@
 
         .bg-dark {
-            background:#269092!important; 
+             
         }
 
         .bg-primary{
-            background:#2effe7!important;
+            background:#1eff00!important;
         }
 
         .bg-secondary{
@@ -12,11 +12,11 @@
         }
 
         .bg-success{
-            background:#195728!important;
+            
         }
 
         .bg-warning{
-            background:#b68f1b!important;
+            
         }
 
         .bg-info{
@@ -24,7 +24,7 @@
         }
 
         .bg-danger{
-            background:#ac0617!important;
+            
         }
 
         .navbar-brand{
@@ -33,7 +33,7 @@
         }
 
         .sb-sidenav-dark{
-            background:#69686e!important;
+            
         }
 
         
@@ -47,27 +47,27 @@
         }
 
         .btn-primary{                  
-            background:#28c3b1!important;border:1px solid #28c3b1!important;
+            
         }
 
         .btn-secondary{                  
-            background:#327769!important;border:1px solid #327769!important;
+            
         }
 
         .btn-success{                  
-            background:#1acb70!important;border:1px solid #1acb70!important;
+            
         }
 
         .btn-danger{                  
-            background:#ec3818!important;border:1px solid #ec3818!important;
+            
         }
 
         .btn-warning{                  
-            background:#dbcc24!important;border:1px solid #dbcc24!important;
+            
         }
 
         .btn-info{                  
-            background:#41b1c4!important;border:1px solid #41b1c4!important;
+            
         }
 
         .modal-header{
@@ -79,6 +79,14 @@
         }
 
         .modal-footer{
+            
+        }
+
+        .page-item.active .page-link{
+            
+        }
+
+        .page-link:hover{
             
         }
 

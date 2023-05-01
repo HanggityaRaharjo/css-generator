@@ -14,11 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('bootstrap-4//jquery.3.5/jquery.3.5.js') }}" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('cubex.css') }}" />
-    {{-- <style>
-        .collapse {
+    <style>
+        code .line {
             border: 1px solid red;
         }
-    </style> --}}
+    </style>
 </head>
 
 <body class="sb-nav-fixed">

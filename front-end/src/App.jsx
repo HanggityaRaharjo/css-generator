@@ -17,7 +17,7 @@ export default function App() {
       element: <Dashboard />,
     },
     {
-      path: "/table",
+      path: "/basic-table",
       element: <Table />,
     },
     {

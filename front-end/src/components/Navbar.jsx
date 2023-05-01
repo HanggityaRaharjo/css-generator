@@ -154,6 +154,12 @@ const Navbar = () => {
           BackgroundColor: stateComponents.modalFooterBackgroundColor,
         },
       },
+      table: {
+        pageButton: {
+          BackgroundColor: stateComponents.tableBackgroundButton,
+          BackgroundHover: stateComponents.tableBackgroundButtonHover,
+        },
+      },
       themeColor: {
         colorPrimary: stateComponents.colorPrimary,
         colorSecondary: stateComponents.colorSecondary,

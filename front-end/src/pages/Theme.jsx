@@ -13,6 +13,8 @@ const Theme = () => {
     setCurrentTab(elementClass);
   };
 
+  console.log(stateColor.colorPrimary);
+
   const tabComponent = {
     primary: [
       {
@@ -145,7 +147,9 @@ const Theme = () => {
                               </div>
                               <div className="text-center w-8/12">
                                 <p className="text-center">
-                                  {stateColor.colorPrimary}
+                                  {stateColor.colorPrimary
+                                    ? stateColor.colorPrimary
+                                    : "#007bff"}
                                 </p>
                               </div>
                             </div>
@@ -162,7 +166,11 @@ const Theme = () => {
                                 ></div>
                               </div>
                               <div className="text-center w-8/12">
-                                <p className="text-center">asdasdasd</p>
+                                <p className="text-center">
+                                  {stateColor.colorSecondary
+                                    ? stateColor.colorSecondary
+                                    : "#6c757d"}
+                                </p>
                               </div>
                             </div>
                             {/* End Secondary */}
@@ -178,7 +186,11 @@ const Theme = () => {
                                 ></div>
                               </div>
                               <div className="text-center w-8/12">
-                                <p className="text-center">asdasdasd</p>
+                                <p className="text-center">
+                                  {stateColor.colorSuccess
+                                    ? stateColor.colorSuccess
+                                    : "#28a745"}
+                                </p>
                               </div>
                             </div>
                             {/* End Success */}
@@ -194,7 +206,11 @@ const Theme = () => {
                                 ></div>
                               </div>
                               <div className="text-center w-8/12">
-                                <p className="text-center">asdasdasd</p>
+                                <p className="text-center">
+                                  {stateColor.colorWarning
+                                    ? stateColor.colorWarning
+                                    : "#ffc107"}
+                                </p>
                               </div>
                             </div>
                             {/* End Warning */}
@@ -210,7 +226,11 @@ const Theme = () => {
                                 ></div>
                               </div>
                               <div className="text-center w-8/12">
-                                <p className="text-center">asdasdasd</p>
+                                <p className="text-center">
+                                  {stateColor.colorInfo
+                                    ? stateColor.colorInfo
+                                    : "#17a2b8"}
+                                </p>
                               </div>
                             </div>
                             {/* End Info */}
@@ -226,7 +246,11 @@ const Theme = () => {
                                 ></div>
                               </div>
                               <div className="text-center w-8/12">
-                                <p className="text-center">asdasdasd</p>
+                                <p className="text-center">
+                                  {stateColor.colorDanger
+                                    ? stateColor.colorDanger
+                                    : "#dc3545"}
+                                </p>
                               </div>
                             </div>
                             {/* End Danger */}

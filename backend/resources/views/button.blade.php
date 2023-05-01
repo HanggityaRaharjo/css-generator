@@ -8,7 +8,6 @@
                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                 <li class="breadcrumb-item active">Buttons</li>
             </ol>
-
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card mb-4">
@@ -27,6 +26,15 @@
                             <button type="button" class="btn btn-info">Info</button>
                             <button type="button" class="btn btn-light">Light</button>
                             <button type="button" class="btn btn-dark">Dark</button>
+
+                            <div class="card bg-dark p-2 text-primary d-flex flex-column">
+                                <pre>
+                                    <code>
+                                        <div>"<div>asd</div>"</div>
+                                    </code>
+                                </pre>
+                            </div>
+
 
                             <div class="d-flex mt-4 mb-2">
                                 <h5>Button Outline</h5>

@@ -105,6 +105,15 @@ const Side = () => {
           Navigation Bar
         </div>
       </Link>
+      <Link to={"/basic-table"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
+            currentPage == "table" ? "text-white bg-primary" : null
+          }`}
+        >
+          Basic Table
+        </div>
+      </Link>
     </div>
   );
 };

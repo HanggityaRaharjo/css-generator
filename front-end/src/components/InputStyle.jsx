@@ -16,7 +16,6 @@ const InputStyle = (props) => {
       value: color.rgba,
     });
   }, [color]);
-  console.log(color);
   return (
     <>
       <div className="form-control transition-all duration-300">

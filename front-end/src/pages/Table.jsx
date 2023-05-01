@@ -5,43 +5,37 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 
 const Table = () => {
-  const stateLink = useStyleStore((state) => state);
-  const stateNav = useStyleStore((state) => state);
   const stateTable = useStyleStore((state) => state);
 
-  const stateCardContent = useStyleStore((state) => state);
-
-  const [currentTab, setCurrentTab] = useState("cubex-card");
-
-  // console.log(currentTab);
+  const [currentTab, setCurrentTab] = useState("tablePageButton");
 
   const handleTab = (elementClass) => {
-    let tabActive = document.querySelector(".tab-active");
-    if (tabActive !== null) {
-      tabActive.classList.remove("tab-active");
-    }
     setCurrentTab(elementClass);
-    document.querySelector(`.${elementClass}`).classList.add("tab-active");
   };
 
   const tabComponent = {
-    cubexcard: [
-      { name: "Background", property: "cardContentBackground" },
-      { name: "Color", property: "cardContentColor" },
-      { name: "Border Color", property: "cardContentBorderColor" },
-    ],
-    cubextable: [
-      { name: "Background", property: "cardContentBackground" },
-      { name: "Color", property: "cardContentColor" },
-      { name: "Border Color", property: "cardContentBorderColor" },
-      { name: "Background Filter", property: "tableBackgroundFilter" },
-      { name: "Filter Color", property: "tableFilterColor" },
-      { name: "Background Search", property: "tableBackgroundSearch" },
-      { name: "Search Color", property: "tableSearchColor" },
-      { name: "Background Button", property: "tableBackgroundButton" },
-      { name: "Table Header", property: "tableHeader" },
-      { name: "Table Row(Odd)", property: "tableRowOdd" },
-      { name: "Table Row(Even)", property: "tableRowEven" },
+    tablePageButton: [
+      {
+        name: "Button Background",
+        property: "tableBackgroundButton",
+        defaultValue: "#007bff",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Button Hover",
+        property: "tableBackgroundButtonHover",
+        defaultValue: "#e9ecef",
+        type: "color",
+        placeholder: "none",
+      },
+      {
+        name: "Button Hover",
+        property: "tableBackgroundButtonHover",
+        defaultValue: "#e9ecef",
+        type: "color",
+        placeholder: "none",
+      },
     ],
   };
 
@@ -99,12 +93,12 @@ const Table = () => {
                         <div
                           className={`bg-[#adadad] rounded-md h-5 mb-1 px-2`}
                           style={{
-                            background: stateLink.sidebarLinkBackgroundActive,
-                            color: stateLink.sidebarLinkTextColor,
-                            borderRadius: stateLink.sidebarLinkBorderRadius,
-                            borderWidth: stateLink.sidebarLinkBorderWidth,
-                            borderColor: stateLink.sidebarLinkBorderColor,
-                            borderStyle: stateLink.sidebarLinkBorderStyle,
+                            background: stateTable.sidebarLinkBackgroundActive,
+                            color: stateTable.sidebarLinkTextColor,
+                            borderRadius: stateTable.sidebarLinkBorderRadius,
+                            borderWidth: stateTable.sidebarLinkBorderWidth,
+                            borderColor: stateTable.sidebarLinkBorderColor,
+                            borderStyle: stateTable.sidebarLinkBorderStyle,
                           }}
                         >
                           Lorem
@@ -115,12 +109,12 @@ const Table = () => {
                         <div
                           className={`flex justify-between mb-2 `}
                           style={{
-                            background: stateNav.navbarBackground,
-                            color: stateNav.navbarTextColor,
-                            borderRadius: stateNav.navbarBorderRadius,
-                            borderColor: stateNav.navbarBorderColor,
-                            borderWidth: stateNav.navbarBorderWidth,
-                            borderStyle: stateNav.navbarBorderStyle,
+                            background: stateTable.navbarBackground,
+                            color: stateTable.navbarTextColor,
+                            borderRadius: stateTable.navbarBorderRadius,
+                            borderColor: stateTable.navbarBorderColor,
+                            borderWidth: stateTable.navbarBorderWidth,
+                            borderStyle: stateTable.navbarBorderStyle,
                           }}
                         >
                           <span className="w-5 h-5 bg-gradient-to-tr from-base-300 via-base-200 to-base-300"></span>
@@ -159,46 +153,28 @@ const Table = () => {
 
                         {/* Konten */}
                         <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md p-5 ${
-                            currentTab == "cubex-card"
-                              ? "border border-primary"
-                              : ""
+                          className={`bg-white rounded-md p-5 ${
+                            currentTab == "cubex-card" ? "" : ""
                           }`}
                           style={{
-                            background: stateCardContent.cardContentBackground,
-                            color: stateCardContent.cardContentColor,
-                            borderRadius:
-                              stateCardContent.cardContentBorderRadius,
-                            borderWidth:
-                              stateCardContent.cardContentBorderWidth,
-                            borderStyle:
-                              stateCardContent.cardContentBorderStyle,
-                            borderColor:
-                              stateCardContent.cardContentBorderColor,
+                            background: stateTable.cardContentBackground,
+                            color: stateTable.cardContentColor,
+                            borderRadius: stateTable.cardContentBorderRadius,
+                            borderWidth: stateTable.cardContentBorderWidth,
+                            borderStyle: stateTable.cardContentBorderStyle,
+                            borderColor: stateTable.cardContentBorderColor,
                           }}
                         >
-                          <div className="flex justify-end mb-2">
-                            <button
-                              className={`px-2 py-1 rounded-md bg-primary ${
-                                currentTab == "table-button"
-                                  ? "border border-primary"
-                                  : null
-                              }`}
-                            >
-                              Button
-                            </button>
-                          </div>
                           <div
                             className={` ${
-                              currentTab == "cubex-table"
-                                ? "border border-primary"
-                                : ""
+                              currentTab == "cubex-table" ? "" : ""
                             }`}
                           >
                             <div className="flex justify-between mb-2">
-                              <div className="flex gap-1">
+                              <div className="flex gap-1 items-center">
                                 <span>Show</span>
                                 <select
+                                  className="border rounded-md"
                                   defaultValue={"10"}
                                   style={{
                                     background:
@@ -212,6 +188,7 @@ const Table = () => {
                                 </select>
                                 <span>Data</span>
                               </div>
+
                               <div
                                 className={`flex items-center gap-2 ${
                                   currentTab == "table-search"
@@ -222,7 +199,7 @@ const Table = () => {
                                 <label>Search</label>
                                 <input
                                   type="text"
-                                  className="rounded-md w-28 h-7"
+                                  className="rounded-md w-36 h-7 border"
                                   style={{
                                     background:
                                       stateTable.tableBackgroundSearch,
@@ -231,50 +208,153 @@ const Table = () => {
                                 />
                               </div>
                             </div>
-
-                            <div className="overflow-x-auto">
-                              <table className="table table-zebra w-full">
-                                {/* head */}
+                            {/* Table */}
+                            <div className="bg-white p-2 rounded-md">
+                              <table className="w-full ">
                                 <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Job</th>
-                                    <th>Favorite Color</th>
+                                  <tr className="border-y-2 border-gray-300">
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      <div className="flex justify-between">
+                                        <p>Name</p>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={1.5}
+                                          stroke="currentColor"
+                                          className="w-4 h-4 text-gray-400"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </th>
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      <div className="flex justify-between">
+                                        <p>Position</p>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={1.5}
+                                          stroke="currentColor"
+                                          className="w-4 h-4 text-gray-400"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </th>
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      <div className="flex justify-between">
+                                        <p>Office</p>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={1.5}
+                                          stroke="currentColor"
+                                          className="w-4 h-4 text-gray-400"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {/* row 1 */}
                                   <tr>
-                                    <th>1</th>
-                                    <td>Cy Ganderton</td>
-                                    <td>Quality Control Specialist</td>
-                                    <td>Blue</td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Airi Satou
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Accountant
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Tokyo
+                                    </td>
                                   </tr>
-                                  {/* row 2 */}
                                   <tr>
-                                    <th>2</th>
-                                    <td>Hart Hagerty</td>
-                                    <td>Desktop Support Technician</td>
-                                    <td>Purple</td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Airi Satou
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Accountant
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Tokyo
+                                    </td>
                                   </tr>
-                                  {/* row 3 */}
                                   <tr>
-                                    <th>3</th>
-                                    <td>Brice Swyre</td>
-                                    <td>Tax Accountant</td>
-                                    <td>Red</td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Airi Satou
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Accountant
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Tokyo
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Airi Satou
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Accountant
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Tokyo
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Airi Satou
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Accountant
+                                    </td>
+                                    <td className="border border-gray-300 p-2 ">
+                                      Tokyo
+                                    </td>
                                   </tr>
                                 </tbody>
+                                <tfoot>
+                                  <tr className="border-y-2 border-gray-300">
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      Name
+                                    </th>
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      Position
+                                    </th>
+                                    <th className="border border-gray-300 p-2 text-left">
+                                      Office
+                                    </th>
+                                  </tr>
+                                </tfoot>
                               </table>
                             </div>
-
-                            <div className={`p-5 flex justify-between text-lg`}>
-                              <span>Show 1 of 1</span>
-                              <div className="flex gap-1">
-                                <button>Pevious</button>
+                            {/* End Table */}
+                            <div className="p-5 flex justify-between items-center text-primary">
+                              <span className="text-black">
+                                Showing 1 to 10 of 57 entries
+                              </span>
+                              <div className="flex border rounded-md overflow-hidden">
+                                <button className="px-1 text-gray-400">
+                                  Pevious
+                                </button>
                                 <button
-                                  className="bg-primary flex w-5 justify-center items-center rounded-md"
+                                  className="p-2 px-3 border-x bg-primary text-white"
                                   style={{
                                     background:
                                       stateTable.tableBackgroundButton,
@@ -282,9 +362,28 @@ const Table = () => {
                                 >
                                   1
                                 </button>
-                                <button>2</button>
-                                <button>3</button>
-                                <button>Next</button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  2
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  3
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  4
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  5
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  6
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  7
+                                </button>
+                                <button className="p-2 px-3 border-x hover:bg-[#e9ecef]">
+                                  8
+                                </button>
+                                <button className="px-1">Next</button>
                               </div>
                             </div>
                           </div>
@@ -305,38 +404,17 @@ const Table = () => {
             {/* End Pembatas */}
           </div>
           {/* Menu Bawah */}
-          <div className="flex justify-center">
-            <div className="tabs translate-y-[1px]">
-              <button
-                className="tab tab-lifted cubex-card tab-active"
-                onClick={() => handleTab("cubex-card")}
-              >
-                Card Table
-              </button>
-              <button
-                className="tab tab-lifted cubex-table"
-                onClick={() => handleTab("cubex-table")}
-              >
-                Table
-              </button>
-            </div>
-          </div>
+          {/* Menu Bawah */}
           <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
-            {currentTab == "cubex-card"
-              ? tabComponent.cubexcard.map((components, index) => (
+            {currentTab == "tablePageButton"
+              ? tabComponent.tablePageButton.map((components, index) => (
                   <InputStyle
                     key={index}
                     name={components.name}
                     property={components.property}
-                  />
-                ))
-              : null}
-            {currentTab == "cubex-table"
-              ? tabComponent.cubextable.map((components, index) => (
-                  <InputStyle
-                    key={index}
-                    name={components.name}
-                    property={components.property}
+                    defaultValue={components.defaultValue}
+                    type={components.type}
+                    placeholder={components.placeholder}
                   />
                 ))
               : null}

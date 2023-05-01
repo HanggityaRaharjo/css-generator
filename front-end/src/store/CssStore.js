@@ -53,17 +53,6 @@ const useStyleStore = create((set) => ({
   cardContentBorderStyle: "",
   cardContentBorderColor: "",
 
-  // Table
-  tableTextColor: "",
-  tableBackgroundFilter: "",
-  tableFilterColor: "",
-  tableBackgroundSearch: "",
-  tableSearchColor: "",
-  tableBackgroundButton: "",
-  tableHeader: "",
-  tableRowOdd: "",
-  tableRowEven: "",
-
   // Form Card
   cardFormBackground: "",
   cardFormColor: "",
@@ -90,6 +79,18 @@ const useStyleStore = create((set) => ({
   cardMonitorColor: "",
   monitorBorderBackground: "",
   valueColor: "",
+
+  // ---------------------------------------------- Table ----------------------------------
+  tableTextColor: "",
+  tableBackgroundFilter: "",
+  tableFilterColor: "",
+  tableBackgroundSearch: "",
+  tableSearchColor: "",
+  tableBackgroundButton: "",
+  tableBackgroundButtonHover: "",
+  tableHeader: "",
+  tableRowOdd: "",
+  tableRowEven: "",
 
   // ---------------------------------------------Button--------------------------------
   // Primary
