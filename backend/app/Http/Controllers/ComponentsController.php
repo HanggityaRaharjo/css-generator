@@ -89,6 +89,8 @@ class ComponentsController extends Controller
         $buttonPrimaryBackgroundColor = !empty($request->components['button']['Primary']['BackgroundColor']) ? 'background:'. $request->components['button']['Primary']['BackgroundColor'] .'!important;' : '';
         $buttonPrimaryBorderColor = !empty($request->components['button']['Primary']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Primary']['BackgroundColor'] .'!important;' : '';
 
+        
+
         // Button Secondary
         $buttonSecondaryBackgroundColor = !empty($request->components['button']['Secondary']['BackgroundColor']) ? 'background:'. $request->components['button']['Secondary']['BackgroundColor'] .'!important;' : '';
         $buttonSecondaryBorderColor = !empty($request->components['button']['Secondary']['BackgroundColor']) ? 'border:1px solid '. $request->components['button']['Secondary']['BackgroundColor'] .'!important;' : '';
