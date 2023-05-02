@@ -54,3 +54,35 @@ Route::get('/basic-table',function(){
 Route::get('/tab-nav',function(){
     return view('tab-nav');
 });
+
+Route::get('/alert',function(){
+    return view('alert');
+});
+
+Route::get('/badge',function(){
+    return view('badge');
+});
+
+Route::get('/card',function(){
+    return view('card');
+});
+
+Route::get('/collapse',function(){
+    return view('collapse');
+});
+
+Route::get('/form',function(){
+    return view('form');
+});
+
+Route::get('/form-layout',function(){
+    return view('form-layout');
+});
+
+Route::get('/form-validation',function(){
+    return view('form-validation');
+});
+
+Route::get('/input-group',function(){
+    return view('input-group');
+});

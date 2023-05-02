@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: "class",
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#007bff",
+          primary: "#0ea5e9",
 
           secondary: "#6c757d",
 

@@ -114,10 +114,15 @@
                                 <a class="nav-link" href="{{ url('tab-nav') }}">Tabs Accordions & Nav</a>
                                 <a class="nav-link" href="#">Tree View</a>
                                 <a class="nav-link" href="#">Toastr Notification</a>
-                                <a class="nav-link" href="#">Alert & Dialogs</a>
+                                <a class="nav-link" href="{{ url('alert') }}">Alert & Dialogs</a>
+                                <a class="nav-link" href="{{ url('badge') }}">Badge</a>
                                 <a class="nav-link" href="{{ url('modal') }}">Modal</a>
-                                <a class="nav-link" href="#">Extended Modal</a>
-                                <a class="nav-link" href="500.html">Nested Table List</a>
+                                <a class="nav-link" href="{{ url('card') }}">Card</a>
+                                <a class="nav-link" href="{{ url('collapse') }}">Collapse</a>
+                                <a class="nav-link" href="{{ url('form') }}">Form</a>
+                                <a class="nav-link" href="{{ url('form-layout') }}">Form Layout</a>
+                                <a class="nav-link" href="{{ url('form-validation') }}">Form Validation</a>
+                                <a class="nav-link" href="{{ url('input-group') }}">Input Group</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"

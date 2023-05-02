@@ -60,7 +60,7 @@ const NavigationBar = () => {
     ],
   };
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-screen dark:bg-[#0f172a]">
       <Navbar />
       <div className="flex h-screen pt-16">
         <Side />

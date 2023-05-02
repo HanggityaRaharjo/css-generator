@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useStyleStore from "../store/CssStore";
 import { Routes, Route, useParams } from "react-router-dom";
@@ -9,27 +9,33 @@ const Side = () => {
 
   let url = window.location.pathname;
   let currentUrl = url.replace("/", "");
-
   const [currentPage, setCurrentPage] = useState(currentUrl);
+
+  console.log(currentPage);
+
   return (
-    <div className="w-[15%] bg-base-200 p-5  h-[100%] overflow-scroll">
+    <div className="w-[15%] bg-base-200 p-5 dark:bg-[#1F2324] h-[100%] overflow-y-scroll dark:text-white">
       <div className={`p-2 mb-2 border-b border-gray-600`}>HTML</div>
       <Link to={"/"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary  hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == ""
+              ? "dark:text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
-          Dashboard
+          Layout
         </div>
       </Link>
       <Link to={"/theme"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "theme"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
-          Theme
+          Color
         </div>
       </Link>
 
@@ -37,8 +43,10 @@ const Side = () => {
 
       <Link to={"/modal"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "table" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "modal"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Modal
@@ -47,8 +55,10 @@ const Side = () => {
 
       <Link to={"/form"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "form" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "form"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Form
@@ -57,8 +67,10 @@ const Side = () => {
 
       <Link to={"/monitoring"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "monitoring" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "monitoring"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Monitoring
@@ -67,8 +79,10 @@ const Side = () => {
 
       <Link to={"/button"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "button" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "button"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Button
@@ -77,8 +91,10 @@ const Side = () => {
 
       <Link to={"/pop-up"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "pop-up" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "pop-up"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Pop Up
@@ -86,8 +102,10 @@ const Side = () => {
       </Link>
       <Link to={"/login"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "login" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "login"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Login
@@ -98,8 +116,10 @@ const Side = () => {
 
       <Link to={"/navigation-bar"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "table" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "navigation-bar"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Navigation Bar
@@ -107,8 +127,10 @@ const Side = () => {
       </Link>
       <Link to={"/basic-table"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary bg-primary text-white ${
-            currentPage == "table" ? "text-white bg-primary" : null
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "basic-table"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
           }`}
         >
           Basic Table

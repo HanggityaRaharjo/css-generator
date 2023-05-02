@@ -26,7 +26,7 @@ const InputStyle = (props) => {
               id="field-background"
               type={props.type}
               defaultValue={props.defaultValue}
-              className="w-[300px] border px-4 h-12"
+              className="w-[300px] border px-4 h-12 dark:bg-[#1F2324] dark:text-white"
               placeholder={props.placeholder}
               onChange={(e) =>
                 handleSidebarValue(e.target.value, props.property)
@@ -37,7 +37,7 @@ const InputStyle = (props) => {
               id="field-background"
               type={props.type}
               defaultValue={props.defaultValue}
-              className="w-[300px] border px-4 h-12"
+              className="w-[300px] border px-4 h-12 dark:bg-[#1F2324] dark:text-white"
               placeholder={props.placeholder}
               onChange={(e) =>
                 handleSidebarValue(e.target.value, props.property)
