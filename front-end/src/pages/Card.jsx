@@ -1,24 +1,24 @@
-import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 import Side from "../components/Side";
 import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
-
-const Modal = () => {
-  const stateModal = useStyleStore((state) => state);
-
-  const [currentTab, setCurrentTab] = useState("modalHeader");
+import InputSelect from "../components/InputSelect";
+import InputRangeSlider from "../components/InputRangeSlider";
+const Card = () => {
+  const [currentTab, setCurrentTab] = useState("cardHeader");
+  const stateCard = useStyleStore((state) => state);
 
   const handleTab = (elementClass) => {
     setCurrentTab(elementClass);
   };
 
   const tabComponent = {
-    modalHeader: {
+    cardHeader: {
       dimension: [
         {
           name: "Height",
-          property: "modalHeaderHeight",
+          property: "cardHeaderHeight",
           defaultValue: "",
           type: "text",
           placeholder: "0rem",
@@ -27,21 +27,21 @@ const Modal = () => {
       border: [
         {
           name: "Border Width",
-          property: "modalHeaderBorderWidth",
+          property: "cardHeaderBorderWidth",
           defaultValue: "0px",
           type: "number",
           placeholder: "0px",
         },
         {
           name: "Border Color",
-          property: "modalHeaderBorderColor",
+          property: "cardHeaderBorderColor",
           defaultValue: "",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Shadow",
-          property: "modalHeaderShadow",
+          property: "cardHeaderShadow",
           defaultValue: "",
           type: "text",
           placeholder: "0px 20px 50px grey",
@@ -50,21 +50,21 @@ const Modal = () => {
       font: [
         {
           name: "Color",
-          property: "modalHeaderColor",
+          property: "cardHeaderColor",
           defaultValue: "0px",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Font Family",
-          property: "modalHeaderFontFamily",
+          property: "cardHeaderFontFamily",
           defaultValue: "0px",
           type: "text",
           placeholder: "Arial,mono-thin,reguler",
         },
         {
           name: "Font Size",
-          property: "modalHeaderFontSize",
+          property: "cardHeaderFontSize",
           defaultValue: "0px",
           type: "text",
           placeholder: "0px",
@@ -73,199 +73,21 @@ const Modal = () => {
       background: [
         {
           name: "Background Color",
-          property: "modalHeaderBackgroundColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Background Gradient",
-          property: "modalHeaderBackgroundGradient",
-          defaultValue: "",
-          type: "text",
-          placeholder: "linear-gradient(red, yellow)",
-        },
-        {
-          name: "Filter Blur",
-          property: "modalHeaderFilterBlur",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-      upload: [
-        {
-          name: "Background Image",
-          property: "modalHeaderBackgroundImage",
-          defaultValue: "Test",
-          type: "text",
-          placeholder: "URL/Link",
-        },
-      ],
-    },
-    modalContent: {
-      dimension: [
-        {
-          name: "Height",
-          property: "modalContentHeight",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0rem",
-        },
-      ],
-      border: [
-        {
-          name: "Border Width",
-          property: "modalContentBorderWidth",
-          defaultValue: "0px",
-          type: "number",
-          placeholder: "0px",
-        },
-        {
-          name: "Border Color",
-          property: "modalContentBorderColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Shadow",
-          property: "modalContentShadow",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px 20px 50px grey",
-        },
-      ],
-      font: [
-        {
-          name: "Color",
-          property: "modalContentColor",
-          defaultValue: "0px",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Font Family",
-          property: "modalContentFontFamily",
-          defaultValue: "0px",
-          type: "text",
-          placeholder: "Arial,mono-thin,reguler",
-        },
-        {
-          name: "Font Size",
-          property: "modalContentFontSize",
-          defaultValue: "0px",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-      background: [
-        {
-          name: "Background Color",
-          property: "modalContentBackgroundColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Background Gradient",
-          property: "modalContentBackgroundGradient",
-          defaultValue: "",
-          type: "text",
-          placeholder: "linear-gradient(red, yellow)",
-        },
-        {
-          name: "Filter Blur",
-          property: "modalContentFilterBlur",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-      upload: [
-        {
-          name: "Background Image",
-          property: "modalContentBackgroundImage",
-          defaultValue: "Test",
-          type: "text",
-          placeholder: "URL/Link",
-        },
-      ],
-    },
-    modalFooter: {
-      dimension: [
-        {
-          name: "Height",
-          property: "modalFooterHeight",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0rem",
-        },
-      ],
-      border: [
-        {
-          name: "Border Width",
-          property: "modalFooterBorderWidth",
-          defaultValue: "0px",
-          type: "number",
-          placeholder: "0px",
-        },
-        {
-          name: "Border Color",
-          property: "modalFooterBorderColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Shadow",
-          property: "modalFooterShadow",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px 20px 50px grey",
-        },
-      ],
-      font: [
-        {
-          name: "Color",
-          property: "modalFooterColor",
-          defaultValue: "0px",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Font Family",
-          property: "modalFooterFontFamily",
-          defaultValue: "0px",
-          type: "text",
-          placeholder: "Arial,mono-thin,reguler",
-        },
-        {
-          name: "Font Size",
-          property: "modalFooterFontSize",
-          defaultValue: "0px",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-      background: [
-        {
-          name: "Background Color",
-          property: "modalFooterBackgroundColor",
+          property: "cardHeaderBackgroundColor",
           defaultValue: "#d3d3d3",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Background Gradient",
-          property: "modalFooterBackgroundGradient",
+          property: "cardHeaderBackgroundGradient",
           defaultValue: "",
           type: "text",
           placeholder: "linear-gradient(red, yellow)",
         },
         {
           name: "Filter Blur",
-          property: "modalFooterFilterBlur",
+          property: "cardHeaderFilterBlur",
           defaultValue: "",
           type: "text",
           placeholder: "0px",
@@ -274,7 +96,185 @@ const Modal = () => {
       upload: [
         {
           name: "Background Image",
-          property: "modalFooterBackgroundImage",
+          property: "cardHeaderBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+    cardContent: {
+      dimension: [
+        {
+          name: "Height",
+          property: "cardContentHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "cardContentBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "cardContentBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "cardContentShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "cardContentColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "cardContentFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "cardContentFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "cardContentBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "cardContentBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "cardContentFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "cardContentBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+    cardFooter: {
+      dimension: [
+        {
+          name: "Height",
+          property: "cardFooterHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "cardFooterBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "cardFooterBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "cardFooterShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "cardFooterColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "cardFooterFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "cardFooterFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "cardFooterBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "cardFooterBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "cardFooterFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "cardFooterBackgroundImage",
           defaultValue: "Test",
           type: "text",
           placeholder: "URL/Link",
@@ -282,6 +282,27 @@ const Modal = () => {
       ],
     },
   };
+
+  const tabComponentSlider = {
+    card: [
+      { name: "Border Radius", property: "cardBorderRadius", unit: "%" },
+      { name: "Border Width", property: "cardBorderWidth", unit: "px" },
+    ],
+  };
+
+  const tabComponentSelect = {
+    sidebar: [
+      {
+        name: "Border Style",
+        property: "cardBorderRadius",
+        value: [
+          { childName: "Small", value: "solid" },
+          { childName: "Dotted", value: "dotted" },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className=" min-h-screen dark:bg-[#0f172a]">
       <Navbar />
@@ -351,74 +372,96 @@ const Modal = () => {
                             </p>
                           </div>
                         </div>
-
                         {/* Konten */}
-                        <div className="bg-black bg-opacity-30 backdrop-blur-sm absolute left-0 top-0 h-full w-full flex justify-center items-center">
-                          <div className="w-96 h-48 overflow-hidden rounded-md bg-white  flex flex-col justify-between">
-                            {/* Modal Header */}
+                        <h2 className="text-2xl font-bold mt-5">Card</h2>
+                        <div className="grid grid-cols-1 gap-5 mt-2">
+                          {/* Card */}
+                          <div
+                            className="w-full h-48 rounded-md shadow-md overflow-hidden"
+                            style={{
+                              borderRadius: stateCard.cardBorderRadius,
+                            }}
+                          >
                             <div
                               className={`${
-                                currentTab === "modalHeader"
+                                currentTab === "cardHeader"
                                   ? "border border-red-500"
                                   : ""
-                              } order-b h-[30%] flex justify-between p-3 cursor-pointer hover:border hover:border-red-500`}
+                              } border h-10 rounded-t-md flex justify-center items-center bg-white  hover:border-red-500 cursor-pointer transition duration-300`}
+                              onClick={() => handleTab("cardHeader")}
                               style={{
-                                background:
-                                  stateModal.modalHeaderBackgroundColor,
+                                background: `${
+                                  stateCard.cardHeaderBackgroundGradient ==
+                                    null ||
+                                  stateCard.cardHeaderBackgroundGradient == ""
+                                    ? stateCard.cardHeaderBackgroundColor
+                                    : stateCard.cardHeaderBackgroundGradient
+                                }`,
+                                borderWidth: `${stateCard.cardHeaderBorderWidth}px`,
+                                borderColor: stateCard.cardHeaderBorderColor,
+                                borderRadius: stateCard.cardHeaderBorderRadius,
+                                boxShadow: stateCard.cardHeaderShadow,
+                                color: stateCard.cardHeaderColor,
+                                height: stateCard.cardHeaderHeight,
+                                filter: `blur(${stateCard.cardHeaderFilterBlur})`,
                               }}
-                              onClick={() => handleTab("modalHeader")}
                             >
-                              <p className="text-lg font-semibold">
-                                Modal Title
-                              </p>
-                              <button className="text-lg text-gray-500 font-semibold">
-                                x
-                              </button>
+                              Card Header
                             </div>
-                            {/* END Modal Header */}
-                            {/* Modal Content */}
                             <div
                               className={`${
-                                currentTab === "modalContent"
+                                currentTab === "cardContent"
                                   ? "border border-red-500"
                                   : ""
-                              } h-[40%] p-2 hover:border hover:border-red-500 cursor-pointer`}
+                              } border-x h-28 flex justify-center items-center bg-white  hover:border-red-500 cursor-pointer transition duration-300 hover:border`}
+                              onClick={() => handleTab("cardContent")}
                               style={{
-                                background:
-                                  stateModal.modalContentBackgroundColor,
+                                background: `${
+                                  stateCard.cardContentBackgroundGradient ==
+                                    null ||
+                                  stateCard.cardContentBackgroundGradient == ""
+                                    ? stateCard.cardContentBackgroundColor
+                                    : stateCard.cardContentBackgroundGradient
+                                }`,
+                                borderWidth: `${stateCard.cardContentBorderWidth}px`,
+                                borderColor: stateCard.cardContentBorderColor,
+                                borderRadius: stateCard.cardContentBorderRadius,
+                                boxShadow: stateCard.cardContentShadow,
+                                color: stateCard.cardContentColor,
+                                height: stateCard.cardContentHeight,
+                                filter: `blur(${stateCard.cardContentFilterBlur})`,
                               }}
-                              onClick={() => handleTab("modalContent")}
                             >
-                              <span>. . .</span>
+                              Card Content
                             </div>
-                            {/* End Modal Body */}
-                            {/* Modal Footer */}
                             <div
                               className={`${
-                                currentTab === "modalFooter"
+                                currentTab === "cardFooter"
                                   ? "border border-red-500"
                                   : ""
-                              } border-t h-[30%] flex justify-end items-center gap-2 px-2 hover:border hover:border-red-500 cursor-pointer`}
+                              } border  h-10 rounded-b-md flex justify-center items-center bg-white  hover:border-red-500 cursor-pointer transition duration-300`}
+                              onClick={() => handleTab("cardFooter")}
                               style={{
-                                background:
-                                  stateModal.modalFooterBackgroundColor,
+                                background: `${
+                                  stateCard.cardFooterBackgroundGradient ==
+                                    null ||
+                                  stateCard.cardFooterBackgroundGradient == ""
+                                    ? stateCard.cardFooterBackgroundColor
+                                    : stateCard.cardFooterBackgroundGradient
+                                }`,
+                                borderWidth: `${stateCard.cardFooterBorderWidth}px`,
+                                borderColor: stateCard.cardFooterBorderColor,
+                                borderRadius: stateCard.cardFooterBorderRadius,
+                                boxShadow: stateCard.cardFooterShadow,
+                                color: stateCard.cardFooterColor,
+                                height: stateCard.cardFooterHeight,
+                                filter: `blur(${stateCard.cardFooterFilterBlur})`,
                               }}
-                              onClick={() => handleTab("modalFooter")}
                             >
-                              <button className="btn btn-sm btn-secondary">
-                                Cancel
-                              </button>
-                              <button
-                                className="btn btn-sm btn-primary"
-                                style={{
-                                  background: stateModal.btnPrimaryBackground,
-                                }}
-                              >
-                                Save Changes
-                              </button>
+                              Card Footer
                             </div>
-                            {/* End Modal Footer */}
                           </div>
+                          {/* End Card */}
                         </div>
                         {/* End Konten */}
                       </div>
@@ -431,20 +474,33 @@ const Modal = () => {
             </div>
             {/* Pembatas */}
             {/* Menu Kanan */}
-            <div className="w-[20%] h-fit p-2">kanan</div>
+            {/* cardBorderRadius */}
+            <div className="w-[20%] h-fit p-2">
+              {tabComponentSlider.card.map((component, index) => (
+                <InputRangeSlider
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
+                />
+              ))}
+            </div>
+            {/* End cardBorderRadius */}
+            {/* End Menu Kanan */}
             {/* End Pembatas */}
           </div>
+
           {/* Menu Bawah */}
-          {/* modalHeader */}
+          {/* cardHeader */}
           <div
             className={`${
-              currentTab === "modalHeader" ? "h-56" : "hidden"
+              currentTab === "cardHeader" ? "h-56" : "hidden"
             } overflow-y-scroll`}
           >
             {/* Dimension */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalHeader"
-                ? tabComponent.modalHeader.dimension.map((component, index) => (
+              {currentTab === "cardHeader"
+                ? tabComponent.cardHeader.dimension.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -459,8 +515,8 @@ const Modal = () => {
             {/* End Dimension */}
             {/* border */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalHeader"
-                ? tabComponent.modalHeader.border.map((component, index) => (
+              {currentTab === "cardHeader"
+                ? tabComponent.cardHeader.border.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -475,8 +531,8 @@ const Modal = () => {
             {/* End border */}
             {/* font */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalHeader"
-                ? tabComponent.modalHeader.font.map((component, index) => (
+              {currentTab === "cardHeader"
+                ? tabComponent.cardHeader.font.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -491,8 +547,96 @@ const Modal = () => {
             {/* End font */}
             {/* background */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalHeader"
-                ? tabComponent.modalHeader.background.map(
+              {currentTab === "cardHeader"
+                ? tabComponent.cardHeader.background.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End background */}
+            {/* file Upload */}
+            <div className="grid grid-cols-1 gap-1 text-sm p-2">
+              {currentTab === "cardHeader"
+                ? tabComponent.cardHeader.upload.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End file Upload */}
+          </div>
+          {/* End cardHeader */}
+          {/* cardContent */}
+          <div
+            className={`${
+              currentTab === "cardContent" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Dimension */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardContent"
+                ? tabComponent.cardContent.dimension.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End Dimension */}
+            {/* border */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardContent"
+                ? tabComponent.cardContent.border.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End border */}
+            {/* font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardContent"
+                ? tabComponent.cardContent.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+            {/* background */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardContent"
+                ? tabComponent.cardContent.background.map(
                     (component, index) => (
                       <InputStyle
                         key={index}
@@ -509,8 +653,8 @@ const Modal = () => {
             {/* End background */}
             {/* file Upload */}
             <div className="grid grid-cols-1 gap-1 text-sm p-2">
-              {currentTab === "modalHeader"
-                ? tabComponent.modalHeader.upload.map((component, index) => (
+              {currentTab === "cardContent"
+                ? tabComponent.cardContent.upload.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -524,109 +668,17 @@ const Modal = () => {
             </div>
             {/* End file Upload */}
           </div>
-          {/* End modalHeader */}
-          {/* modalContent */}
+          {/* End cardContent */}
+          {/* cardFooter */}
           <div
             className={`${
-              currentTab === "modalContent" ? "h-56" : "hidden"
+              currentTab === "cardFooter" ? "h-56" : "hidden"
             } overflow-y-scroll`}
           >
             {/* Dimension */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalContent"
-                ? tabComponent.modalContent.dimension.map(
-                    (component, index) => (
-                      <InputStyle
-                        key={index}
-                        name={component.name}
-                        property={component.property}
-                        defaultValue={component.defaultValue}
-                        type={component.type}
-                        placeholder={component.placeholder}
-                      />
-                    )
-                  )
-                : null}
-            </div>
-            {/* End Dimension */}
-            {/* border */}
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalContent"
-                ? tabComponent.modalContent.border.map((component, index) => (
-                    <InputStyle
-                      key={index}
-                      name={component.name}
-                      property={component.property}
-                      defaultValue={component.defaultValue}
-                      type={component.type}
-                      placeholder={component.placeholder}
-                    />
-                  ))
-                : null}
-            </div>
-            {/* End border */}
-            {/* font */}
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalContent"
-                ? tabComponent.modalContent.font.map((component, index) => (
-                    <InputStyle
-                      key={index}
-                      name={component.name}
-                      property={component.property}
-                      defaultValue={component.defaultValue}
-                      type={component.type}
-                      placeholder={component.placeholder}
-                    />
-                  ))
-                : null}
-            </div>
-            {/* End font */}
-            {/* background */}
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalContent"
-                ? tabComponent.modalContent.background.map(
-                    (component, index) => (
-                      <InputStyle
-                        key={index}
-                        name={component.name}
-                        property={component.property}
-                        defaultValue={component.defaultValue}
-                        type={component.type}
-                        placeholder={component.placeholder}
-                      />
-                    )
-                  )
-                : null}
-            </div>
-            {/* End background */}
-            {/* file Upload */}
-            <div className="grid grid-cols-1 gap-1 text-sm p-2">
-              {currentTab === "modalContent"
-                ? tabComponent.modalContent.upload.map((component, index) => (
-                    <InputStyle
-                      key={index}
-                      name={component.name}
-                      property={component.property}
-                      defaultValue={component.defaultValue}
-                      type={component.type}
-                      placeholder={component.placeholder}
-                    />
-                  ))
-                : null}
-            </div>
-            {/* End file Upload */}
-          </div>
-          {/* End modalContent */}
-          {/* modalFooter */}
-          <div
-            className={`${
-              currentTab === "modalFooter" ? "h-56" : "hidden"
-            } overflow-y-scroll`}
-          >
-            {/* Dimension */}
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalFooter"
-                ? tabComponent.modalFooter.dimension.map((component, index) => (
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.dimension.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -641,8 +693,8 @@ const Modal = () => {
             {/* End Dimension */}
             {/* border */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalFooter"
-                ? tabComponent.modalFooter.border.map((component, index) => (
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.border.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -657,8 +709,8 @@ const Modal = () => {
             {/* End border */}
             {/* font */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalFooter"
-                ? tabComponent.modalFooter.font.map((component, index) => (
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.font.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -673,26 +725,24 @@ const Modal = () => {
             {/* End font */}
             {/* background */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "modalFooter"
-                ? tabComponent.modalFooter.background.map(
-                    (component, index) => (
-                      <InputStyle
-                        key={index}
-                        name={component.name}
-                        property={component.property}
-                        defaultValue={component.defaultValue}
-                        type={component.type}
-                        placeholder={component.placeholder}
-                      />
-                    )
-                  )
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.background.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
                 : null}
             </div>
             {/* End background */}
             {/* file Upload */}
             <div className="grid grid-cols-1 gap-1 text-sm p-2">
-              {currentTab === "modalFooter"
-                ? tabComponent.modalFooter.upload.map((component, index) => (
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.upload.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -706,7 +756,7 @@ const Modal = () => {
             </div>
             {/* End file Upload */}
           </div>
-          {/* End modalFooter */}
+          {/* End cardFooter */}
           {/* End Menu Bawah */}
         </div>
       </div>
@@ -714,4 +764,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default Card;

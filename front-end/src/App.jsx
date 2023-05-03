@@ -9,6 +9,8 @@ import Popup from "./pages/Popup";
 import Login from "./pages/Login";
 import Modal from "./pages/Modal";
 import Theme from "./pages/Theme";
+import Card from "./pages/Card";
+import Breadcrumbs from "./pages/Breadcrumbs";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -51,6 +53,14 @@ export default function App() {
     {
       path: "/navigation-bar",
       element: <NavigationBar />,
+    },
+    {
+      path: "/card",
+      element: <Card />,
+    },
+    {
+      path: "/breadcrumbs",
+      element: <Breadcrumbs />,
     },
   ]);
 

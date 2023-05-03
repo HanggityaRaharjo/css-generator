@@ -6,36 +6,147 @@ import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
 const Form = () => {
-  const [currentTab, setCurrentTab] = useState("form-card");
+  const [currentTab, setCurrentTab] = useState("label");
   const stateForm = useStyleStore((state) => state);
 
   const handleTab = (elementClass) => {
-    let tabActive = document.querySelector(".tab-active");
-    if (tabActive !== null) {
-      tabActive.classList.remove("tab-active");
-    }
     setCurrentTab(elementClass);
-    document.querySelector(`.${elementClass}`).classList.add("tab-active");
   };
 
   const tabComponent = {
-    formCard: [
-      { name: "Background", property: "cardFormBackground" },
-      { name: "Color", property: "cardFormColor" },
-    ],
-    inputText: [
-      { name: "Background Input", property: "inputTextBackground" },
-      { name: "Input Color", property: "inputTextColor" },
-      { name: "Label Color", property: "inputLabelColor" },
-    ],
-    inputSelect: [
-      { name: "Background Select", property: "selectTextBackground" },
-      { name: "select Color", property: "selectTextColor" },
-      { name: "Label Color", property: "selectLabelColor" },
-    ],
-    textArea: [
-      { name: "Background", property: "textAreaBackground" },
-      { name: "Text Color", property: "textAreaColor" },
+    label: {
+      font: [
+        {
+          name: "Color",
+          property: "formLabelColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "formLabelFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "formLabelFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+        {
+          name: "Font Weight",
+          property: "formLabelFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+    },
+    input: {
+      dimension: [
+        {
+          name: "Height",
+          property: "formInputHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "formInputBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "formInputBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "formInputShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "formInputColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "formInputFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "formInputFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "formInputBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "formInputBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "formInputFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "formInputBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+  };
+  const tabComponentSelect = {
+    label: [
+      {
+        name: "Font Style",
+        property: "formLabelFontStyle",
+        value: [
+          { childName: "Normal", value: "normal" },
+          { childName: "Italic", value: "italic" },
+          { childName: "Oblique", value: "oblique" },
+        ],
+      },
     ],
   };
 
@@ -94,279 +205,55 @@ const Form = () => {
                             </span>
                           </div>
                         </div>
-                        {/* Breadcrumb */}
-                        <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between `}
-                        >
-                          <div className="w-1/2 flex justify-center items-center">
-                            <div className="h-5 w-5 bg-white rounded-full"></div>
-                          </div>
-                          <div className="w-11/12">
-                            <p>Lorem</p>
-                            <p className="text-xs">
-                              Lorem <span>/</span> <span>Lorem</span>
-                            </p>
-                          </div>
-                        </div>
-
+                        {/* End Navigation */}
                         {/* Konten */}
-                        <div
-                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md p-5 ${
-                            currentTab == "form-card"
-                              ? "border border-primary"
-                              : null
-                          }`}
-                          style={{
-                            background: stateForm.cardFormBackground,
-                            color: stateForm.cardFormColor,
-                          }}
-                        >
-                          <div
-                            className={`grid grid-cols-4 gap-5 justify-between mb-5 }`}
-                          >
-                            {/* Type Text */}
-                            <div
-                              className={
-                                currentTab == "input-text"
-                                  ? "border border-primary"
-                                  : null
-                              }
+                        {/* Konten */}
+                        <div className="border bg-white p-5 rounded-md shadow-md">
+                          {/* Input */}
+                          <div className="flex flex-col mb-5">
+                            <label
+                              className={`${
+                                currentTab === "label"
+                                  ? "border border-red-500 w-fit"
+                                  : ""
+                              } hover:border hover:border-red-500 cursor-pointer`}
                             >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.inputLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <input
-                                type="text"
-                                className="w-full rounded-md h-8 px-2"
-                                placeholder="Placeholder"
-                                style={{
-                                  background: stateForm.inputTextBackground,
-                                  color: stateForm.inputTextColor,
-                                }}
-                              />
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-text"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.inputLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <input
-                                type="text"
-                                className="w-full rounded-md h-8 px-2"
-                                placeholder="Placeholder"
-                                style={{
-                                  background: stateForm.inputTextBackground,
-                                  color: stateForm.inputTextColor,
-                                }}
-                              />
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-text"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.inputLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <input
-                                type="text"
-                                className="w-full rounded-md h-8 px-2"
-                                placeholder="Placeholder"
-                                style={{
-                                  background: stateForm.inputTextBackground,
-                                  color: stateForm.inputTextColor,
-                                }}
-                              />
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-text"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.inputLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <input
-                                type="text"
-                                className="w-full rounded-md h-8 px-2"
-                                placeholder="Placeholder"
-                                style={{
-                                  background: stateForm.inputTextBackground,
-                                  color: stateForm.inputTextColor,
-                                }}
-                              />
-                            </div>
-
-                            {/* End Type Text  */}
-                            {/* Type Select */}
-                            <div
-                              className={
-                                currentTab == "input-select"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.selectLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <select
-                                defaultValue={"none"}
-                                className="w-full rounded-md h-8"
-                                style={{
-                                  color: stateForm.selectTextColor,
-                                  background: stateForm.selectTextBackground,
-                                }}
-                              >
-                                <option value="none">Value</option>
-                              </select>
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-select"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.selectLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <select
-                                defaultValue={"none"}
-                                className="w-full rounded-md h-8"
-                                style={{
-                                  color: stateForm.selectTextColor,
-                                  background: stateForm.selectTextBackground,
-                                }}
-                              >
-                                <option value="none">Value</option>
-                              </select>
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-select"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.selectLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <select
-                                defaultValue={"none"}
-                                className="w-full rounded-md h-8"
-                                style={{
-                                  color: stateForm.selectTextColor,
-                                  background: stateForm.selectTextBackground,
-                                }}
-                              >
-                                <option value="none">Value</option>
-                              </select>
-                            </div>
-                            <div
-                              className={
-                                currentTab == "input-select"
-                                  ? "border border-primary"
-                                  : null
-                              }
-                            >
-                              <div>
-                                <label
-                                  style={{
-                                    color: stateForm.selectLabelColor,
-                                  }}
-                                >
-                                  Label
-                                </label>
-                              </div>
-                              <select
-                                defaultValue={"none"}
-                                className="w-full rounded-md h-8"
-                                style={{
-                                  color: stateForm.selectTextColor,
-                                  background: stateForm.selectTextBackground,
-                                }}
-                              >
-                                <option value="none">Value</option>
-                              </select>
-                            </div>
-
-                            {/* End Type Select */}
+                              Label
+                            </label>
+                            <input
+                              type="text"
+                              className="border rounded-sm h-10 cursor-pointer"
+                            />
                           </div>
-                          {/* Text Area */}
-                          <div>
-                            <textarea
-                              rows="5"
-                              className={`w-full p-2 rounded-md ${
-                                currentTab == "text-area"
-                                  ? "border border-primary"
-                                  : null
-                              }`}
-                              style={{
-                                background: stateForm.textAreaBackground,
-                                color: stateForm.textAreaColor,
-                              }}
-                              placeholder="Text Area"
-                            ></textarea>
+                          {/* End Input */}
+                          {/* Input */}
+                          <div className="flex flex-col mb-2">
+                            <label
+                              className={`${
+                                currentTab === "label"
+                                  ? "border border-red-500 w-fit"
+                                  : ""
+                              } hover:border hover:border-red-500 cursor-pointer`}
+                            >
+                              Label
+                            </label>
+                            <input
+                              type="text"
+                              className="border rounded-sm h-10 cursor-pointer"
+                            />
                           </div>
-                          {/* End Text Area */}
-                          <div className="flex justify-end gap-2">
-                            <button className="btn btn-primary">Submit</button>
-                            <button className=" btn btn-primary btn-outline">
-                              Cancel
-                            </button>
+                          {/* End Input */}
+                          <div className="mb-2 flex gap-2">
+                            <input type="checkbox" name="" id="" />
+                            <span>Check Me Out</span>
                           </div>
+                          {/* Button */}
+                          <button className="bg-[#007bff] p-2 rounded-md text-white">
+                            Submit
+                          </button>
+                          {/* End Button */}
                         </div>
+                        {/* End Konten */}
                         {/* End Konten */}
                       </div>
                     </div>
@@ -378,84 +265,76 @@ const Form = () => {
             </div>
             {/* Pembatas */}
             {/* Menu Kanan */}
-            <div className="w-[20%] h-fit p-2">kanan</div>
+            <div className="w-[20%] h-fit p-2">
+              {/* Select */}
+              {currentTab === "label"
+                ? tabComponentSelect.label.map((component, index) => (
+                    <InputSelect
+                      key={index}
+                      name={component.name}
+                      value={component.value}
+                    />
+                  ))
+                : ""}
+              {/* End Select */}
+            </div>
+            {/* End Menu Kanan */}
             {/* End Pembatas */}
           </div>
-          <div className="flex justify-center">
-            <div className="tabs translate-y-[1px]">
-              <button
-                className="tab tab-lifted form-card tab-active"
-                onClick={() => handleTab("form-card")}
-              >
-                Form Card
-              </button>
-              <button
-                className="tab tab-lifted input-text"
-                onClick={() => handleTab("input-text")}
-              >
-                Input Text
-              </button>
-              <button
-                className="tab tab-lifted input-select"
-                onClick={() => handleTab("input-select")}
-              >
-                Input Select
-              </button>
-              <button
-                className="tab tab-lifted text-area"
-                onClick={() => handleTab("text-area")}
-              >
-                Text Area
-              </button>
-            </div>
-          </div>
+
           {/* Menu Bawah */}
-          <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
-            {/* Form Card */}
-            {currentTab == "form-card"
-              ? tabComponent.formCard.map((components, index) => (
-                  <InputStyle
-                    key={index}
-                    name={components.name}
-                    property={components.property}
-                  />
-                ))
-              : null}
-            {/* End Form Card */}
-            {/* Input Text */}
-            {currentTab == "input-text"
-              ? tabComponent.inputText.map((components, index) => (
-                  <InputStyle
-                    key={index}
-                    name={components.name}
-                    property={components.property}
-                  />
-                ))
-              : null}
-            {/* End Input Text */}
-            {/* Input Text */}
-            {currentTab == "input-select"
-              ? tabComponent.inputSelect.map((components, index) => (
-                  <InputStyle
-                    key={index}
-                    name={components.name}
-                    property={components.property}
-                  />
-                ))
-              : null}
-            {/* End Input Text */}
-            {/* Input Text */}
-            {currentTab == "text-area"
-              ? tabComponent.textArea.map((components, index) => (
-                  <InputStyle
-                    key={index}
-                    name={components.name}
-                    property={components.property}
-                  />
-                ))
-              : null}
-            {/* End Input Text */}
+          {/* label */}
+          <div
+            className={`${
+              currentTab === "label" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* font */}
+            <h3 className="text-lg ml-2 font-bold">Font</h3>
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "label"
+                ? tabComponent.label.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
           </div>
+          {/* End label */}
+          {/* input */}
+          <div
+            className={`${
+              currentTab === "label" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* font */}
+            <h3 className="text-lg ml-2 font-bold">Font</h3>
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "label"
+                ? tabComponent.label.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+          </div>
+          {/* End input */}
+
+          {/* End Menu Bawah */}
         </div>
       </div>
     </div>

@@ -18,19 +18,19 @@ const useStyleStore = create((set) => ({
   sidebarLinkBorderColor: "",
 
   // BreadCrumbs
-  breadcrumbBackground: "",
-  breadcrumbTextTitle: "",
-  breadcrumbTextColor: "",
-  breadcrumbTextActive: "",
-  breadcrumbBorderRadius: "",
-  breadcrumbBorderWidth: "",
-  breadcrumbBorderStyle: "",
-  breadcrumbBorderColor: "",
+  // breadcrumbBackground: "",
+  // breadcrumbTextTitle: "",
+  // breadcrumbTextColor: "",
+  // breadcrumbTextActive: "",
+  // breadcrumbBorderRadius: "",
+  // breadcrumbBorderWidth: "",
+  // breadcrumbBorderStyle: "",
+  // breadcrumbBorderColor: "",
 
   //Card
   cardBackground: "",
   cardTextColorPrimary: "",
-  cardBorderRadius: "",
+
   cardBorderWidth: "",
   cardBorderStyle: "",
   cardBorderColor: "",
@@ -175,7 +175,7 @@ const useStyleStore = create((set) => ({
   loginButtonTextColor: "",
   // ---------------------------- Login -------------------------------
 
-  // Selected
+  // Header
   headerBackgroundColor: "",
   headerBackgroundImage: "",
   headerBackgroundGradient: "",
@@ -184,12 +184,14 @@ const useStyleStore = create((set) => ({
   headerBorderColor: "",
   headerShadow: "",
   headerColor: "",
-  headerFilter: "",
+  headerFilterBlur: "",
   headerFontFamily: "",
   headerFontSize: "",
+  headerBorderRadius: "",
   headerHeight: "",
-  // End Selected
-  // Selected
+  // End Header
+
+  // Sidebar
   sidebarBackgroundColor: "",
   sidebarBackgroundImage: "",
   sidebarBackgroundGradient: "",
@@ -199,9 +201,11 @@ const useStyleStore = create((set) => ({
   sidebarShadowThick: "",
   sidebarShadowGradient: "",
   sidebarColor: "",
-  sidebarFilter: "",
+  sidebarFilterBlur: "",
   sidebarFontFamily: "",
   sidebarFontSize: "",
+  sidebarBorderRadius: "",
+  // End Sidebar
 
   // Content
   contentBackgroundColor: "",
@@ -213,18 +217,166 @@ const useStyleStore = create((set) => ({
   contentShadowThick: "",
   contentShadowGradient: "",
   contentColor: "",
-  contentFilter: "",
+  contentFilterBlur: "",
   contentFontFamily: "",
   contentFontSize: "",
+  contentBorderRadius: "",
   // End Content
+  // Selected
+  footerBackgroundColor: "",
+  footerBackgroundImage: "",
+  footerBackgroundGradient: "",
+  footerBorderWidth: "",
+  footerBorderStyle: "",
+  footerBorderColor: "",
+  footerShadow: "",
+  footerColor: "",
+  footerFilterBlur: "",
+  footerFontFamily: "",
+  footerFontSize: "",
+  footerBorderRadius: "",
+  footerHeight: "",
+  // End Selected
   // --------------------------------------------------- Modal ------------------------------------------
+  // Modal Header
   modalHeaderBackgroundColor: "",
+  modalHeaderBackgroundImage: "",
+  modalHeaderBackgroundGradient: "",
+  modalHeaderBorderWidth: "",
+  modalHeaderBorderStyle: "",
   modalHeaderBorderColor: "",
+  modalHeaderShadow: "",
+  modalHeaderColor: "",
+  modalHeaderFilterBlur: "",
+  modalHeaderFontFamily: "",
+  modalHeaderFontSize: "",
+  modalHeaderBorderRadius: "",
+  modalHeaderHeight: "",
+  // End Modal Header
+  // Modal Body
+  modalBodyBackgroundColor: "",
+  modalBodyBackgroundImage: "",
+  modalBodyBackgroundGradient: "",
+  modalBodyBorderWidth: "",
+  modalBodyBorderStyle: "",
   modalBodyBorderColor: "",
-  modalBodyBorderColor: "",
+  modalBodyShadow: "",
+  modalBodyColor: "",
+  modalBodyFilterBlur: "",
+  modalBodyFontFamily: "",
+  modalBodyFontSize: "",
+  modalBodyBorderRadius: "",
+  modalBodyHeight: "",
+  // End Modal Body
+  // Modal Footer
   modalFooterBackgroundColor: "",
+  modalFooterBackgroundImage: "",
+  modalFooterBackgroundGradient: "",
+  modalFooterBorderWidth: "",
+  modalFooterBorderStyle: "",
   modalFooterBorderColor: "",
+  modalFooterShadow: "",
+  modalFooterColor: "",
+  modalFooterFilterBlur: "",
+  modalFooterFontFamily: "",
+  modalFooterFontSize: "",
+  modalFooterBorderRadius: "",
+  modalFooterHeight: "",
+  // End Modal Footer
 
+  // End Modal
+
+  // ----------------------------------------- Card ------------------------------------------
+  // Card Header
+  cardHeaderBackgroundColor: "",
+  cardHeaderBackgroundImage: "",
+  cardHeaderBackgroundGradient: "",
+  cardHeaderBorderWidth: "",
+  cardHeaderBorderStyle: "",
+  cardHeaderBorderColor: "",
+  cardHeaderShadow: "",
+  cardHeaderColor: "",
+  cardHeaderFilterBlur: "",
+  cardHeaderFontFamily: "",
+  cardHeaderFontSize: "",
+  cardHeaderBorderRadius: "",
+  cardHeaderHeight: "",
+  // Card Content
+  cardContentBackgroundColor: "",
+  cardContentBackgroundImage: "",
+  cardContentBackgroundGradient: "",
+  cardContentBorderWidth: "",
+  cardContentBorderStyle: "",
+  cardContentBorderColor: "",
+  cardContentShadow: "",
+  cardContentColor: "",
+  cardContentFilterBlur: "",
+  cardContentFontFamily: "",
+  cardContentFontSize: "",
+  cardContentBorderRadius: "",
+  cardContentHeight: "",
+  // Card Footer
+  cardFooterBackgroundColor: "",
+  cardFooterBackgroundImage: "",
+  cardFooterBackgroundGradient: "",
+  cardFooterBorderWidth: "",
+  cardFooterBorderStyle: "",
+  cardFooterBorderColor: "",
+  cardFooterShadow: "",
+  cardFooterColor: "",
+  cardFooterFilterBlur: "",
+  cardFooterFontFamily: "",
+  cardFooterFontSize: "",
+  cardFooterBorderRadius: "",
+  cardFooterHeight: "",
+
+  cardBorderRadius: "",
+  // ----------------------------------------- End Card ------------------------------------------
+  // ----------------------------------------- Breadcrumbs ---------------------------------------
+  breadcrumbsBackgroundColor: "",
+  breadcrumbsBackgroundImage: "",
+  breadcrumbsBackgroundGradient: "",
+  breadcrumbsBorderWidth: "",
+  breadcrumbsBorderStyle: "",
+  breadcrumbsBorderColor: "",
+  breadcrumbsShadow: "",
+  breadcrumbsColor: "",
+  breadcrumbsFilterBlur: "",
+  breadcrumbsFontFamily: "",
+  breadcrumbsFontSize: "",
+  breadcrumbsBorderRadius: "",
+  breadcrumbsHeight: "",
+
+  breadcrumbsItemColor: "",
+  breadcrumbsItemDividerColor: "",
+  breadcrumbsItemPaddingLeft: "",
+  breadcrumbsItemActiveColor: "",
+
+  // ----------------------------------------- End Breadcrumbs -----------------------------------
+  // ----------------------------------------- Form ----------------------------------------------
+  // Label
+  formLabelColor: "",
+  formLabelFontSize: "",
+  formLabelFontFamily: "",
+  formLabelFontWeight: "",
+  formLabelFontStyle: "",
+  // End Label
+  // Input
+  formInputBackgroundColor: "",
+  formInputBackgroundImage: "",
+  formInputBackgroundGradient: "",
+  formInputBorderWidth: "",
+  formInputBorderStyle: "",
+  formInputBorderColor: "",
+  formInputShadow: "",
+  formInputColor: "",
+  formInputFilterBlur: "",
+  formInputFontFamily: "",
+  formInputFontSize: "",
+  formInputBorderRadius: "",
+  formInputHeight: "",
+  // End Input
+  // ----------------------------------------- End Form ------------------------------------------
   // Color Theme
   colorPrimary: "#007bff",
   colorSecondary: "#6c757d",

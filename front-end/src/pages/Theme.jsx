@@ -18,42 +18,42 @@ const Theme = () => {
   const tabComponent = {
     primary: [
       {
-        name: "Color",
+        name: "Primary Color",
         property: "colorPrimary",
         defaultValue: "#007bff",
         type: "color",
         placeholder: "none",
       },
       {
-        name: "Color",
+        name: "Secondary Color",
         property: "colorSecondary",
         defaultValue: "#6c757d",
         type: "color",
         placeholder: "none",
       },
       {
-        name: "Color",
+        name: "Success Color",
         property: "colorSuccess",
         defaultValue: "#28a745",
         type: "color",
         placeholder: "none",
       },
       {
-        name: "Color",
+        name: "Warning Color",
         property: "colorWarning",
         defaultValue: "#ffc107",
         type: "color",
         placeholder: "none",
       },
       {
-        name: "Color",
+        name: "Info Color",
         property: "colorInfo",
         defaultValue: "#17a2b8",
         type: "color",
         placeholder: "none",
       },
       {
-        name: "Color",
+        name: "Danger Color",
         property: "colorDanger",
         defaultValue: "#dc3545",
         type: "color",
@@ -132,7 +132,7 @@ const Theme = () => {
                         </div>
 
                         {/* Konten */}
-                        <div className="bg-black bg-opacity-30 backdrop-blur-sm absolute left-0 top-0 h-full w-full flex justify-center items-center">
+                        <div className="bg-black bg-opacity-30 backdrop-blur-sm absolute left-0 top-0 h-full w-full flex justify-center items-center p-2">
                           <div className="w-96 h-full overflow-hidden rounded-md bg-white  flex flex-col justify-between p-5">
                             {/* Primary */}
                             <div className="w-full flex items-center">
@@ -145,7 +145,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorPrimary
                                     ? stateColor.colorPrimary
@@ -165,7 +165,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorSecondary
                                     ? stateColor.colorSecondary
@@ -185,7 +185,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorSuccess
                                     ? stateColor.colorSuccess
@@ -205,7 +205,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorWarning
                                     ? stateColor.colorWarning
@@ -225,7 +225,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorInfo
                                     ? stateColor.colorInfo
@@ -245,7 +245,7 @@ const Theme = () => {
                                   }}
                                 ></div>
                               </div>
-                              <div className="text-center w-8/12">
+                              <div className="text-center w-8/12 text-lg font-bold">
                                 <p className="text-center">
                                   {stateColor.colorDanger
                                     ? stateColor.colorDanger

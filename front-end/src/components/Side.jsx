@@ -53,6 +53,30 @@ const Side = () => {
         </div>
       </Link>
 
+      <Link to={"/card"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "card"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
+          }`}
+        >
+          Card
+        </div>
+      </Link>
+
+      <Link to={"/breadcrumbs"}>
+        <div
+          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
+            currentPage == "breadcrumbs"
+              ? "text-white bg-primary dark:bg-[#4579A0]"
+              : "dark:text-[#8c9aaf]"
+          }`}
+        >
+          Breadcrumbs
+        </div>
+      </Link>
+
       <Link to={"/form"}>
         <div
           className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
@@ -65,7 +89,7 @@ const Side = () => {
         </div>
       </Link>
 
-      <Link to={"/monitoring"}>
+      {/* <Link to={"/monitoring"}>
         <div
           className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
             currentPage == "monitoring"
@@ -75,7 +99,7 @@ const Side = () => {
         >
           Monitoring
         </div>
-      </Link>
+      </Link> */}
 
       <Link to={"/button"}>
         <div
@@ -100,7 +124,7 @@ const Side = () => {
           Pop Up
         </div>
       </Link>
-      <Link to={"/login"}>
+      {/* <Link to={"/login"}>
         <div
           className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
             currentPage == "login"
@@ -110,7 +134,7 @@ const Side = () => {
         >
           Login
         </div>
-      </Link>
+      </Link> */}
 
       <div className={`p-2 mb-2 border-b border-gray-600`}>UI Components</div>
 

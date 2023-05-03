@@ -83,11 +83,11 @@ const Preview = () => {
           placeholder: "linear-gradient(red, yellow)",
         },
         {
-          name: "Background Image",
-          property: "headerBackgroundImage",
-          defaultValue: "Test",
+          name: "Filter Blur",
+          property: "headerFilterBlur",
+          defaultValue: "",
           type: "text",
-          placeholder: "URL/Link",
+          placeholder: "0px",
         },
       ],
       upload: [
@@ -172,8 +172,106 @@ const Preview = () => {
           placeholder: "linear-gradient(red, yellow)",
         },
         {
+          name: "Filter Blur",
+          property: "sidebarFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
           name: "Background Image",
-          property: "sidebarBackgroundImage",
+          property: "headerBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+    content: {
+      dimension: [
+        {
+          name: "Height",
+          property: "contentHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "contentBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "contentBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "contentShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "contentColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "contentFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "contentFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "contentBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "contentBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "contentFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "headerBackgroundImage",
           defaultValue: "Test",
           type: "text",
           placeholder: "URL/Link",
@@ -181,114 +279,113 @@ const Preview = () => {
       ],
     },
 
-    content: [
-      {
-        name: "Background Color",
-        property: "contentBackgroundColor",
-        defaultValue: "",
-        type: "color",
-        placeholder: "none",
-      },
-      {
-        name: "Background Gradient",
-        property: "contentBackgroundGradient",
-        defaultValue: "",
-        type: "text",
-        placeholder: "linear-gradient(red, yellow)",
-      },
-      {
-        name: "Background Image",
-        property: "contentBackgroundImage",
-        defaultValue: "Test",
-        type: "text",
-        placeholder: "URL/Link",
-      },
-      {
-        name: "Border Width",
-        property: "contentBorderWidth",
-        defaultValue: "0px",
-        type: "number",
-        placeholder: "0px",
-      },
-      {
-        name: "Border Color",
-        property: "contentBorderColor",
-        defaultValue: "",
-        type: "color",
-        placeholder: "none",
-      },
-      {
-        name: "Shadow Thick",
-        property: "contentShadowThick",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
-      },
-      {
-        name: "Shadow Gradient",
-        property: "contentShadowGradient",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
-      },
-      {
-        name: "Color",
-        property: "contentColor",
-        defaultValue: "0px",
-        type: "color",
-        placeholder: "none",
-      },
-      {
-        name: "Filter Blur",
-        property: "contentFilter",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
-      },
-      {
-        name: "Font Family",
-        property: "contentFontFamily",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "Arial,mono-thin,reguler",
-      },
-      {
-        name: "Font Size",
-        property: "contentFontSize",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
-      },
-      {
-        name: "Height",
-        property: "contentHeight",
-        defaultValue: "0px",
-        type: "text",
-        placeholder: "0px",
-      },
-    ],
+    footer: {
+      dimension: [
+        {
+          name: "Height",
+          property: "footerHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "footerBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "footerBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "footerShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "footerColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "footerFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "footerFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "footerBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "footerBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "footerFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "footerBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
   };
 
   const tabComponentSlider = {
+    header: [
+      { name: "Border Radius", property: "headerBorderRadius", unit: "%" },
+      { name: "Border Width", property: "headerBorderWidth", unit: "px" },
+    ],
     sidebar: [
       { name: "Border Radius", property: "sidebarBorderRadius", unit: "%" },
       { name: "Border Width", property: "sidebarBorderWidth", unit: "px" },
     ],
-    breadcrumbs: [
-      { name: "Border Radius", property: "breadcrumbBorderRadius", unit: "%" },
-      { name: "Border Width", property: "breadcrumbBorderWidth", unit: "px" },
+    content: [
+      { name: "Border Radius", property: "contentBorderRadius", unit: "%" },
+      { name: "Border Width", property: "contentBorderWidth", unit: "px" },
     ],
-    linkBgActive: [
-      { name: "Border Radius", property: "sidebarLinkBorderRadius", unit: "%" },
-      { name: "Border Width", property: "sidebarLinkBorderWidth", unit: "px" },
-    ],
-    cubexcard: [
-      { name: "Border Radius", property: "cardBorderRadius", unit: "%" },
-      { name: "Border Width", property: "cardBorderWidth", unit: "px" },
-    ],
-    navigation: [
-      { name: "Border Radius", property: "navbarBorderRadius", unit: "%" },
-      { name: "Border Width", property: "navbarBorderWidth", unit: "px" },
+    footer: [
+      { name: "Border Radius", property: "footerBorderRadius", unit: "%" },
+      { name: "Border Width", property: "footerBorderWidth", unit: "px" },
     ],
   };
 
@@ -792,7 +889,9 @@ const Preview = () => {
               <div className="absolute -left-[2px] top-[23px] w-[746px] px-[43px] h-[372px] overflow-hidden">
                 <div className="h-full overflow-hidden">
                   <header
-                    className="bg-primary h-10 cursor-pointer flex justify-center items-center hover:border hover:border-red-500"
+                    className={`${
+                      currentTab == "header" ? "border border-red-500" : ""
+                    } bg-primary h-10 cursor-pointer flex justify-center items-center hover:border hover:border-red-500 transition duration-300`}
                     style={{
                       background: `${
                         stateMenu.headerBackgroundGradient == null ||
@@ -802,9 +901,11 @@ const Preview = () => {
                       }`,
                       borderWidth: `${stateMenu.headerBorderWidth}px`,
                       borderColor: stateMenu.headerBorderColor,
+                      borderRadius: stateMenu.headerBorderRadius,
                       boxShadow: stateMenu.headerShadow,
                       color: stateMenu.headerColor,
                       height: stateMenu.headerHeight,
+                      filter: `blur(${stateMenu.headerFilterBlur})`,
                     }}
                     onClick={() => handleMenu("header")}
                   >
@@ -812,7 +913,9 @@ const Preview = () => {
                   </header>
                   <div className="flex">
                     <div
-                      className="w-[15%] h-[300px] bg-secondary cursor-pointer  flex justify-center items-center hover:border hover:border-red-500"
+                      className={`${
+                        currentTab === "sidebar" ? "border border-red-500" : ""
+                      } w-[15%] h-[300px] bg-secondary cursor-pointer  flex justify-center items-center hover:border hover:border-red-500 transition duration-300`}
                       onClick={() => handleMenu("sidebar")}
                       style={{
                         background: `${
@@ -821,14 +924,21 @@ const Preview = () => {
                             ? stateMenu.sidebarBackgroundColor
                             : stateMenu.sidebarBackgroundGradient
                         }`,
+                        borderWidth: `${stateMenu.sidebarBorderWidth}px`,
+                        borderColor: stateMenu.sidebarBorderColor,
+                        borderRadius: stateMenu.sidebarBorderRadius,
+                        boxShadow: stateMenu.sidebarShadow,
                         color: stateMenu.sidebarColor,
+                        height: stateMenu.sidebarHeight,
+                        filter: `blur(${stateMenu.sidebarFilterBlur})`,
                       }}
                     >
                       Sidebar
                     </div>
                     <div
-                      className="w-[85%] cursor-pointer  flex justify-center items-center hover:border hover:border-red-500 bg-white"
-                      onClick={() => handleMenu("content")}
+                      className={`${
+                        currentTab === "content" ? "border border-red-500" : ""
+                      } bg-white cursor-pointer flex w-full h-[300px] justify-center items-center hover:border hover:border-red-500 transition duration-300`}
                       style={{
                         background: `${
                           stateMenu.contentBackgroundGradient == null ||
@@ -836,13 +946,38 @@ const Preview = () => {
                             ? stateMenu.contentBackgroundColor
                             : stateMenu.contentBackgroundGradient
                         }`,
+                        borderWidth: `${stateMenu.contentBorderWidth}px`,
+                        borderColor: stateMenu.contentBorderColor,
+                        boxShadow: stateMenu.contentShadow,
                         color: stateMenu.contentColor,
+                        height: stateMenu.contentHeight,
+                        filter: `blur(${stateMenu.contentFilterBlur})`,
                       }}
+                      onClick={() => handleMenu("content")}
                     >
                       Content
                     </div>
                   </div>
-                  <footer className="bg-primary h-8  flex justify-center items-center">
+                  <footer
+                    className={`${
+                      currentTab == "footer" ? "border border-red-500" : ""
+                    } bg-primary h-10 cursor-pointer flex justify-center items-center hover:border hover:border-red-500 transition duration-300`}
+                    style={{
+                      background: `${
+                        stateMenu.footerBackgroundGradient == null ||
+                        stateMenu.footerBackgroundGradient == ""
+                          ? stateMenu.footerBackgroundColor
+                          : stateMenu.footerBackgroundGradient
+                      }`,
+                      borderWidth: `${stateMenu.footerBorderWidth}px`,
+                      borderColor: stateMenu.footerBorderColor,
+                      boxShadow: stateMenu.footerShadow,
+                      color: stateMenu.footerColor,
+                      height: stateMenu.footerHeight,
+                      filter: `blur(${stateMenu.footerFilterBlur})`,
+                    }}
+                    onClick={() => handleMenu("footer")}
+                  >
                     Footer
                   </footer>
                 </div>
@@ -853,128 +988,90 @@ const Preview = () => {
         </div>
         {/* Pembatas */}
         {/* Menu Kanan */}
-
-        <div className="w-[20%] h-fit p-2">
-          {/* Sidebar */}
-          {currentTab == "sidebar"
-            ? tabComponentSlider.sidebar.map((components, index) => (
+        {/* header */}
+        <div
+          className={`${
+            currentTab === "header" ? "w-[20%] h-fit p-2" : "hidden"
+          } `}
+        >
+          {currentTab === "header"
+            ? tabComponentSlider.header.map((component, index) => (
                 <InputRangeSlider
                   key={index}
-                  name={components.name}
-                  property={components.property}
-                  unit={components.unit}
-                />
-              ))
-            : null}
-          {/* End Sidebar */}
-          {/* Breadcrumbs */}
-          {currentTab == "cubexbreadcrumbs"
-            ? tabComponentSlider.breadcrumbs.map((components, index) => (
-                <InputRangeSlider
-                  key={index}
-                  name={components.name}
-                  property={components.property}
-                  unit={components.unit}
-                />
-              ))
-            : null}
-          {/* End Breadcrumbs */}
-          {/* Link Bg Active */}
-          {currentTab == "link-bg-active"
-            ? tabComponentSlider.linkBgActive.map((components, index) => (
-                <InputRangeSlider
-                  key={index}
-                  name={components.name}
-                  property={components.property}
-                  unit={components.unit}
-                />
-              ))
-            : null}
-          {/* End Link Bg Active */}
-          {/* Cubex Card */}
-          {currentTab == "cubex-card"
-            ? tabComponentSlider.cubexcard.map((components, index) => (
-                <InputRangeSlider
-                  key={index}
-                  name={components.name}
-                  property={components.property}
-                  unit={components.unit}
-                />
-              ))
-            : null}
-          {/* End Cubex Card */}
-          {/* Navigation */}
-          {currentTab == "navigation"
-            ? tabComponentSlider.navigation.map((components, index) => (
-                <InputRangeSlider
-                  key={index}
-                  name={components.name}
-                  property={components.property}
-                  unit={components.unit}
-                />
-              ))
-            : null}
-          {/* End Navigation */}
-          {/* Select */}
-          {/* Sidebar */}
-          {currentTab == "sidebar"
-            ? tabComponentSelect.sidebar.map((components, index) => (
-                <InputSelect
-                  key={index}
-                  property={components.property}
-                  name={components.name}
-                  value={components.value}
-                />
-              ))
-            : null}
-          {/* Breadcrumbs */}
-          {currentTab == "cubexbreadcrumbs"
-            ? tabComponentSelect.breadcrumbs.map((components, index) => (
-                <InputSelect
-                  key={index}
-                  property={components.property}
-                  name={components.name}
-                  value={components.value}
-                />
-              ))
-            : null}
-          {currentTab == "link-bg-active"
-            ? tabComponentSelect.linkBgActive.map((components, index) => (
-                <InputSelect
-                  key={index}
-                  property={components.property}
-                  name={components.name}
-                  value={components.value}
-                />
-              ))
-            : null}
-          {currentTab == "cubex-card"
-            ? tabComponentSelect.cubexcard.map((components, index) => (
-                <InputSelect
-                  key={index}
-                  property={components.property}
-                  name={components.name}
-                  value={components.value}
-                />
-              ))
-            : null}
-          {currentTab == "navigation"
-            ? tabComponentSelect.navigation.map((components, index) => (
-                <InputSelect
-                  key={index}
-                  property={components.property}
-                  name={components.name}
-                  value={components.value}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
                 />
               ))
             : null}
         </div>
+        {/* End header */}
+        {/* sidebar */}
+        <div
+          className={`${
+            currentTab === "sidebar" ? "w-[20%] h-fit p-2" : "hidden"
+          } `}
+        >
+          {currentTab === "sidebar"
+            ? tabComponentSlider.sidebar.map((component, index) => (
+                <InputRangeSlider
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
+                />
+              ))
+            : null}
+        </div>
+        {/* End sidebar */}
+        {/* content */}
+        <div
+          className={`${
+            currentTab === "content" ? "w-[20%] h-fit p-2" : "hidden"
+          } `}
+        >
+          {currentTab === "content"
+            ? tabComponentSlider.content.map((component, index) => (
+                <InputRangeSlider
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
+                />
+              ))
+            : null}
+        </div>
+        {/* End content */}
+        {/* footer */}
+        <div
+          className={`${
+            currentTab === "footer" ? "w-[20%] h-fit p-2" : "hidden"
+          } `}
+        >
+          {currentTab === "footer"
+            ? tabComponentSlider.footer.map((component, index) => (
+                <InputRangeSlider
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
+                />
+              ))
+            : null}
+        </div>
+        {/* End footer */}
+        {/* End Menu Kanan */}
+
         {/* End Pembatas */}
       </div>
 
       {/* Menu Bawah */}
       {/* Header */}
-      <div className="h-56 overflow-y-scroll">
+      <div
+        className={`${
+          currentTab === "header" ? "h-56" : "hidden"
+        } overflow-y-scroll`}
+      >
         {/* Dimension */}
         <div className="grid grid-cols-3 gap-1 text-sm p-2">
           {currentTab === "header"
@@ -1007,6 +1104,22 @@ const Preview = () => {
             : null}
         </div>
         {/* End border */}
+        {/* font */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "header"
+            ? tabComponent.header.font.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End font */}
         {/* background */}
         <div className="grid grid-cols-3 gap-1 text-sm p-2">
           {currentTab === "header"
@@ -1041,6 +1154,271 @@ const Preview = () => {
         {/* End file Upload */}
       </div>
       {/* End Header */}
+      {/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+      {/* Sidebar */}
+      <div
+        className={`${
+          currentTab === "sidebar" ? "h-56" : "hidden"
+        } overflow-y-scroll`}
+      >
+        {/* Dimension */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "sidebar"
+            ? tabComponent.sidebar.dimension.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End Dimension */}
+        {/* border */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "sidebar"
+            ? tabComponent.sidebar.border.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End border */}
+        {/* font */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "sidebar"
+            ? tabComponent.sidebar.font.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End font */}
+        {/* background */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "sidebar"
+            ? tabComponent.sidebar.background.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End background */}
+        {/* file Upload */}
+        <div className="grid grid-cols-1 gap-1 text-sm p-2">
+          {currentTab === "sidebar"
+            ? tabComponent.sidebar.upload.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End file Upload */}
+      </div>
+      {/* End Sidebar */}
+      {/* content */}
+      <div
+        className={`${
+          currentTab === "content" ? "h-56" : "hidden"
+        } overflow-y-scroll`}
+      >
+        {/* Dimension */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "content"
+            ? tabComponent.content.dimension.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End Dimension */}
+        {/* border */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "content"
+            ? tabComponent.content.border.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End border */}
+        {/* font */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "content"
+            ? tabComponent.content.font.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End font */}
+        {/* background */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "content"
+            ? tabComponent.content.background.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End background */}
+        {/* file Upload */}
+        <div className="grid grid-cols-1 gap-1 text-sm p-2">
+          {currentTab === "content"
+            ? tabComponent.content.upload.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End file Upload */}
+      </div>
+      {/* End content */}
+      {/* footer */}
+      <div
+        className={`${
+          currentTab === "footer" ? "h-56" : "hidden"
+        } overflow-y-scroll`}
+      >
+        {/* Dimension */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "footer"
+            ? tabComponent.footer.dimension.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End Dimension */}
+        {/* border */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "footer"
+            ? tabComponent.footer.border.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End border */}
+        {/* font */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "footer"
+            ? tabComponent.footer.font.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End font */}
+        {/* background */}
+        <div className="grid grid-cols-3 gap-1 text-sm p-2">
+          {currentTab === "footer"
+            ? tabComponent.footer.background.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End background */}
+        {/* file Upload */}
+        <div className="grid grid-cols-1 gap-1 text-sm p-2">
+          {currentTab === "footer"
+            ? tabComponent.footer.upload.map((component, index) => (
+                <InputStyle
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  defaultValue={component.defaultValue}
+                  type={component.type}
+                  placeholder={component.placeholder}
+                />
+              ))
+            : null}
+        </div>
+        {/* End file Upload */}
+      </div>
+      {/* End footer */}
       {/* End Menu Bawah */}
     </div>
   );
