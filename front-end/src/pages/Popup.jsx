@@ -4,36 +4,111 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
+import InputFile from "../components/InputFile";
 import { useState } from "react";
 
 const Popup = () => {
-  const [currentTab, setCurrentTab] = useState("popup-success");
+  const [currentTab, setCurrentTab] = useState("popUp");
   const stateNotif = useStyleStore((state) => state);
 
   const handleTab = (elementClass) => {
-    let tabActive = document.querySelector(".tab-active");
-    if (tabActive !== null) {
-      tabActive.classList.remove("tab-active");
-    }
     setCurrentTab(elementClass);
-    document.querySelector(`.${elementClass}`).classList.add("tab-active");
   };
 
   const tabComponent = {
-    popUp: [
-      { name: "Background Card", property: "popUpCardBackground" },
-      { name: "Title Color", property: "popUpTextColor" },
-      { name: "Background Success", property: "popUpSuccessBackground" },
-      { name: "Color Success", property: "popUpSuccessColor" },
-      { name: "Background Failed", property: "popUpFailedBackground" },
-      { name: "Color Failed", property: "popUpFailedColor" },
-      { name: "Pop Up Button", property: "popUpBtnBackground" },
-      { name: "Button Text", property: "popUpBtnTextColor" },
-    ],
+    popUp: {
+      dimension: [
+        {
+          name: "Height",
+          property: "popUpHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "popUpBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "popUpBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "popUpShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "popUpColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "popUpFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "popUpFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "popUpBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "popUpBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "popUpFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "popUpBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
   };
 
   return (
-    <div className="min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
+    <div className="min-h-screen bg-white dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -325,28 +400,97 @@ const Popup = () => {
             <div className="w-[20%] h-fit p-2">kanan</div>
             {/* End Pembatas */}
           </div>
-          {/* Tabs */}
-          <div className="flex justify-center">
-            <div className="tabs translate-y-[1px]">
-              <button
-                className="tab tab-lifted popup-success tab-active"
-                onClick={() => handleTab("popup-success")}
-              >
-                Pop Up Success
-              </button>
-            </div>
-          </div>
-          {/* End Tabs */}
+
           {/* Menu Bawah */}
-          <div className="grid grid-cols-3 gap-1 text-sm h-56 p-2 overflow-y-scroll">
-            {tabComponent.popUp.map((components, index) => (
-              <InputStyle
-                key={index}
-                name={components.name}
-                property={components.property}
-              />
-            ))}
+          {/* popUp */}
+          <div
+            className={`${
+              currentTab === "popUp" ? "h-80" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Dimension */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "popUp"
+                ? tabComponent.popUp.dimension.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End Dimension */}
+            {/* border */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "popUp"
+                ? tabComponent.popUp.border.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End border */}
+            {/* font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "popUp"
+                ? tabComponent.popUp.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+            {/* background */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "popUp"
+                ? tabComponent.popUp.background.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End background */}
+            {/* file Upload */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "popUp"
+                ? tabComponent.popUp.upload.map((component, index) => (
+                    <InputFile
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End file Upload */}
           </div>
+          {/* End popUp */}
+          {/* End Menu Bawah */}
         </div>
       </div>
     </div>

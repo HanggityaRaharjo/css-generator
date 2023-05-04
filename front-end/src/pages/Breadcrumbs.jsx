@@ -162,7 +162,7 @@ const Breadcrumbs = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
+    <div className=" min-h-screen bg-white dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
 
       <div className="flex min-h-screen pt-16">

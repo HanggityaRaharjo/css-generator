@@ -1,5 +1,6 @@
 import useStyleStore from "../store/CssStore";
 import React, { useEffect, useState } from "react";
+
 const InputStyle = (props) => {
   const changeStyle = useStyleStore((state) => state.changeStyle);
   const handleSidebarValue = (value, componenStore) => {
@@ -27,7 +28,8 @@ const InputStyle = (props) => {
                 handleSidebarValue(e.target.value, props.property)
               }
             />
-          ) : (
+          ) : null}
+          {props.type == "text" || props.type == "number" ? (
             <input
               id="field-background"
               type={props.type}
@@ -38,7 +40,7 @@ const InputStyle = (props) => {
                 handleSidebarValue(e.target.value, props.property)
               }
             />
-          )}
+          ) : null}
         </label>
       </div>
     </>

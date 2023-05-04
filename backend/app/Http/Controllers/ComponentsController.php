@@ -39,7 +39,6 @@ class ComponentsController extends Controller
      */
     public function store(Request $request)
     {
-
         // Check If Data None
         // Header
         $headerBackgroundColor = !empty($request->components['header']['BackgroundColor']) ? 'background:'. $request->components['header']['BackgroundColor'] .'!important;' : '';
@@ -82,6 +81,8 @@ class ComponentsController extends Controller
         // Content
         $contentBackgroundColor = !empty($request->components['content']['BackgroundColor']) ? 'background:'. $request->components['content']['BackgroundColor'] .'!important;' : '';
         $contentBackgroundGradient = !empty($request->components['content']['BackgroundGradient']) ? 'background:'. $request->components['content']['BackgroundGradient'] .'!important;' : '';
+
+        $contentBackgroundImage = !empty($request->components['content']['BackgroundImage']) ? 'background-image: url("./../assets/'. $request->components['content']['BackgroundImage'] .'")!important;' : '';
 
         $contentColor = !empty($request->components['content']['Color']) ? 'color:'. $request->components['content']['Color'] .'!important;' : '';
 
@@ -128,6 +129,22 @@ class ComponentsController extends Controller
         // Modal Body
         $modalFooterBackgroundColor = !empty($request->components['modal']['modalFooter']['BackgroundColor']) ? 'background:'. $request->components['modal']['modalFooter']['BackgroundColor'] .'!important;' : '';
 
+
+        // ------------------------------------ End Modal ---------------------------------------------
+
+        // --------------------------------------- Card ----------------------------------------------
+        // Modal Header
+        $cardHeaderBackgroundColor = !empty($request->components['card']['cardHeader']['BackgroundColor']) ? 'background:'. $request->components['card']['cardHeader']['BackgroundColor'] .'!important;' : '';
+
+        // card Body
+        $cardBodyBackgroundColor = !empty($request->components['card']['cardBody']['BackgroundColor']) ? 'background:'. $request->components['card']['cardBody']['BackgroundColor'] .'!important;' : '';
+
+        // card Body
+        $cardFooterBackgroundColor = !empty($request->components['card']['cardFooter']['BackgroundColor']) ? 'background:'. $request->components['card']['cardFooter']['BackgroundColor'] .'!important;' : '';
+
+
+        // ------------------------------------ End Card ---------------------------------------------
+
         // BG Color Primary
         $backgroundColorPrimary = !empty($request->components['themeColor']['colorPrimary']) ? 'background:'. $request->components['themeColor']['colorPrimary'] .'!important;' : '';
 
@@ -146,8 +163,21 @@ class ComponentsController extends Controller
         // BG Color Danger
         $backgroundColorDanger = !empty($request->components['themeColor']['colorDanger']) ? 'background:'. $request->components['themeColor']['colorDanger'] .'!important;' : '';
         
-        
-        
+
+        //------------------------------------------------------------------- BREADCRUMBS -------------------------------------------------------------------------------------
+         // breadcrumbs
+         $breadcrumbsBackroundColor = !empty($request->components['breadcrumbs']['backgroundColor']) ? 'background:'. $request->components['breadcrumbs']['backgroundColor'] .'!important;' : '';
+        //  -------------------------------------------------------
+         // breadcrumbs item
+         $breadcrumbsItemColor = !empty($request->components['breadcrumbs']['breadcrumbsItem']['color']) ? 'color:'. $request->components['breadcrumbs']['breadcrumbsItem']['color'] .'!important;' : '';
+         // breadcrumbs item divider
+         $breadcrumbsItemDividerColor = !empty($request->components['breadcrumbs']['breadcrumbsItem']['dividerColor']) ? 'color:'. $request->components['breadcrumbs']['breadcrumbsItem']['dividerColor'] .'!important;' : '';
+         // breadcrumbs item space
+         $breadcrumbsItemSpace = !empty($request->components['breadcrumbs']['breadcrumbsItem']['itemSpace']) ? 'padding-left:'. $request->components['breadcrumbs']['breadcrumbsItem']['itemSpace'] .'!important;' : '';
+        //  breadcrums active
+         // breadcrumbs item
+         $breadcrumbsItemActiveColor = !empty($request->components['breadcrumbs']['breadcrumbsItemActive']['color']) ? 'color:'. $request->components['breadcrumbs']['breadcrumbsItemActive']['color'] .'!important;' : '';
+
         // --------------------------------------- End Modal ----------------------------------------------
         // All Content Color
         $allContentColor = '
@@ -159,8 +189,32 @@ class ComponentsController extends Controller
             // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             
         // Writing CSS File
-        $myfile = fopen("cubex.css", "w") or die("Unable to open file!");
-        fwrite($myfile, '
+        $myfile = fopen(public_path("bootstrap-test/css/cubex.css"), "w") or die("Unable to open file!");
+        fwrite($myfile,'
+
+        /* --------------------------------------------------------- Breadcrumbs -------------------------------------------------*/
+        .breadcrumb{
+            '. $breadcrumbsBackroundColor .'
+        }
+        .breadcrumb-item{
+            '. $breadcrumbsItemColor.
+            $breadcrumbsItemSpace
+            .'
+        }
+        .breadcrumb-item::before{
+            '. $breadcrumbsItemDividerColor
+            .'
+        }
+        .breadcrumb-item a{
+            '. $breadcrumbsItemColor
+            .'
+        }
+        .breadcrumb-item.active{
+            '. $breadcrumbsItemActiveColor
+            .'
+        }
+
+        /* --------------------------------------------------------- Background -------------------------------------------------*/
         .bg-dark {
             '. 
             $headerBackgroundColor.   // Header
@@ -207,6 +261,166 @@ class ComponentsController extends Controller
             .'
         }
 
+        /* --------------------------------------------------------- End Background -------------------------------------------------*/
+
+        /* --------------------------------------------------------- Button -------------------------------------------------*/
+      
+        .btn-primary{
+            '.
+            $backgroundColorPrimary  //background Primary
+            .'
+        }
+
+        .btn-secondary{
+            '.
+            $backgroundColorSecondary  //background Secondary
+            .'
+        }
+
+        .btn-success{
+            '.
+            $backgroundColorSuccess  //background success
+            .'
+        }
+
+        .btn-warning{
+            '.
+            $backgroundColorWarning  //background warning
+            .'
+        }
+
+        .btn-info{
+            '.
+            $backgroundColorInfo  //background Info
+            .'
+        }
+
+        .btn-danger{
+            '.
+            $backgroundColorDanger  //background Danger
+            .'
+        }
+
+        /* --------------------------------------------------------- End Button -------------------------------------------------*/
+
+        /* --------------------------------------------------------- Navbar-------------------------------------------------*/
+      
+        .navbar-primary{
+            '.
+            $backgroundColorPrimary  //background Primary
+            .'
+        }
+
+        .navbar-secondary{
+            '.
+            $backgroundColorSecondary  //background Secondary
+            .'
+        }
+
+        .navbar-success{
+            '.
+            $backgroundColorSuccess  //background success
+            .'
+        }
+
+        .navbar-warning{
+            '.
+            $backgroundColorWarning  //background warning
+            .'
+        }
+
+        .navbar-info{
+            '.
+            $backgroundColorInfo  //background Info
+            .'
+        }
+
+        .navbar-danger{
+            '.
+            $backgroundColorDanger  //background Danger
+            .'
+        }
+
+        /* --------------------------------------------------------- End Navbar-------------------------------------------------*/
+        /* --------------------------------------------------------- Alert-------------------------------------------------*/
+      
+        .alert-primary{
+            '.
+            $backgroundColorPrimary  //background Primary
+            .'
+        }
+
+        .alert-secondary{
+            '.
+            $backgroundColorSecondary  //background Secondary
+            .'
+        }
+
+        .alert-success{
+            '.
+            $backgroundColorSuccess  //background success
+            .'
+        }
+
+        .alert-warning{
+            '.
+            $backgroundColorWarning  //background warning
+            .'
+        }
+
+        .alert-info{
+            '.
+            $backgroundColorInfo  //background Info
+            .'
+        }
+
+        .alert-danger{
+            '.
+            $backgroundColorDanger  //background Danger
+            .'
+        }
+
+        /* --------------------------------------------------------- End Alert-------------------------------------------------*/
+        /* --------------------------------------------------------- Text-------------------------------------------------*/
+      
+        .text-primary{
+            '.
+            $backgroundColorPrimary  //background Primary
+            .'
+        }
+
+        .text-secondary{
+            '.
+            $backgroundColorSecondary  //background Secondary
+            .'
+        }
+
+        .text-success{
+            '.
+            $backgroundColorSuccess  //background success
+            .'
+        }
+
+        .text-warning{
+            '.
+            $backgroundColorWarning  //background warning
+            .'
+        }
+
+        .text-info{
+            '.
+            $backgroundColorInfo  //background Info
+            .'
+        }
+
+        .text-danger{
+            '.
+            $backgroundColorDanger  //background Danger
+            .'
+        }
+
+        /* --------------------------------------------------------- End Text-------------------------------------------------*/
+
         .navbar-brand{
             ' . $headerHeight . '
 
@@ -225,7 +439,8 @@ class ComponentsController extends Controller
         main{
             '.
             $contentBackgroundColor.  // Content
-            $contentBackgroundGradient
+            $contentBackgroundGradient.
+            $contentBackgroundImage
             .
             '
         }
@@ -287,6 +502,24 @@ class ComponentsController extends Controller
         .modal-footer{
             '. 
             $modalFooterBackgroundColor  //Modal Body
+            .'
+        }
+
+        .card-header{
+            '. 
+            $cardHeaderBackgroundColor  //card Header
+            .'
+        }
+
+        .card-body{
+            '. 
+            $cardBodyBackgroundColor  //card Body
+            .'
+        }
+
+        .card-footer{
+            '. 
+            $cardFooterBackgroundColor  //card Body
             .'
         }
 

@@ -12,6 +12,12 @@ import Theme from "./pages/Theme";
 import Card from "./pages/Card";
 import Breadcrumbs from "./pages/Breadcrumbs";
 import Tabs from "./pages/Tabs";
+import Toast from "./pages/Toast";
+import Dropdown from "./pages/Dropdown";
+import Accordions from "./pages/Accordions";
+import Tree from "./pages/Tree";
+import Alert from "./pages/Alert";
+import PreviewAll from "./pages/PreviewAll";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -66,6 +72,30 @@ export default function App() {
     {
       path: "/tabs",
       element: <Tabs />,
+    },
+    {
+      path: "/toast",
+      element: <Toast />,
+    },
+    {
+      path: "/accordions",
+      element: <Accordions />,
+    },
+    {
+      path: "/dropdown",
+      element: <Dropdown />,
+    },
+    {
+      path: "/tree-view",
+      element: <Tree />,
+    },
+    {
+      path: "/alert",
+      element: <Alert />,
+    },
+    {
+      path: "/preview-all",
+      element: <PreviewAll />,
     },
   ]);
 

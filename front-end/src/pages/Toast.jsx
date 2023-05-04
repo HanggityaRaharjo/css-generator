@@ -6,51 +6,19 @@ import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
 const Toast = () => {
-  const [currentTab, setCurrentTab] = useState("label");
-  const stateForm = useStyleStore((state) => state);
+  const [currentTab, setCurrentTab] = useState("toastHeader");
+  const stateToast = useStyleStore((state) => state);
 
   const handleTab = (elementClass) => {
     setCurrentTab(elementClass);
   };
 
   const tabComponent = {
-    label: {
-      font: [
-        {
-          name: "Color",
-          property: "formLabelColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Font Family",
-          property: "formLabelFontFamily",
-          defaultValue: "",
-          type: "text",
-          placeholder: "Arial,mono-thin,reguler",
-        },
-        {
-          name: "Font Size",
-          property: "formLabelFontSize",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-        {
-          name: "Font Weight",
-          property: "formLabelFontSize",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-    },
-    input: {
+    toastHeader: {
       dimension: [
         {
           name: "Height",
-          property: "formInputHeight",
+          property: "toastHeaderHeight",
           defaultValue: "",
           type: "text",
           placeholder: "0rem",
@@ -59,21 +27,21 @@ const Toast = () => {
       border: [
         {
           name: "Border Width",
-          property: "formInputBorderWidth",
-          defaultValue: "",
+          property: "toastHeaderBorderWidth",
+          defaultValue: "0px",
           type: "number",
           placeholder: "0px",
         },
         {
           name: "Border Color",
-          property: "formInputBorderColor",
+          property: "toastHeaderBorderColor",
           defaultValue: "",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Shadow",
-          property: "formInputShadow",
+          property: "toastHeaderShadow",
           defaultValue: "",
           type: "text",
           placeholder: "0px 20px 50px grey",
@@ -82,22 +50,22 @@ const Toast = () => {
       font: [
         {
           name: "Color",
-          property: "formInputColor",
-          defaultValue: "",
+          property: "toastHeaderColor",
+          defaultValue: "0px",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Font Family",
-          property: "formInputFontFamily",
-          defaultValue: "",
+          property: "toastHeaderFontFamily",
+          defaultValue: "0px",
           type: "text",
           placeholder: "Arial,mono-thin,reguler",
         },
         {
           name: "Font Size",
-          property: "formInputFontSize",
-          defaultValue: "",
+          property: "toastHeaderFontSize",
+          defaultValue: "0px",
           type: "text",
           placeholder: "0px",
         },
@@ -105,21 +73,21 @@ const Toast = () => {
       background: [
         {
           name: "Background Color",
-          property: "formInputBackgroundColor",
+          property: "toastHeaderBackgroundColor",
           defaultValue: "#d3d3d3",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Background Gradient",
-          property: "formInputBackgroundGradient",
+          property: "toastHeaderBackgroundGradient",
           defaultValue: "",
           type: "text",
           placeholder: "linear-gradient(red, yellow)",
         },
         {
           name: "Filter Blur",
-          property: "formInputFilterBlur",
+          property: "toastHeaderFilterBlur",
           defaultValue: "",
           type: "text",
           placeholder: "0px",
@@ -128,7 +96,96 @@ const Toast = () => {
       upload: [
         {
           name: "Background Image",
-          property: "formInputBackgroundImage",
+          property: "toastHeaderBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+    toastContent: {
+      dimension: [
+        {
+          name: "Height",
+          property: "toastContentHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "toastContentBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "toastContentBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "toastContentShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "toastContentColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "toastContentFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "toastContentFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "toastContentBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "toastContentBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "toastContentFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "toastContentBackgroundImage",
           defaultValue: "Test",
           type: "text",
           placeholder: "URL/Link",
@@ -137,22 +194,28 @@ const Toast = () => {
     },
   };
 
+  const tabComponentSlider = {
+    card: [
+      { name: "Border Radius", property: "cardBorderRadius", unit: "%" },
+      { name: "Border Width", property: "cardBorderWidth", unit: "px" },
+    ],
+  };
+
   const tabComponentSelect = {
-    label: [
+    sidebar: [
       {
-        name: "Font Style",
-        property: "formLabelFontStyle",
+        name: "Border Style",
+        property: "cardBorderRadius",
         value: [
-          { childName: "Normal", value: "normal" },
-          { childName: "Italic", value: "italic" },
-          { childName: "Oblique", value: "oblique" },
+          { childName: "Small", value: "solid" },
+          { childName: "Dotted", value: "dotted" },
         ],
       },
     ],
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a]">
+    <div className=" min-h-screen bg-white dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -206,97 +269,87 @@ const Toast = () => {
                             </span>
                           </div>
                         </div>
-                        {/* End Navigation */}
-                        {/* Konten */}
-                        {/* Konten */}
-                        <div className="border bg-white p-5 rounded-md shadow-md">
-                          {/* Input */}
-                          <div className="flex flex-col mb-5">
-                            <label
-                              className={`${
-                                currentTab === "label"
-                                  ? "border border-red-500 "
-                                  : ""
-                              } hover:border hover:border-red-500 cursor-pointer w-fit`}
-                              onClick={() => handleTab("label")}
-                            >
-                              Label
-                            </label>
-                            <input
-                              type="text"
-                              className={`${
-                                currentTab === "input" ? "border-red-500" : ""
-                              } border rounded-sm h-10 cursor-pointer hover:border-red-500  outline-0 bg-white`}
-                              placeholder="placeholder"
-                              onClick={() => handleTab("input")}
-                              style={{
-                                background: `${
-                                  stateForm.formInputBackgroundGradient ==
-                                    null ||
-                                  stateForm.formInputBackgroundGradient == ""
-                                    ? stateForm.formInputBackgroundColor
-                                    : stateForm.formInputBackgroundGradient
-                                }`,
-                                borderWidth: `${stateForm.formInputBorderWidth}px`,
-                                borderColor: stateForm.formInputBorderColor,
-                                borderRadius: stateForm.formInputBorderRadius,
-                                boxShadow: stateForm.formInputShadow,
-                                color: stateForm.formInputColor,
-                                height: stateForm.formInputHeight,
-                                filter: `blur(${stateForm.formInputFilterBlur})`,
-                              }}
-                            />
+                        {/* Breadcrumb */}
+                        <div
+                          className={`bg-gradient-to-tr from-base-300 via-base-200 to-base-300 rounded-md w-32 h-12 mb-2  text-black flex justify-between `}
+                        >
+                          <div className="w-1/2 flex justify-center items-center">
+                            <div className="h-5 w-5 bg-white rounded-full"></div>
                           </div>
-                          {/* End Input */}
-                          {/* Input */}
-                          <div className="flex flex-col mb-2">
-                            <label
+                          <div className="w-11/12">
+                            <p>Lorem</p>
+                            <p className="text-xs">
+                              Lorem <span>/</span> <span>Lorem</span>
+                            </p>
+                          </div>
+                        </div>
+                        {/* Konten */}
+                        <div className="h-full relative">
+                          {/* Toast */}
+                          <div
+                            className="w-64 h-fit rounded-md absolute right-0 bottom-2 overflow-hidden shadow-md"
+                            style={{
+                              borderRadius: stateToast.cardBorderRadius,
+                            }}
+                          >
+                            <div
                               className={`${
-                                currentTab === "label"
+                                currentTab === "toastHeader"
                                   ? "border border-red-500"
                                   : ""
-                              } hover:border hover:border-red-500 cursor-pointer  w-fit`}
-                              onClick={() => handleTab("label")}
-                            >
-                              Label
-                            </label>
-                            <input
-                              type="text"
-                              className={`${
-                                currentTab === "input" ? "border-red-500" : ""
-                              } border rounded-sm h-10 cursor-pointer hover:border-red-500 outline-0 bg-white`}
-                              defaultValue="value"
-                              onClick={() => handleTab("input")}
+                              } border h-10 rounded-t-sm flex justify-center items-center bg-white  hover:border-red-500 cursor-pointer transition duration-300`}
+                              onClick={() => handleTab("toastHeader")}
                               style={{
                                 background: `${
-                                  stateForm.formInputBackgroundGradient ==
+                                  stateToast.toastHeaderBackgroundGradient ==
                                     null ||
-                                  stateForm.formInputBackgroundGradient == ""
-                                    ? stateForm.formInputBackgroundColor
-                                    : stateForm.formInputBackgroundGradient
+                                  stateToast.toastHeaderBackgroundGradient == ""
+                                    ? stateToast.toastHeaderBackgroundColor
+                                    : stateToast.toastHeaderBackgroundGradient
                                 }`,
-                                borderWidth: `${stateForm.formInputBorderWidth}px`,
-                                borderColor: stateForm.formInputBorderColor,
-                                borderRadius: stateForm.formInputBorderRadius,
-                                boxShadow: stateForm.formInputShadow,
-                                color: stateForm.formInputColor,
-                                height: stateForm.formInputHeight,
-                                filter: `blur(${stateForm.formInputFilterBlur})`,
+                                borderWidth: `${stateToast.toastHeaderBorderWidth}px`,
+                                borderColor: stateToast.toastHeaderBorderColor,
+                                borderRadius:
+                                  stateToast.toastHeaderBorderRadius,
+                                boxShadow: stateToast.toastHeaderShadow,
+                                color: stateToast.toastHeaderColor,
+                                height: stateToast.toastHeaderHeight,
+                                filter: `blur(${stateToast.toastHeaderFilterBlur})`,
                               }}
-                            />
+                            >
+                              Toast Header
+                            </div>
+                            <div
+                              className={`${
+                                currentTab === "toastContent"
+                                  ? "border border-red-500"
+                                  : ""
+                              } border-x h-16 bg-gray-100 flex justify-center items-center   hover:border-red-500 cursor-pointer transition duration-300 hover:border rounded-b-sm`}
+                              onClick={() => handleTab("toastContent")}
+                              style={{
+                                background: `${
+                                  stateToast.toastContentBackgroundGradient ==
+                                    null ||
+                                  stateToast.toastContentBackgroundGradient ==
+                                    ""
+                                    ? stateToast.toastContentBackgroundColor
+                                    : stateToast.toastContentBackgroundGradient
+                                }`,
+                                borderWidth: `${stateToast.toastContentBorderWidth}px`,
+                                borderColor: stateToast.toastContentBorderColor,
+                                borderRadius:
+                                  stateToast.toastContentBorderRadius,
+                                boxShadow: stateToast.toastContentShadow,
+                                color: stateToast.toastContentColor,
+                                height: stateToast.toastContentHeight,
+                                filter: `blur(${stateToast.toastContentFilterBlur})`,
+                              }}
+                            >
+                              Toast Content
+                            </div>
                           </div>
-                          {/* End Input */}
-                          <div className="mb-2 flex gap-2">
-                            <input type="checkbox" name="" id="" />
-                            <span>Check Me Out</span>
-                          </div>
-                          {/* Button */}
-                          <button className="bg-[#007bff] p-2 rounded-md text-white">
-                            Submit
-                          </button>
-                          {/* End Button */}
+                          {/* End Toast */}
                         </div>
-                        {/* End Konten */}
                         {/* End Konten */}
                       </div>
                     </div>
@@ -308,61 +361,33 @@ const Toast = () => {
             </div>
             {/* Pembatas */}
             {/* Menu Kanan */}
+            {/* cardBorderRadius */}
             <div className="w-[20%] h-fit p-2">
-              {/* Select */}
-              {currentTab === "label"
-                ? tabComponentSelect.label.map((component, index) => (
-                    <InputSelect
-                      key={index}
-                      name={component.name}
-                      value={component.value}
-                    />
-                  ))
-                : ""}
-              {/* End Select */}
+              {tabComponentSlider.card.map((component, index) => (
+                <InputRangeSlider
+                  key={index}
+                  name={component.name}
+                  property={component.property}
+                  unit={component.unit}
+                />
+              ))}
             </div>
+            {/* End cardBorderRadius */}
             {/* End Menu Kanan */}
             {/* End Pembatas */}
           </div>
 
           {/* Menu Bawah */}
-          {/* label */}
+          {/* toastHeader */}
           <div
             className={`${
-              currentTab === "label" ? "h-56" : "hidden"
-            } overflow-y-scroll`}
-          >
-            {/* font */}
-            <h3 className="text-lg ml-2 font-bold">Font</h3>
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "label"
-                ? tabComponent.label.font.map((component, index) => (
-                    <InputStyle
-                      key={index}
-                      name={component.name}
-                      property={component.property}
-                      defaultValue={component.defaultValue}
-                      type={component.type}
-                      placeholder={component.placeholder}
-                    />
-                  ))
-                : null}
-            </div>
-            {/* End font */}
-          </div>
-          {/* End label */}
-
-          {/* Lagi disini ------------------------------------------------------------------------------ */}
-          {/* input */}
-          <div
-            className={`${
-              currentTab === "input" ? "h-56" : "hidden"
+              currentTab === "toastHeader" ? "h-56" : "hidden"
             } overflow-y-scroll`}
           >
             {/* Dimension */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.dimension.map((component, index) => (
+              {currentTab === "toastHeader"
+                ? tabComponent.toastHeader.dimension.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -377,8 +402,8 @@ const Toast = () => {
             {/* End Dimension */}
             {/* border */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.border.map((component, index) => (
+              {currentTab === "toastHeader"
+                ? tabComponent.toastHeader.border.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -393,8 +418,8 @@ const Toast = () => {
             {/* End border */}
             {/* font */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.font.map((component, index) => (
+              {currentTab === "toastHeader"
+                ? tabComponent.toastHeader.font.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -409,8 +434,190 @@ const Toast = () => {
             {/* End font */}
             {/* background */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.background.map((component, index) => (
+              {currentTab === "toastHeader"
+                ? tabComponent.toastHeader.background.map(
+                    (component, index) => (
+                      <InputStyle
+                        key={index}
+                        name={component.name}
+                        property={component.property}
+                        defaultValue={component.defaultValue}
+                        type={component.type}
+                        placeholder={component.placeholder}
+                      />
+                    )
+                  )
+                : null}
+            </div>
+            {/* End background */}
+            {/* file Upload */}
+            <div className="grid grid-cols-1 gap-1 text-sm p-2">
+              {currentTab === "toastHeader"
+                ? tabComponent.toastHeader.upload.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End file Upload */}
+          </div>
+          {/* End toastHeader */}
+          {/* toastContent */}
+          <div
+            className={`${
+              currentTab === "toastContent" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Dimension */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "toastContent"
+                ? tabComponent.toastContent.dimension.map(
+                    (component, index) => (
+                      <InputStyle
+                        key={index}
+                        name={component.name}
+                        property={component.property}
+                        defaultValue={component.defaultValue}
+                        type={component.type}
+                        placeholder={component.placeholder}
+                      />
+                    )
+                  )
+                : null}
+            </div>
+            {/* End Dimension */}
+            {/* border */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "toastContent"
+                ? tabComponent.toastContent.border.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End border */}
+            {/* font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "toastContent"
+                ? tabComponent.toastContent.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+            {/* background */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "toastContent"
+                ? tabComponent.toastContent.background.map(
+                    (component, index) => (
+                      <InputStyle
+                        key={index}
+                        name={component.name}
+                        property={component.property}
+                        defaultValue={component.defaultValue}
+                        type={component.type}
+                        placeholder={component.placeholder}
+                      />
+                    )
+                  )
+                : null}
+            </div>
+            {/* End background */}
+            {/* file Upload */}
+            <div className="grid grid-cols-1 gap-1 text-sm p-2">
+              {currentTab === "toastContent"
+                ? tabComponent.toastContent.upload.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End file Upload */}
+          </div>
+          {/* End toastContent */}
+          {/* cardFooter */}
+          <div
+            className={`${
+              currentTab === "cardFooter" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Dimension */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.dimension.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End Dimension */}
+            {/* border */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.border.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End border */}
+            {/* font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+            {/* background */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.background.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -425,8 +632,8 @@ const Toast = () => {
             {/* End background */}
             {/* file Upload */}
             <div className="grid grid-cols-1 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.upload.map((component, index) => (
+              {currentTab === "cardFooter"
+                ? tabComponent.cardFooter.upload.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -440,8 +647,7 @@ const Toast = () => {
             </div>
             {/* End file Upload */}
           </div>
-          {/* End input */}
-          {/* ------------------------------------------------------------------------------ */}
+          {/* End cardFooter */}
           {/* End Menu Bawah */}
         </div>
       </div>

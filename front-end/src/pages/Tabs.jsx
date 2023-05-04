@@ -4,9 +4,10 @@ import Side from "../components/Side";
 import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
+import InputFile from "../components/InputFile";
 import InputRangeSlider from "../components/InputRangeSlider";
 const Tabs = () => {
-  const [currentTab, setCurrentTab] = useState("label");
+  const [currentTab, setCurrentTab] = useState("tabsActive");
   const stateForm = useStyleStore((state) => state);
 
   const handleTab = (elementClass) => {
@@ -14,43 +15,11 @@ const Tabs = () => {
   };
 
   const tabComponent = {
-    label: {
-      font: [
-        {
-          name: "Color",
-          property: "formLabelColor",
-          defaultValue: "",
-          type: "color",
-          placeholder: "none",
-        },
-        {
-          name: "Font Family",
-          property: "formLabelFontFamily",
-          defaultValue: "",
-          type: "text",
-          placeholder: "Arial,mono-thin,reguler",
-        },
-        {
-          name: "Font Size",
-          property: "formLabelFontSize",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-        {
-          name: "Font Weight",
-          property: "formLabelFontSize",
-          defaultValue: "",
-          type: "text",
-          placeholder: "0px",
-        },
-      ],
-    },
-    input: {
+    tabsActive: {
       dimension: [
         {
           name: "Height",
-          property: "formInputHeight",
+          property: "tabsActiveHeight",
           defaultValue: "",
           type: "text",
           placeholder: "0rem",
@@ -59,21 +28,21 @@ const Tabs = () => {
       border: [
         {
           name: "Border Width",
-          property: "formInputBorderWidth",
-          defaultValue: "",
+          property: "tabsActiveBorderWidth",
+          defaultValue: "0px",
           type: "number",
           placeholder: "0px",
         },
         {
           name: "Border Color",
-          property: "formInputBorderColor",
+          property: "tabsActiveBorderColor",
           defaultValue: "",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Shadow",
-          property: "formInputShadow",
+          property: "tabsActiveShadow",
           defaultValue: "",
           type: "text",
           placeholder: "0px 20px 50px grey",
@@ -82,22 +51,22 @@ const Tabs = () => {
       font: [
         {
           name: "Color",
-          property: "formInputColor",
-          defaultValue: "",
+          property: "tabsActiveColor",
+          defaultValue: "0px",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Font Family",
-          property: "formInputFontFamily",
-          defaultValue: "",
+          property: "tabsActiveFontFamily",
+          defaultValue: "0px",
           type: "text",
           placeholder: "Arial,mono-thin,reguler",
         },
         {
           name: "Font Size",
-          property: "formInputFontSize",
-          defaultValue: "",
+          property: "tabsActiveFontSize",
+          defaultValue: "0px",
           type: "text",
           placeholder: "0px",
         },
@@ -105,21 +74,21 @@ const Tabs = () => {
       background: [
         {
           name: "Background Color",
-          property: "formInputBackgroundColor",
+          property: "tabsActiveBackgroundColor",
           defaultValue: "#d3d3d3",
           type: "color",
           placeholder: "none",
         },
         {
           name: "Background Gradient",
-          property: "formInputBackgroundGradient",
+          property: "tabsActiveBackgroundGradient",
           defaultValue: "",
           type: "text",
           placeholder: "linear-gradient(red, yellow)",
         },
         {
           name: "Filter Blur",
-          property: "formInputFilterBlur",
+          property: "tabsActiveFilterBlur",
           defaultValue: "",
           type: "text",
           placeholder: "0px",
@@ -128,7 +97,96 @@ const Tabs = () => {
       upload: [
         {
           name: "Background Image",
-          property: "formInputBackgroundImage",
+          property: "tabsActiveBackgroundImage",
+          defaultValue: "Test",
+          type: "text",
+          placeholder: "URL/Link",
+        },
+      ],
+    },
+    tabsItem: {
+      dimension: [
+        {
+          name: "Height",
+          property: "tabsItemHeight",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0rem",
+        },
+      ],
+      border: [
+        {
+          name: "Border Width",
+          property: "tabsItemBorderWidth",
+          defaultValue: "0px",
+          type: "number",
+          placeholder: "0px",
+        },
+        {
+          name: "Border Color",
+          property: "tabsItemBorderColor",
+          defaultValue: "",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Shadow",
+          property: "tabsItemShadow",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px 20px 50px grey",
+        },
+      ],
+      font: [
+        {
+          name: "Color",
+          property: "tabsItemColor",
+          defaultValue: "0px",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Font Family",
+          property: "tabsItemFontFamily",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "Arial,mono-thin,reguler",
+        },
+        {
+          name: "Font Size",
+          property: "tabsItemFontSize",
+          defaultValue: "0px",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      background: [
+        {
+          name: "Background Color",
+          property: "tabsItemBackgroundColor",
+          defaultValue: "#d3d3d3",
+          type: "color",
+          placeholder: "none",
+        },
+        {
+          name: "Background Gradient",
+          property: "tabsItemBackgroundGradient",
+          defaultValue: "",
+          type: "text",
+          placeholder: "linear-gradient(red, yellow)",
+        },
+        {
+          name: "Filter Blur",
+          property: "tabsItemFilterBlur",
+          defaultValue: "",
+          type: "text",
+          placeholder: "0px",
+        },
+      ],
+      upload: [
+        {
+          name: "Background Image",
+          property: "tabsItemBackgroundImage",
           defaultValue: "Test",
           type: "text",
           placeholder: "URL/Link",
@@ -152,7 +210,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a]">
+    <div className="min-h-screen bg-white dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -208,7 +266,62 @@ const Tabs = () => {
                         </div>
                         {/* End Navigation */}
                         {/* Konten */}
-                        <div className="mt-5 border border-black">asd</div>
+                        <div className="mt-5">
+                          <h4 className="text-2xl font-bold">Tab Active</h4>
+                          <div className="flex">
+                            <div
+                              className={` rounded-t-md bg-white w-20 py-4 px-1 cursor-pointer hover:border-red-500 ${
+                                currentTab === "tabsActive"
+                                  ? "border border-red-500"
+                                  : "border border-gray-400 border-b-0"
+                              }`}
+                              onClick={() => handleTab("tabsActive")}
+                            >
+                              Tab Active
+                            </div>
+                            <div
+                              className={`border-b hover:border border-gray-400 rounded-t-md cursor-pointer w-fit py-4 p-2 hover:border-red-500 ${
+                                currentTab === "tabsItem"
+                                  ? "border border-red-500"
+                                  : ""
+                              }`}
+                              onClick={() => handleTab("tabsItem")}
+                            >
+                              Tab Item
+                            </div>
+                            <div
+                              className={`border-b hover:border border-gray-400 rounded-t-md cursor-pointer w-fit py-4 p-2 hover:border-red-500 ${
+                                currentTab === "tabsItem"
+                                  ? "border border-red-500"
+                                  : ""
+                              }`}
+                              onClick={() => handleTab("tabsItem")}
+                            >
+                              Tab Item
+                            </div>
+                            <div
+                              className={`border-b hover:border border-gray-400 rounded-t-md cursor-pointer w-fit py-4 p-2 hover:border-red-500 ${
+                                currentTab === "tabsItem"
+                                  ? "border border-red-500"
+                                  : ""
+                              }`}
+                              onClick={() => handleTab("tabsItem")}
+                            >
+                              Tab Item
+                            </div>
+                            <div
+                              className={`border-b hover:border border-gray-400 rounded-t-md cursor-pointer w-fit py-4 p-2 hover:border-red-500 ${
+                                currentTab === "tabsItem"
+                                  ? "border border-red-500"
+                                  : ""
+                              }`}
+                              onClick={() => handleTab("tabsItem")}
+                            >
+                              Tab Item
+                            </div>
+                            <div className="w-[650px] border-b border-gray-400"></div>
+                          </div>
+                        </div>
                         {/* End Konten */}
                       </div>
                     </div>
@@ -238,43 +351,16 @@ const Tabs = () => {
           </div>
 
           {/* Menu Bawah */}
-          {/* label */}
+          {/* Tabs Active */}
           <div
             className={`${
-              currentTab === "label" ? "h-56" : "hidden"
-            } overflow-y-scroll`}
-          >
-            {/* font */}
-            <h3 className="text-lg ml-2 font-bold">Font</h3>
-            <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "label"
-                ? tabComponent.label.font.map((component, index) => (
-                    <InputStyle
-                      key={index}
-                      name={component.name}
-                      property={component.property}
-                      defaultValue={component.defaultValue}
-                      type={component.type}
-                      placeholder={component.placeholder}
-                    />
-                  ))
-                : null}
-            </div>
-            {/* End font */}
-          </div>
-          {/* End label */}
-
-          {/* Lagi disini ------------------------------------------------------------------------------ */}
-          {/* input */}
-          <div
-            className={`${
-              currentTab === "input" ? "h-56" : "hidden"
+              currentTab === "tabsActive" ? "h-80" : "hidden"
             } overflow-y-scroll`}
           >
             {/* Dimension */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.dimension.map((component, index) => (
+              {currentTab === "tabsActive"
+                ? tabComponent.tabsActive.dimension.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -289,8 +375,8 @@ const Tabs = () => {
             {/* End Dimension */}
             {/* border */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.border.map((component, index) => (
+              {currentTab === "tabsActive"
+                ? tabComponent.tabsActive.border.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -305,8 +391,8 @@ const Tabs = () => {
             {/* End border */}
             {/* font */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.font.map((component, index) => (
+              {currentTab === "tabsActive"
+                ? tabComponent.tabsActive.font.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -321,8 +407,8 @@ const Tabs = () => {
             {/* End font */}
             {/* background */}
             <div className="grid grid-cols-3 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.background.map((component, index) => (
+              {currentTab === "tabsActive"
+                ? tabComponent.tabsActive.background.map((component, index) => (
                     <InputStyle
                       key={index}
                       name={component.name}
@@ -336,10 +422,10 @@ const Tabs = () => {
             </div>
             {/* End background */}
             {/* file Upload */}
-            <div className="grid grid-cols-1 gap-1 text-sm p-2">
-              {currentTab === "input"
-                ? tabComponent.input.upload.map((component, index) => (
-                    <InputStyle
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsActive"
+                ? tabComponent.tabsActive.upload.map((component, index) => (
+                    <InputFile
                       key={index}
                       name={component.name}
                       property={component.property}
@@ -352,8 +438,96 @@ const Tabs = () => {
             </div>
             {/* End file Upload */}
           </div>
-          {/* End input */}
-          {/* ------------------------------------------------------------------------------ */}
+          {/* End Tabs Active */}
+          {/* Tabs Item */}
+          <div
+            className={`${
+              currentTab === "tabsItem" ? "h-80" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Dimension */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsItem"
+                ? tabComponent.tabsItem.dimension.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End Dimension */}
+            {/* border */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsItem"
+                ? tabComponent.tabsItem.border.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End border */}
+            {/* font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsItem"
+                ? tabComponent.tabsItem.font.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End font */}
+            {/* background */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsItem"
+                ? tabComponent.tabsItem.background.map((component, index) => (
+                    <InputStyle
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End background */}
+            {/* file Upload */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "tabsItem"
+                ? tabComponent.tabsItem.upload.map((component, index) => (
+                    <InputFile
+                      key={index}
+                      name={component.name}
+                      property={component.property}
+                      defaultValue={component.defaultValue}
+                      type={component.type}
+                      placeholder={component.placeholder}
+                    />
+                  ))
+                : null}
+            </div>
+            {/* End file Upload */}
+          </div>
+          {/* End Tabs Item */}
+
           {/* End Menu Bawah */}
         </div>
       </div>

@@ -383,13 +383,91 @@ const useStyleStore = create((set) => ({
   // Color Theme
   colorPrimary: "#007bff",
   colorSecondary: "#6c757d",
-  colorSuccess: "#28a745", 
+  colorSuccess: "#28a745",
   colorWarning: "#ffc107",
   colorInfo: "#17a2b8",
   colorDanger: "#dc3545",
+  // ----------------------------------------- Toast ------------------------------------------
+  // toast Header
+  toastHeaderBackgroundColor: "",
+  toastHeaderBackgroundImage: "",
+  toastHeaderBackgroundGradient: "",
+  toastHeaderBorderWidth: "",
+  toastHeaderBorderStyle: "",
+  toastHeaderBorderColor: "",
+  toastHeaderShadow: "",
+  toastHeaderColor: "",
+  toastHeaderFilterBlur: "",
+  toastHeaderFontFamily: "",
+  toastHeaderFontSize: "",
+  toastHeaderBorderRadius: "",
+  toastHeaderHeight: "",
+  // toast Content
+  toastContentBackgroundColor: "",
+  toastContentBackgroundImage: "",
+  toastContentBackgroundGradient: "",
+  toastContentBorderWidth: "",
+  toastContentBorderStyle: "",
+  toastContentBorderColor: "",
+  toastContentShadow: "",
+  toastContentColor: "",
+  toastContentFilterBlur: "",
+  toastContentFontFamily: "",
+  toastContentFontSize: "",
+  toastContentBorderRadius: "",
+  toastContentHeight: "",
+  // ----------------------------------------- Toast ------------------------------------------
+  // ----------------------------------------- Tabs ------------------------------------------
+  // Tabs Active
+  tabsActiveContentBackgroundColor: "",
+  tabsActiveContentBackgroundImage: "",
+  tabsActiveContentBackgroundGradient: "",
+  tabsActiveContentBorderWidth: "",
+  tabsActiveContentBorderStyle: "",
+  tabsActiveContentBorderColor: "",
+  tabsActiveContentShadow: "",
+  tabsActiveContentColor: "",
+  tabsActiveContentFilterBlur: "",
+  tabsActiveContentFontFamily: "",
+  tabsActiveContentFontSize: "",
+  tabsActiveContentBorderRadius: "",
+  tabsActiveContentHeight: "",
+  // Tabs Item
+  tabsItemContentBackgroundColor: "",
+  tabsItemContentBackgroundImage: "",
+  tabsItemContentBackgroundGradient: "",
+  tabsItemContentBorderWidth: "",
+  tabsItemContentBorderStyle: "",
+  tabsItemContentBorderColor: "",
+  tabsItemContentShadow: "",
+  tabsItemContentColor: "",
+  tabsItemContentFilterBlur: "",
+  tabsItemContentFontFamily: "",
+  tabsItemContentFontSize: "",
+  tabsItemContentBorderRadius: "",
+  tabsItemContentHeight: "",
+
+  // ----------------------------------------- End Tabs ------------------------------------------
+  // ----------------------------------------- Pop up ------------------------------------------
+  // PopUp
+  popUpBackgroundColor: "",
+  popUpBackgroundImage: "",
+  popUpBackgroundGradient: "",
+  popUpBorderWidth: "",
+  popUpBorderStyle: "",
+  popUpBorderColor: "",
+  popUpShadow: "",
+  popUpColor: "",
+  popUpFilterBlur: "",
+  popUpFontFamily: "",
+  popUpFontSize: "",
+  popUpBorderRadius: "",
+  popUpHeight: "",
+  // ----------------------------------------- End Pop up ------------------------------------------
 
   // End Selected
   changeStyle: (state) => {
+    console.log(state);
     const property = state.property;
     set({ [property]: state.value });
   },

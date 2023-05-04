@@ -18,40 +18,6 @@ const Navbar = () => {
   };
   const handleSaveButton = () => {
     const components = {
-      breadcrumbs: {
-        breadcrumbBackground: stateComponents.breadcrumbBackground,
-        breadcrumbBorderColor: stateComponents.breadcrumbBorderColor,
-        breadcrumbBorderRadius: stateComponents.breadcrumbBorderRadius,
-        breadcrumbBorderStyle: stateComponents.breadcrumbBorderStyle,
-        breadcrumbBorderWidth: stateComponents.breadcrumbBorderWidth,
-        breadcrumbTextActive: stateComponents.breadcrumbTextActive,
-        breadcrumbTextColor: stateComponents.breadcrumbTextColor,
-        breadcrumbTextTitle: stateComponents.breadcrumbTextTitle,
-      },
-      card: {
-        cardBackground: stateComponents.cardBackground,
-        cardBackgroundProgress: stateComponents.cardBackgroundProgress,
-        cardBorderColor: stateComponents.cardBorderColor,
-        cardBorderRadius: stateComponents.cardBorderRadius,
-        cardBorderStyle: stateComponents.cardBorderStyle,
-        cardBorderWidth: stateComponents.cardBorderWidth,
-        cardContentBackground: stateComponents.cardContentBackground,
-        cardContentBorderColor: stateComponents.cardContentBorderColor,
-        cardContentBorderRadius: stateComponents.cardContentBorderRadius,
-        cardContentBorderStyle: stateComponents.cardContentBorderStyle,
-        cardContentBorderWidth: stateComponents.cardContentBorderWidth,
-        cardContentColor: stateComponents.cardContentColor,
-        cardFormBackground: stateComponents.cardFormBackground,
-        cardFormColor: stateComponents.cardFormColor,
-        cardGaugeBackground: stateComponents.cardGaugeBackground,
-        cardGaugeValueColor: stateComponents.cardGaugeValueColor,
-        cardLoginBackground: stateComponents.cardLoginBackground,
-        cardLoginHeading: stateComponents.cardLoginHeading,
-        cardLoginTextColor: stateComponents.cardLoginTextColor,
-        cardMonitorBackground: stateComponents.cardMonitorBackground,
-        cardMonitorColor: stateComponents.cardMonitorColor,
-        cardTextColorPrimary: stateComponents.cardTextColorPrimary,
-      },
       input: {
         inputLabelColor: stateComponents.inputLabelColor,
         inputTextBackground: stateComponents.inputTextBackground,
@@ -119,6 +85,7 @@ const Navbar = () => {
       content: {
         BackgroundColor: stateComponents.contentBackgroundColor,
         BackgroundGradient: stateComponents.contentBackgroundGradient,
+        BackgroundImage: stateComponents.contentBackgroundImage,
         Color: stateComponents.contentColor,
       },
       button: {
@@ -152,6 +119,17 @@ const Navbar = () => {
           BackgroundColor: stateComponents.modalFooterBackgroundColor,
         },
       },
+      card: {
+        cardHeader: {
+          BackgroundColor: stateComponents.cardHeaderBackgroundColor,
+        },
+        cardBody: {
+          BackgroundColor: stateComponents.cardContentBackgroundColor,
+        },
+        cardFooter: {
+          BackgroundColor: stateComponents.cardFooterBackgroundColor,
+        },
+      },
       table: {
         pageButton: {
           BackgroundColor: stateComponents.tableBackgroundButton,
@@ -165,6 +143,17 @@ const Navbar = () => {
         colorWarning: stateComponents.colorWarning,
         colorInfo: stateComponents.colorInfo,
         colorDanger: stateComponents.colorDanger,
+      },
+      breadcrumbs: {
+        backgroundColor: stateComponents.breadcrumbsBackgroundColor,
+        breadcrumbsItem: {
+          color: stateComponents.breadcrumbsItemColor,
+          dividerColor: stateComponents.breadcrumbsItemDividerColor,
+          itemSpace: stateComponents.breadcrumbsItemPaddingLeft,
+        },
+        breadcrumbsItemActive: {
+          color: stateComponents.breadcrumbsItemActiveColor,
+        },
       },
     };
 
@@ -204,7 +193,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 text-yellow-300 dark:text-white"
+              className="w-6 h-6 text-yellow-300 dark:text-primary"
             >
               <path
                 strokeLinecap="round"
@@ -227,7 +216,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5 dark:text-white text-primary"
+              className="w-5 h-5 text-primary"
             >
               <path
                 strokeLinecap="round"
@@ -238,26 +227,48 @@ const Navbar = () => {
           </div>
         </div>
         {/* End Toggle Dark Mode */}
+        <button className="btn btn-primary text-white bg-[#35b3ed] dark:border-primary dark:text-primary flex gap-1 dark:bg-transparent">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          Preview All
+        </button>
         <button
-          className="btn btn-primary text-white bg-[#35b3ed] dark:border-0 flex gap-1"
+          className="btn btn-primary text-white bg-[#35b3ed] dark:border-primary dark:text-primary flex gap-1 dark:bg-transparent"
           onClick={handleSaveButton}
         >
           <svg
-            fill="#ffffff"
+            fill="currentColor"
             className="w-5 h-5"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M11 14v-4H5v4H3V8h10v6h-2 3V2H4v4h8V2h-2v2H6V2H2v12h3zM0 0h16v16H0V0z"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             />
           </svg>
           Save
         </button>
-        <button className="btn btn-primary text-white bg-[#35b3ed] dark:border-0 flex gap-1">
+        <button className="btn btn-primary text-white bg-[#35b3ed] dark:border-primary dark:text-primary flex gap-1 dark:bg-transparent">
           <svg
-            fill="#ffffff"
+            fill="currentColor"
             className="w-6 h-6"
             viewBox="0 0 512 512"
             data-name="Layer 1"

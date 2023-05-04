@@ -4,6 +4,7 @@ import Side from "../components/Side";
 import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
+import InputFile from "../components/InputFile";
 import InputRangeSlider from "../components/InputRangeSlider";
 const Card = () => {
   const [currentTab, setCurrentTab] = useState("cardHeader");
@@ -304,7 +305,7 @@ const Card = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
+    <div className=" min-h-screen bg-white dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -562,10 +563,10 @@ const Card = () => {
             </div>
             {/* End background */}
             {/* file Upload */}
-            <div className="grid grid-cols-1 gap-1 text-sm p-2">
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
               {currentTab === "cardHeader"
                 ? tabComponent.cardHeader.upload.map((component, index) => (
-                    <InputStyle
+                    <InputFile
                       key={index}
                       name={component.name}
                       property={component.property}
