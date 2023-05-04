@@ -183,11 +183,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-200 dark:bg-gradient-to-r dark:from-[#905923] dark:to-[#533314] fixed">
+    <div className="navbar bg-white border-b border-gray-200 dark:border-b dark:border-slate-800 dark:bg-[#0f172a] fixed z-[50]">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl dark:text-white">
-          Dashboard CSS Generator
+        <a className=" normal-case text-xl dark:text-white font-bold">
+          <p className="text-[#35b1e9] px-5 dark:bg-[#162a43] dark:hover:bg-[#173953] bg-[#ebf8fe] hover:bg-[#d7f2fe] rounded-full transition duration-300 p-2">
+            CSS GENERATOR
+          </p>
         </a>
+        <div className="ml-32 w-96 text-lg h-10 overflow-hidden bg-[#ebf8fe] text-[#35b1e9] font-bold p-2 rounded-full  flex justify-center items-center hover:bg-[#d7f2fe] cursor-pointer dark:bg-[#162a43] dark:hover:bg-[#173953] transition duration-300">
+          <p>CODE-11-2222-421-234</p>
+        </div>
       </div>
       <div className="flex gap-5">
         {/* Toggle Dark Mode */}
@@ -233,10 +238,36 @@ const Navbar = () => {
           </div>
         </div>
         {/* End Toggle Dark Mode */}
-        <button className="btn btn-primary" onClick={handleSaveButton}>
+        <button
+          className="btn btn-primary text-white bg-[#35b3ed] dark:border-0 flex gap-1"
+          onClick={handleSaveButton}
+        >
+          <svg
+            fill="#ffffff"
+            className="w-5 h-5"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 14v-4H5v4H3V8h10v6h-2 3V2H4v4h8V2h-2v2H6V2H2v12h3zM0 0h16v16H0V0z"
+              fill-rule="evenodd"
+            />
+          </svg>
           Save
         </button>
-        <button className="btn btn-primary">Reset</button>
+        <button className="btn btn-primary text-white bg-[#35b3ed] dark:border-0 flex gap-1">
+          <svg
+            fill="#ffffff"
+            className="w-6 h-6"
+            viewBox="0 0 512 512"
+            data-name="Layer 1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M64,256H34A222,222,0,0,1,430,118.15V85h30V190H355V160h67.27A192.21,192.21,0,0,0,256,64C150.13,64,64,150.13,64,256Zm384,0c0,105.87-86.13,192-192,192A192.21,192.21,0,0,1,89.73,352H157V322H52V427H82V393.85A222,222,0,0,0,478,256Z" />
+          </svg>
+          Reset
+        </button>
       </div>
     </div>
   );

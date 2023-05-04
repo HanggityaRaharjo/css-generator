@@ -333,6 +333,7 @@ const useStyleStore = create((set) => ({
   cardBorderRadius: "",
   // ----------------------------------------- End Card ------------------------------------------
   // ----------------------------------------- Breadcrumbs ---------------------------------------
+  // Breadcrumbs
   breadcrumbsBackgroundColor: "",
   breadcrumbsBackgroundImage: "",
   breadcrumbsBackgroundGradient: "",
@@ -347,9 +348,11 @@ const useStyleStore = create((set) => ({
   breadcrumbsBorderRadius: "",
   breadcrumbsHeight: "",
 
+  // Breadcrumbs item
   breadcrumbsItemColor: "",
   breadcrumbsItemDividerColor: "",
   breadcrumbsItemPaddingLeft: "",
+  // Breadcrumbs item active
   breadcrumbsItemActiveColor: "",
 
   // ----------------------------------------- End Breadcrumbs -----------------------------------
@@ -380,7 +383,7 @@ const useStyleStore = create((set) => ({
   // Color Theme
   colorPrimary: "#007bff",
   colorSecondary: "#6c757d",
-  colorSuccess: "#28a745",
+  colorSuccess: "#28a745", 
   colorWarning: "#ffc107",
   colorInfo: "#17a2b8",
   colorDanger: "#dc3545",

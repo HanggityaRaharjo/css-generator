@@ -5,7 +5,7 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
-const Form = () => {
+const Tabs = () => {
   const [currentTab, setCurrentTab] = useState("label");
   const stateForm = useStyleStore((state) => state);
 
@@ -152,7 +152,7 @@ const Form = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
+    <div className=" min-h-screen dark:bg-[#0f172a]">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -208,95 +208,7 @@ const Form = () => {
                         </div>
                         {/* End Navigation */}
                         {/* Konten */}
-                        {/* Konten */}
-                        <div className="border bg-white p-5 rounded-md shadow-md">
-                          {/* Input */}
-                          <div className="flex flex-col mb-5">
-                            <label
-                              className={`${
-                                currentTab === "label"
-                                  ? "border border-red-500 "
-                                  : ""
-                              } hover:border hover:border-red-500 cursor-pointer w-fit`}
-                              onClick={() => handleTab("label")}
-                            >
-                              Label
-                            </label>
-                            <input
-                              type="text"
-                              className={`${
-                                currentTab === "input" ? "border-red-500" : ""
-                              } border rounded-sm h-10 cursor-pointer hover:border-red-500  outline-0 bg-white`}
-                              placeholder="placeholder"
-                              onClick={() => handleTab("input")}
-                              style={{
-                                background: `${
-                                  stateForm.formInputBackgroundGradient ==
-                                    null ||
-                                  stateForm.formInputBackgroundGradient == ""
-                                    ? stateForm.formInputBackgroundColor
-                                    : stateForm.formInputBackgroundGradient
-                                }`,
-                                borderWidth: `${stateForm.formInputBorderWidth}px`,
-                                borderColor: stateForm.formInputBorderColor,
-                                borderRadius: stateForm.formInputBorderRadius,
-                                boxShadow: stateForm.formInputShadow,
-                                color: stateForm.formInputColor,
-                                height: stateForm.formInputHeight,
-                                filter: `blur(${stateForm.formInputFilterBlur})`,
-                              }}
-                            />
-                          </div>
-                          {/* End Input */}
-                          {/* Input */}
-                          <div className="flex flex-col mb-2">
-                            <label
-                              className={`${
-                                currentTab === "label"
-                                  ? "border border-red-500"
-                                  : ""
-                              } hover:border hover:border-red-500 cursor-pointer  w-fit`}
-                              onClick={() => handleTab("label")}
-                            >
-                              Label
-                            </label>
-                            <input
-                              type="text"
-                              className={`${
-                                currentTab === "input" ? "border-red-500" : ""
-                              } border rounded-sm h-10 cursor-pointer hover:border-red-500 outline-0 bg-white`}
-                              defaultValue="value"
-                              onClick={() => handleTab("input")}
-                              style={{
-                                background: `${
-                                  stateForm.formInputBackgroundGradient ==
-                                    null ||
-                                  stateForm.formInputBackgroundGradient == ""
-                                    ? stateForm.formInputBackgroundColor
-                                    : stateForm.formInputBackgroundGradient
-                                }`,
-                                borderWidth: `${stateForm.formInputBorderWidth}px`,
-                                borderColor: stateForm.formInputBorderColor,
-                                borderRadius: stateForm.formInputBorderRadius,
-                                boxShadow: stateForm.formInputShadow,
-                                color: stateForm.formInputColor,
-                                height: stateForm.formInputHeight,
-                                filter: `blur(${stateForm.formInputFilterBlur})`,
-                              }}
-                            />
-                          </div>
-                          {/* End Input */}
-                          <div className="mb-2 flex gap-2">
-                            <input type="checkbox" name="" id="" />
-                            <span>Check Me Out</span>
-                          </div>
-                          {/* Button */}
-                          <button className="bg-[#007bff] p-2 rounded-md text-white">
-                            Submit
-                          </button>
-                          {/* End Button */}
-                        </div>
-                        {/* End Konten */}
+                        <div className="mt-5 border border-black">asd</div>
                         {/* End Konten */}
                       </div>
                     </div>
@@ -449,4 +361,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Tabs;

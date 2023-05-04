@@ -283,9 +283,9 @@ const Modal = () => {
     },
   };
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a]">
+    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
-      <div className="flex h-screen pt-16">
+      <div className="flex min-h-screen pt-16">
         <Side />
         <div className="w-[85%] p-2">
           {/* Content Disinni */}
@@ -298,9 +298,9 @@ const Modal = () => {
               </div>
 
               {/* Windows Preview */}
-              <div className="mockup-window border border-base-300 rounded-t-none">
+              <div className="mockup-window border bg-[#f8fafc] border-base-300 rounded-t-none">
                 <div className="border-t border-base-300">
-                  <div className="h-[550px]  rounded-md">
+                  <div className="h-[550px] rounded-md">
                     <div className="flex gap-2 h-full">
                       {/* Sidebar */}
                       <div className="w-[15%] bg-gradient-to-tr from-base-300 via-base-200 to-base-300 p-2 text-black text-xs h-full">

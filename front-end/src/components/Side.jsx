@@ -11,155 +11,193 @@ const Side = () => {
   let currentUrl = url.replace("/", "");
   const [currentPage, setCurrentPage] = useState(currentUrl);
 
-  console.log(currentPage);
-
   return (
-    <div className="w-[15%] bg-base-200 p-5 dark:bg-[#1F2324] h-[100%] overflow-y-scroll dark:text-white">
-      <div className={`p-2 mb-2 border-b border-gray-600`}>HTML</div>
-      <Link to={"/"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary  hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == ""
-              ? "dark:text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Layout
-        </div>
-      </Link>
-      <Link to={"/theme"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "theme"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Color
-        </div>
-      </Link>
+    <div className="w-[15%] dark:text-slate-200 font-sans">
+      <div className="fixed w-[inherit] bg-white p-5 dark:bg-[#0f172a] h-screen overflow-y-scroll  font-semibold">
+        <div className={`p-2 font-bold text-lg`}>HTML</div>
+        <Link to={"/"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black  hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == ""
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Layout
+          </div>
+        </Link>
+        <Link to={"/theme"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "theme"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Color
+          </div>
+        </Link>
 
-      <div className={`p-2 mb-2 border-b border-gray-600`}>UI Features</div>
+        <div className={`p-2 font-bold text-lg`}>UI Features</div>
 
-      <Link to={"/modal"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "modal"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Modal
-        </div>
-      </Link>
+        <Link to={"/modal"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "modal"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Modal
+          </div>
+        </Link>
 
-      <Link to={"/card"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "card"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Card
-        </div>
-      </Link>
+        <Link to={"/card"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "card"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Card
+          </div>
+        </Link>
 
-      <Link to={"/breadcrumbs"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "breadcrumbs"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Breadcrumbs
-        </div>
-      </Link>
+        <Link to={"/breadcrumbs"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "breadcrumbs"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Breadcrumbs
+          </div>
+        </Link>
 
-      <Link to={"/form"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "form"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Form
-        </div>
-      </Link>
+        <Link to={"/form"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "form"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Form
+          </div>
+        </Link>
 
-      {/* <Link to={"/monitoring"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "monitoring"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Monitoring
-        </div>
-      </Link> */}
+        <Link to={"/button"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "button"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Button
+          </div>
+        </Link>
 
-      <Link to={"/button"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "button"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Button
-        </div>
-      </Link>
+        <Link to={"/tabs"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "tabs"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Tabs
+          </div>
+        </Link>
 
-      <Link to={"/pop-up"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "pop-up"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Pop Up
-        </div>
-      </Link>
-      {/* <Link to={"/login"}>
-        <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "login"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
-        >
-          Login
-        </div>
-      </Link> */}
+        <Link to={"/pop-up"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "pop-up"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Pop Up
+          </div>
+        </Link>
 
-      <div className={`p-2 mb-2 border-b border-gray-600`}>UI Components</div>
+        <Link to={"/pop-up"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "pop-up"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Toast
+          </div>
+        </Link>
 
-      <Link to={"/navigation-bar"}>
+        <div className={`p-2 font-bold text-lg`}>UI Components</div>
+
+        <Link to={"/basic-table"}>
+          <div
+            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
+              currentPage == "basic-table"
+                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
+                : "dark:text-[#8c9aaf]"
+            }`}
+          >
+            Basic Table
+          </div>
+        </Link>
+
+        {/* Development */}
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "navigation-bar"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
         >
-          Navigation Bar
+          UI Component
         </div>
-      </Link>
-      <Link to={"/basic-table"}>
         <div
-          className={`rounded-md p-2 ml-5 mb-1 hover:bg-primary hover:text-white hover:dark:bg-[#4579A0] hover:dark:text-white ${
-            currentPage == "basic-table"
-              ? "text-white bg-primary dark:bg-[#4579A0]"
-              : "dark:text-[#8c9aaf]"
-          }`}
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
         >
-          Basic Table
+          UI Component
         </div>
-      </Link>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        <div
+          className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 dark:text-[#8c9aaf]`}
+        >
+          UI Component
+        </div>
+        {/* End Development */}
+      </div>
     </div>
   );
 };

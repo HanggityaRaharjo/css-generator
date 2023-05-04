@@ -11,7 +11,7 @@ const InputSelect = (props) => {
 
   return (
     <select
-      className="select select-bordered w-full my-2"
+      className="select select-bordered w-full my-2 dark:bg-slate-700 dark:text-slate-200"
       defaultValue={"none"}
       onChange={(e) => handleSelected(e.target.value)}
     >

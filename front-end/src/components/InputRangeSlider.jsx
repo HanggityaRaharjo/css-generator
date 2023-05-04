@@ -10,7 +10,9 @@ const InputRangeSlider = (props) => {
   };
   return (
     <div className="form-control flex justify-center items-center gap-1">
-      <label className="bg-gray-300  px-2 rounded-md">{props.name}</label>
+      <label className="bg-gray-300 dark:bg-slate-700 dark:text-slate-200  px-2 rounded-md w-full text-center">
+        {props.name}
+      </label>
       <input
         type="range"
         className="w-full"

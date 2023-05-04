@@ -66,7 +66,7 @@ const Table = () => {
   return (
     <div className="min-h-screen dark:bg-[#0f172a]">
       <Navbar />
-      <div className="flex h-screen pt-16">
+      <div className="flex min-h-screen pt-16">
         <Side />
         <div className="w-[85%] p-2">
           {/* Content Disinni */}
@@ -79,7 +79,7 @@ const Table = () => {
               </div>
 
               {/* Windows Preview */}
-              <div className="mockup-window border border-base-300 rounded-t-none">
+              <div className="mockup-window border border-base-300 rounded-t-none dark:bg-[#f8fafc] dark:text-gray-600">
                 <div className="border-t border-base-300">
                   <div className="h-[550px]  rounded-md">
                     <div className="flex gap-2 h-full">
@@ -405,7 +405,7 @@ const Table = () => {
           </div>
           {/* Menu Bawah */}
           {/* Menu Bawah */}
-          <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
+          <div className="grid grid-cols-6 gap-1 text-sm h-56 p-2 overflow-y-scroll">
             {currentTab == "tablePageButton"
               ? tabComponent.tablePageButton.map((components, index) => (
                   <InputStyle

@@ -11,6 +11,7 @@ import Modal from "./pages/Modal";
 import Theme from "./pages/Theme";
 import Card from "./pages/Card";
 import Breadcrumbs from "./pages/Breadcrumbs";
+import Tabs from "./pages/Tabs";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -61,6 +62,10 @@ export default function App() {
     {
       path: "/breadcrumbs",
       element: <Breadcrumbs />,
+    },
+    {
+      path: "/tabs",
+      element: <Tabs />,
     },
   ]);
 

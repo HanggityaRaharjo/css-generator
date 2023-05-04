@@ -121,21 +121,21 @@ const Breadcrumbs = () => {
         },
         {
           name: "Item Space",
-          property: "breadcrumbsItemDividerColor",
+          property: "breadcrumbsItemPaddingLeft",
           defaultValue: "",
-          type: "number",
+          type: "text",
           placeholder: "0rem",
         },
       ],
     },
     breadcrumbsItemActive: {
-      dimension: [
+      font: [
         {
-          name: "Height",
-          property: "breadcrumbsHeight",
+          name: "Color",
+          property: "breadcrumbsItemActiveColor",
           defaultValue: "",
-          type: "text",
-          placeholder: "0rem",
+          type: "color",
+          placeholder: "",
         },
       ],
     },
@@ -162,10 +162,10 @@ const Breadcrumbs = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a]">
+    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
 
-      <div className="flex h-screen pt-16">
+      <div className="flex min-h-screen pt-16">
         <Side />
         <div className="w-[85%] p-2">
           {/* Content Disinni */}
@@ -178,7 +178,7 @@ const Breadcrumbs = () => {
               </div>
 
               {/* Windows Preview */}
-              <div className="mockup-window border border-base-300 rounded-t-none">
+              <div className="mockup-window border border-base-300 rounded-t-none dark:bg-[#f8fafc] dark:text-gray-600">
                 <div className="border-t border-base-300">
                   <div className="h-[550px]  rounded-md">
                     <div className="flex gap-2 h-full">
@@ -246,22 +246,60 @@ const Breadcrumbs = () => {
                           >
                             <li className="h-[25px]">
                               <button className="transition-all duration-300 cursor-pointer relative">
-                                <span className="text-[#007bff]">
+                                <span
+                                  className="text-[#007bff]"
+                                  style={{
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemColor,
+                                  }}
+                                >
                                   Breadcrumb item
                                 </span>
-                                <span className="text-gray-600 pl-[0.5rem]">
+                                <span
+                                  className="text-gray-600 pl-[0.5rem]"
+                                  style={{
+                                    paddingLeft:
+                                      stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemDividerColor,
+                                  }}
+                                >
                                   /
                                 </span>
-                                <span className="text-[#007bff] pl-[0.5rem]">
+                                <span
+                                  className="text-[#007bff] pl-[0.5rem]"
+                                  style={{
+                                    paddingLeft:
+                                      stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemColor,
+                                  }}
+                                >
                                   Breadcrumb item
                                 </span>
-                                <span className="text-gray-600 pl-[0.5rem]">
+                                <span
+                                  className="text-gray-600 pl-[0.5rem]"
+                                  style={{
+                                    paddingLeft:
+                                      stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemDividerColor,
+                                  }}
+                                >
                                   /
                                 </span>
                               </button>
                             </li>
 
-                            <li className="text-gray-600 pl-[0.5rem]">
+                            <li
+                              className="text-gray-600 pl-[0.5rem]"
+                              style={{
+                                paddingLeft:
+                                  stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                color:
+                                  stateBreadcrumbs.breadcrumbsItemActiveColor,
+                              }}
+                            >
                               <div
                                 className={`transition-all duration-300 cursor-pointer`}
                               >
@@ -325,20 +363,44 @@ const Breadcrumbs = () => {
                               filter: `blur(${stateBreadcrumbs.breadcrumbsFilterBlur})`,
                             }}
                           >
-                            <li className="h-[25px] w-64">
+                            <li className="h-[25px] w-fit">
                               <button
                                 className={`${
                                   currentTab === "breadcrumbsItem"
                                     ? "border border-red-500"
                                     : ""
-                                } flex gap-2 transition-all duration-300 cursor-pointer relative hover:border hover:border-red-500`}
+                                } flex transition-all duration-300 cursor-pointer relative hover:border hover:border-red-500`}
                                 onClick={() => handleTab("breadcrumbsItem")}
                               >
-                                <span className="text-[#007bff]">
+                                <span
+                                  className="text-[#007bff] pl-[0.5rem]"
+                                  style={{
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemColor,
+                                  }}
+                                >
                                   Breadcrumb item
                                 </span>
-                                <span className="text-gray-600">/</span>
-                                <span className="text-[#007bff]">
+                                <span
+                                  className="text-gray-600 pl-[0.5rem]"
+                                  style={{
+                                    paddingLeft:
+                                      stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemDividerColor,
+                                  }}
+                                >
+                                  /
+                                </span>
+                                <span
+                                  className="text-[#007bff] pl-[0.5rem]"
+                                  style={{
+                                    paddingLeft:
+                                      stateBreadcrumbs.breadcrumbsItemPaddingLeft,
+                                    color:
+                                      stateBreadcrumbs.breadcrumbsItemColor,
+                                  }}
+                                >
                                   Breadcrumb item
                                 </span>
                               </button>
@@ -372,8 +434,12 @@ const Breadcrumbs = () => {
                                   currentTab === "breadcrumbsActive"
                                     ? "border border-red-500"
                                     : ""
-                                } flex gap-2  transition-all duration-300 cursor-pointer hover:border hover:border-red-500`}
+                                } flex gap-2 transition-all duration-300 cursor-pointer hover:border hover:border-red-500`}
                                 onClick={() => handleTab("breadcrumbsActive")}
+                                style={{
+                                  color:
+                                    stateBreadcrumbs.breadcrumbsItemActiveColor,
+                                }}
                               >
                                 Breadcrumb Active
                               </div>
@@ -519,6 +585,32 @@ const Breadcrumbs = () => {
                       placeholder={component.placeholder}
                     />
                   ))
+                : null}
+            </div>
+            {/* End Font */}
+          </div>
+          {/* End breadcrumbs item */}
+          {/* breadcrumbs item */}
+          <div
+            className={`${
+              currentTab === "breadcrumbsActive" ? "h-56" : "hidden"
+            } overflow-y-scroll`}
+          >
+            {/* Font */}
+            <div className="grid grid-cols-3 gap-1 text-sm p-2">
+              {currentTab === "breadcrumbsActive"
+                ? tabComponent.breadcrumbsItemActive.font.map(
+                    (component, index) => (
+                      <InputStyle
+                        key={index}
+                        name={component.name}
+                        property={component.property}
+                        defaultValue={component.defaultValue}
+                        type={component.type}
+                        placeholder={component.placeholder}
+                      />
+                    )
+                  )
                 : null}
             </div>
             {/* End Font */}

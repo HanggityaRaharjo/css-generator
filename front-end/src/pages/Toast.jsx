@@ -5,7 +5,7 @@ import useStyleStore from "../store/CssStore";
 import InputStyle from "../components/InputStyle";
 import InputSelect from "../components/InputSelect";
 import InputRangeSlider from "../components/InputRangeSlider";
-const Form = () => {
+const Toast = () => {
   const [currentTab, setCurrentTab] = useState("label");
   const stateForm = useStyleStore((state) => state);
 
@@ -152,7 +152,7 @@ const Form = () => {
   };
 
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
+    <div className=" min-h-screen dark:bg-[#0f172a]">
       <Navbar />
       <div className="flex min-h-screen pt-16">
         <Side />
@@ -449,4 +449,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Toast;

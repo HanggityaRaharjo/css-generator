@@ -123,9 +123,9 @@ const Button = () => {
     ],
   };
   return (
-    <div className=" min-h-screen dark:bg-[#0f172a]">
+    <div className=" min-h-screen dark:bg-[#0f172a] dark:text-slate-200">
       <Navbar />
-      <div className="flex h-screen pt-16">
+      <div className="flex min-h-screen pt-16">
         <Side />
         <div className="w-[85%] p-2">
           {/* Content Disinni */}
@@ -138,7 +138,7 @@ const Button = () => {
               </div>
 
               {/* Windows Preview */}
-              <div className="mockup-window border border-base-300 rounded-t-none ">
+              <div className="mockup-window border border-base-300 rounded-t-none dark:bg-[#f8fafc] dark:text-gray-600">
                 <div className="border-t border-base-300">
                   <div className="h-[550px]  rounded-md">
                     <div className="flex gap-2 h-full">
@@ -984,37 +984,37 @@ const Button = () => {
           <div className="flex justify-center">
             <div className="tabs translate-y-[1px]">
               <button
-                className="tab tab-lifted button-primary tab-active"
+                className="tab tab-lifted text-white button-primary tab-active"
                 onClick={() => handleTab("button-primary")}
               >
                 Primary
               </button>
               <button
-                className="tab tab-lifted button-secondary"
+                className="tab tab-lifted text-white button-secondary"
                 onClick={() => handleTab("button-secondary")}
               >
                 Secondary
               </button>
               <button
-                className="tab tab-lifted button-success"
+                className="tab tab-lifted text-white button-success"
                 onClick={() => handleTab("button-success")}
               >
                 Success
               </button>
               <button
-                className="tab tab-lifted button-danger"
+                className="tab tab-lifted text-white button-danger"
                 onClick={() => handleTab("button-danger")}
               >
                 Danger
               </button>
               <button
-                className="tab tab-lifted button-warning"
+                className="tab tab-lifted text-white button-warning"
                 onClick={() => handleTab("button-warning")}
               >
                 Warning
               </button>
               <button
-                className="tab tab-lifted button-info"
+                className="tab tab-lifted text-white button-info"
                 onClick={() => handleTab("button-info")}
               >
                 Info
@@ -1022,7 +1022,7 @@ const Button = () => {
             </div>
           </div>
           {/* Menu Bawah */}
-          <div className="grid grid-cols-6 gap-1 text-sm border-4 h-40 p-2 overflow-y-scroll">
+          <div className="grid grid-cols-3 gap-1 text-sm  h-56 p-2 overflow-y-scroll">
             {/* Primary */}
             {currentTab == "button-primary"
               ? tabComponent.btnPrimary.map((component, index) => (
