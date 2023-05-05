@@ -1078,7 +1078,7 @@ const Preview = () => {
                     <div
                       className={`${
                         currentTab === "content" ? "border border-red-500" : ""
-                      } cursor-pointer flex w-full h-[186px] justify-center items-center hover:border hover:border-red-500 transition duration-300`}
+                      } cursor-pointer flex w-full h-[186px] justify-center items-center hover:border hover:border-red-500 transition duration-300 bg-center bg-cover`}
                       style={{
                         background: `${
                           stateMenu.contentBackgroundGradient == null ||

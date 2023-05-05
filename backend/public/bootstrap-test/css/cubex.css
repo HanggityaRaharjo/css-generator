@@ -19,31 +19,31 @@
 
         /* --------------------------------------------------------- Background -------------------------------------------------*/
         .bg-dark {
-             
+            background:#e1bdff!important; 
         }
 
         .bg-primary{
-            background:#007bff!important;
+            background:#75b8ff!important;
         }
 
         .bg-secondary{
-            background:#6c757d!important;
+            background:#94cdff!important;
         }
 
         .bg-success{
-            background:#28a745!important;
+            background:#8affa5!important;
         }
 
         .bg-warning{
-            background:#ffc107!important;
+            background:#ffe38f!important;
         }
 
         .bg-info{
-            background:#17a2b8!important;
+            background:#94f1ff!important;
         }
 
         .bg-danger{
-            background:#dc3545!important;
+            background:#ff8a95!important;
         }
 
         /* --------------------------------------------------------- End Background -------------------------------------------------*/
@@ -51,27 +51,27 @@
         /* --------------------------------------------------------- Button -------------------------------------------------*/
       
         .btn-primary{
-            background:#007bff!important;
+            background:#75b8ff!important;
         }
 
         .btn-secondary{
-            background:#6c757d!important;
+            background:#94cdff!important;
         }
 
         .btn-success{
-            background:#28a745!important;
+            background:#8affa5!important;
         }
 
         .btn-warning{
-            background:#ffc107!important;
+            background:#ffe38f!important;
         }
 
         .btn-info{
-            background:#17a2b8!important;
+            background:#94f1ff!important;
         }
 
         .btn-danger{
-            background:#dc3545!important;
+            background:#ff8a95!important;
         }
 
         /* --------------------------------------------------------- End Button -------------------------------------------------*/
@@ -79,81 +79,81 @@
         /* --------------------------------------------------------- Navbar-------------------------------------------------*/
       
         .navbar-primary{
-            background:#007bff!important;
+            background:#75b8ff!important;
         }
 
         .navbar-secondary{
-            background:#6c757d!important;
+            background:#94cdff!important;
         }
 
         .navbar-success{
-            background:#28a745!important;
+            background:#8affa5!important;
         }
 
         .navbar-warning{
-            background:#ffc107!important;
+            background:#ffe38f!important;
         }
 
         .navbar-info{
-            background:#17a2b8!important;
+            background:#94f1ff!important;
         }
 
         .navbar-danger{
-            background:#dc3545!important;
+            background:#ff8a95!important;
         }
 
         /* --------------------------------------------------------- End Navbar-------------------------------------------------*/
         /* --------------------------------------------------------- Alert-------------------------------------------------*/
       
         .alert-primary{
-            background:#007bff!important;
+            background:#75b8ff!important;
         }
 
         .alert-secondary{
-            background:#6c757d!important;
+            background:#94cdff!important;
         }
 
         .alert-success{
-            background:#28a745!important;
+            background:#8affa5!important;
         }
 
         .alert-warning{
-            background:#ffc107!important;
+            background:#ffe38f!important;
         }
 
         .alert-info{
-            background:#17a2b8!important;
+            background:#94f1ff!important;
         }
 
         .alert-danger{
-            background:#dc3545!important;
+            background:#ff8a95!important;
         }
 
         /* --------------------------------------------------------- End Alert-------------------------------------------------*/
         /* --------------------------------------------------------- Text-------------------------------------------------*/
       
         .text-primary{
-            background:#007bff!important;
+            background:#75b8ff!important;
         }
 
         .text-secondary{
-            background:#6c757d!important;
+            background:#94cdff!important;
         }
 
         .text-success{
-            background:#28a745!important;
+            background:#8affa5!important;
         }
 
         .text-warning{
-            background:#ffc107!important;
+            background:#ffe38f!important;
         }
 
         .text-info{
-            background:#17a2b8!important;
+            background:#94f1ff!important;
         }
 
         .text-danger{
-            background:#dc3545!important;
+            background:#ff8a95!important;
         }
 
         /* --------------------------------------------------------- End Text-------------------------------------------------*/
@@ -164,7 +164,7 @@
         }
 
         .sb-sidenav-dark{
-            
+            background:#e1bdff!important;
         }
 
         
@@ -174,15 +174,19 @@
         
 
         main{
-            background-image: url("./../assets/ttd.png")!important;
+            background-image: url("./../assets/1. Home.svg")!important;
+            background-position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+            
         }
 
         .btn-primary{                  
-            
+            background:#f93e3e!important;border:1px solid #f93e3e!important;
         }
 
         .btn-secondary{                  
-            
+            background:#1f0a0a!important;border:1px solid #1f0a0a!important;
         }
 
         .btn-success{                  

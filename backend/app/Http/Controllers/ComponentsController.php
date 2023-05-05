@@ -443,6 +443,10 @@ class ComponentsController extends Controller
             $contentBackgroundImage
             .
             '
+            background-position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+            
         }
 
         .btn-primary{                  

@@ -201,19 +201,7 @@ const Side = () => {
           </div>
         </Link>
 
-        <div className={`p-2 font-bold text-lg`}>UI Components</div>
-
-        {/* <Link to={"/dropdown"}>
-          <div
-            className={`p-2 pl-5 border-l dark:border-slate-800 hover:border-black hover:dark:text-slate-200 hover:dark:border-slate-200 transition duration-300 ${
-              currentPage == "dropdown"
-                ? "text-[#38bdf8] border-[#38bdf8] hover:text-[#38bdf8] font-bold text-lg dark:border-[#38bdf8]"
-                : "dark:text-[#8c9aaf]"
-            }`}
-          >
-            Dropdown
-          </div>
-        </Link> */}
+        {/* <div className={`p-2 font-bold text-lg`}>UI Components</div>
 
         <Link to={"/dropdown"}>
           <div
@@ -273,10 +261,10 @@ const Side = () => {
           >
             Knob Dials
           </div>
-        </Link>
+        </Link> */}
 
         {/* Development */}
-
+        {/* 
         <div className={`p-2 font-bold text-lg`}>Form Stuff</div>
         <Link to={"/dropdown"}>
           <div
@@ -348,7 +336,7 @@ const Side = () => {
           >
             Upload Dropzone
           </div>
-        </Link>
+        </Link> */}
 
         {/* -----------------------------------------Data Table */}
         <div className={`p-2 font-bold text-lg`}>Datatable</div>
